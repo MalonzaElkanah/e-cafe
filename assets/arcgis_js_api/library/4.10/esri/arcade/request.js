@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports","dojo/Deferred","../request"],function(m,e,k,g){Object.defineProperty(e,"__esModule",{value:!0});e.serviceRequest=function(a,b,e,h,d){void 0===d&&(d=null);if(null!==d){var c=new k;d.getToken().then(function(d){try{if(a=a+="?token\x3d"+d,"get"===h.toLowerCase())g(a,{responseType:"json",query:b}).then(function(a){c.resolve(a)},function(a){c.reject(a)});else{if(b)for(var f in b)a=-1<a.indexOf("?")?a+"\x26":a+"?",a+=encodeURIComponent(f)+"\x3d"+encodeURIComponent(b[f]);g(a,
+{method:"post",query:e,responseType:"json"}).then(function(a){c.resolve(a)},function(a){c.reject(a)})}}catch(l){c.reject(l)}},function(a){c.reject(a)});return c.promise}if("get"===h.toLowerCase())return g(a,{responseType:"json",query:b});if(b)for(var f in b)a=-1<a.indexOf("?")?a+"\x26":a+"?",a+=encodeURIComponent(f)+"\x3d"+encodeURIComponent(b[f]);return g(a,{method:"post",responseType:"json",query:e})}});

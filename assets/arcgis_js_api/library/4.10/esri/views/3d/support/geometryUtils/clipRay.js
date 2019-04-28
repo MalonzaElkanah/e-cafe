@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define("require exports ../../../../core/ObjectStack ../../../../core/libs/gl-matrix-2/gl-matrix ../stack ./ray".split(" "),function(q,e,m,h,n,g){function f(a){return a?{ray:g.create(a.ray),c0:a.c0,c1:a.c1}:{ray:g.create(),c0:0,c1:Number.MAX_VALUE}}function k(a,b,d,c){void 0===c&&(c=f());g.copy(a,c.ray);c.c0=b;c.c1=d;return c}function l(a,b,d){void 0===d&&(d=f());var c=h.vec3.length(a.vector);g.fromValues(a.origin,b,d.ray);d.c0=0;d.c1=c;return d}Object.defineProperty(e,"__esModule",{value:!0});e.create=
+f;e.wrap=function(a,b,d){var c=p.get();c.ray=a;c.c0=b;c.c1=d;return c};e.copy=function(a,b){void 0===b&&(b=f());return k(a.ray,a.c0,a.c1,b)};e.fromValues=k;e.fromRay=function(a,b){void 0===b&&(b=f());g.copy(a,b.ray);b.c0=0;b.c1=Number.MAX_VALUE;return b};e.fromLineSegment=function(a,b){void 0===b&&(b=f());var d=h.vec3.normalize(n.sv3d.get(),a.vector);return l(a,d,b)};e.fromLineSegmentAndDirection=l;var p=new m.ObjectStack(function(){return{c0:0,c1:0,ray:null}})});

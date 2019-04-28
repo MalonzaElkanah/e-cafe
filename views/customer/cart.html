@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"/>
+	<script src= /e-cafe/assets/js/jquery.js ></script>	
+	
+	<link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+	<script src="https://js.arcgis.com/4.10/"></script>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="/e-cafe/assets/css/normalize.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/skeleton.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/style.css" rel="stylesheet" type="text/css"/>
+	<title>ecafe.com</title>
+  	<link rel="icon" type="image/png" href="/e-cafe/assets/images/favicon.png">
+	
+	<style type="text/css">
+	#navigation{
+		height: 50px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border: 1px solid #e7e7e7;
+    	background-color: #f3f3f3;
+		text-align: center;
+	}
+	#navigation a {
+		text-decoration: none;
+		color: black;
+
+	}
+	#restaurantlogo{
+		font-size: 40px;
+		text-align: center;
+		font-family: forte;
+	    color: maroon;
+	}
+	#restaurantlogo a{
+		font-size: 40px;
+		text-align: center;
+		font-family: forte;
+	    color: maroon;
+	}
+	#sidenav{
+		display: none;
+		border: 1px solid #b7b7b7;
+		color: #6a6c70; 
+		background-color: #2d3035;
+		height: 100%;
+	}
+	#content{
+		background-color:#f3f3f3;
+		border: 0px solid #e7e7e7;
+		height: 100%;
+	}
+	#homecontent{
+		border: 0px solid #e7e7e7;
+		height: 100%;	
+	}
+	#miniprofile{
+		height: 100px;
+		padding-top: 25px;
+		padding-left: 25px;
+
+	}
+	#profilepic{
+
+	    width: 60px;
+    	height: 60px;
+	    border-radius: 50%;
+	    overflow: hidden;
+	    margin-right: 15px;
+	    background: #6a6c70;
+	    padding: 4px;
+	    border: 3px solid #282b2f;
+	}
+	#profilepic img{
+		/*padding-top: 0px;
+		padding-left: 0px;*/
+
+	}
+	#profilename{
+		padding-top: 10px;
+		border: 0px solid black;
+		height: 60px;
+		text-align: center;
+		color: #6a6c70; 
+	}
+	#maintitle{
+		
+		background-color: #2d3035;
+		height: 30px;
+		
+		font-weight: bold;
+	}
+	#maintitle h6{
+		font-weight: 700;
+	    margin-left: 20px;
+	    color: #494d53;
+	    font-size: 1.2rem;
+	    margin-bottom: 15px
+	}
+	#extrastitle{
+		background-color: #2d3035;
+		height: 30px;
+		
+		font-weight: bold;
+	}
+	#extrastitle h6{
+		font-weight: 700;
+	    margin-left: 20px;
+	    color: #494d53;
+	    font-size: 1.2rem;
+	    margin-bottom: 15px
+	}
+	#homenav{
+		/*border-bottom: 1px solid maroon;
+		/*border: 1px solid #b7b7b7;*/
+		height: 50px;
+	}
+	#sidebaricon{
+		height: 30px;
+		width: 60px;
+		border-right: 1px solid #6a6c70;
+		padding-left: 15px;
+	}
+	#sidenavname{
+		padding-left: 5px;
+		padding-top: 5px;
+	}
+	#extranav{
+		/*border-bottom: 1px solid maroon;
+		border: 1px solid #b7b7b7;*/
+		height: 50px;
+	}
+	#contentNav{
+		height: 40px;
+		border: 1px solid #e7e7e7;
+		background-color: #2d3035;
+		text-align: center;
+		
+	}
+	#contentNav h6{
+		font-weight: bold;
+		color: #f3f3f3;/*#494d53;*/
+		padding-top: 10px;
+	}
+	#contentNav a{
+		text-decoration: none;
+	}
+	.active{
+		background-color: black;
+	}
+		#tableTitle{
+			text-align: center;
+			font-weight: bold;
+			padding-bottom: 20px;
+			color: maroon;
+		}
+
+		#restaurantsTableDiv{
+			/*<div class="row" id="restaurantsTableDiv" style=" height: 300px; "> </div>*/
+			background-color: #f3f3f3;
+		}
+		table{
+			width: 100%;
+		}
+		th{
+			color: maroon;
+			text-align: center;
+		}
+		td{
+			text-align: center;
+		}
+
+		table#restaurantTable tr:nth-child(even) {
+		    background-color: #eee;
+		}
+		table#restaurantTable tr:nth-child(odd) {
+		    background-color: #f3f3f3;
+		}
+		table#restaurantTable th {
+		    color: maroon;
+		    background-color: #f3f3f3;
+		}
+		/*button#removeOrder{
+			float: left;
+			padding-left: 50px;
+		}
+		button#orderFood{
+			float: right;
+			padding-right: 50px;
+		}*/
+		button#orderFood, button#removeOrder {
+			float: right;
+			/*padding-right: 50px;*/
+		    font-size: 14px;
+		    color: #fff;
+		    font-weight: 600;
+		    padding: 0px 45px;
+		    background: maroon;
+		    outline: none;
+    		border: none;
+    		cursor: pointer;
+		}
+		.button{
+			float: right;
+			/*padding-right: 50px;*/
+		    font-size: 14px;
+		    color: #fff;
+		    font-weight: 600;
+		    padding: 0px 45px;
+		    background: maroon;
+		    outline: none;
+    		border: none;
+    		cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+
+		<!-- Navigation area  &nbsp; -->
+
+		<div class="row" id="navigation">
+			<div class="three columns" id="restaurantlogo">
+				<div class="one column">
+					<img alt="" src="/e-cafe/assets/images/sidenavicon.png" id="sidenavicon" style="width: 25px; height:25px; padding-left: 5px" >
+				</div>
+				<div class="ten columns">
+					<a href="#" >E-CAFE</a>
+				</div>
+				
+			</div>
+			<div class="four columns"> <p> </p></div>
+			<div class="five columns">
+				<div class="two columns">
+					<img alt="" src="/e-cafe/assets/images/search.png" id="search" style="width: 25px; height:25px; padding-left: px" >
+				</div>
+				<div class="two columns">
+					<a href="notifications.php">
+						<img alt="" src="/e-cafe/assets/images/notificationIcon.png" id="notificationicon" style="width: 25px; height:25px;" >
+					</a>
+				</div>
+				<div class="two columns">
+					<a href="messages.php">
+						<img alt="" src="/e-cafe/assets/images/messageicon.png" id="messageicon" style="width: 25px; height:25px; " >
+					</a>
+				</div>
+				<div class="six columns">
+					<?php if(Session::get("loggedin")): ?>
+						<p class="iblk log">
+							<?php echo ' '.$_SESSION["username"].' | '; ?> 
+							<a href=<?= BASE_URL."login/runLogout"?>>Logout</a>
+						</p>
+					<?php endif;?> 
+					
+				</div>
+				
+				
+				
+			</div>
+				
+		</div>
+
+		<!-- Navigation area ends &nbsp; -->
+
+		<div class="row" id="content">
+
+		<!-- SideBar area Bigins &nbsp; -->	
+
+			<div class="three columns" id="sidenav">
+				<div class="twelve columns" id="miniprofile">
+					<div class="four columns" id="profilepic">
+						<img alt="add food" src="/e-cafe/assets/images/defaultprofilepic.png" title="profile pic" id="proileicon" style="width: 50px; height:50px;">
+					</div>
+					<div class="seven columns" id="profilename">
+						<div class="twelve columns" ><h7 style ="font-weight: bold;">
+							<?php 
+								echo' '.$_SESSION["customer_name"];
+							?>
+							
+						</h7> </div>
+						<div class="twelve columns" ><h7>restaurant category</h7>  </div>
+					</div>
+				</div>	
+				<div class="twelve columns" id="maintitle">
+					<h6>MAIN</h6>
+				</div>
+				<div class="twelve columns" id="homenav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/homeicon.png" title="home" id="homeicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Home</h8></div>
+				</div>
+				<div class="twelve columns" id="homenav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/profileicon.png" title="profile" id="homeicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Profile</h8></div>
+				</div>	
+				<div class="twelve columns" id="homenav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/statsicon.png" title="profile" id="homeicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Statistics</h8></div>
+				</div>
+				<div class="twelve columns" id="homenav"></div>	
+				<div class="twelve columns" id="homenav"></div>
+				<div class="twelve columns" id="extrastitle">
+					<h6>EXTRAS</h6>
+				</div>
+				<div class="twelve columns" id="extranav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/settingsicon.png" title="settings" id="settingsicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Settings</h8></div>
+				</div>
+				<div class="twelve columns" id="extranav"></div>	
+				<div class="twelve columns" id="extranav"></div>
+						
+			</div>
+
+			<!-- Sidebar area ends &nbsp; -->
+
+			<div class="twelve columns" id="homecontent">
+
+			<!-- Home Menu area Begins &nbsp; -->	
+				<div class="row" id="contentNav">
+					<div class="three columns" id="menuNav">
+						<a href="index.php"><h6> MENU </h6></a>
+					</div>
+					<div class="three columns">
+						<a href="foodcart.php"><h6> FOOD CART</h6></a> 
+					</div>
+					<div class="three columns">
+						<a href="orders.php"> <h6> MY ORDERS </h6></a>
+					</div>
+					<div class="three columns">
+						<a href="previousOrders.php"><h6> PREV ORDERS </h6></a>
+					</div>
+				</div>
+
+				<div class="row" id="homeHeader">
+					<h3 id="foodMenu"> </h3>
+				</div>
+
+			<!-- Home-Menu area ends &nbsp; -->	
+
+			<!-- food cart area Begins &nbsp; -->
+				<div class="row" id="restaurantsTableDiv" style=" ">
+					<div class="row" id="tableTitle" style="height:50px; ">
+						<h4> MY FOOD CART</h4>
+					</div>
+					<div class="row" id="getRestaurant">
+						<table id="restaurantTable">
+							<tr>
+								<th> </th>
+								<th>FOOD NAME</th>
+								<th>QUANTITY</th>
+								<th>PRICE</th>
+								<th>RESTAURANT NAME</th>
+								<th>SELECT</th>
+							</tr>
+							<?php 
+							$i = 0; 
+							foreach($this->cart_data as $order): 
+							$i++;
+							$k = $order['food_quantity'];
+							?>
+							<tr id="O<?= $i?>">
+								<td>
+									<img alt=" " src="/e-cafe/assets/<?= $order['picture_id']?>" title=" " id="foodImage" style="width: 50px; height:50px; padding-left: 30px;">
+								</td>
+								<td><?= $order['food_name']?></td>
+								<td>
+									<select name="S<?= $i?>">
+										<?php for ($j = 1; $j < 50; $j++): ?>
+											<?php if($j==$k): ?>
+												<option value="<?=$j?>" selected><?=$j?></option>
+											<?php else: ?>	
+												<option value="<?=$j?>"><?=$j?></option>
+											<?php endif; ?>	
+										<?php endfor; ?>
+									</select>
+								</td>
+								<td><?= $order['food_price']?></td>
+								<td><?= $order['restaurant_name']?></td>
+								<td>
+									<input type="checkbox" name="O<?= $i?>" value="<?= $order['order_id']?>">
+								</td>
+							</tr>
+							<?php 
+							
+							endforeach; ?>
+							<p id="count" style="display: none;"><?= $i?></p>
+						</table>
+					</div>
+					<div id="tableButtons" style="padding-top: 30px;">
+							<div class="two columns" style="padding-right: 20px; float: right;">
+								<button href="#" id="orderFood" class=" "> ORDER </button></div>
+							<div class="two columns" style="padding-right: 20px; float: right;">
+								<button href="#" id="removeOrder" > REMOVE</button>
+							</div>  
+					</div>
+				</div>
+				<div class="row" style="height: 50px;">
+					<h3> </h3>
+				</div>
+			<!--Cart Table area Ends -->
+
+			<!--Cart Table area Begins -->
+				<div id="getLocation">
+					
+				</div>
+			<!--Cart Table area Ends -->
+
+
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		//SIDE NAV BUTTON
+		$(function(){
+			$("#sidenavicon").click(function(){
+				if($("#sidenav").css("display")==="block"){
+  					$("#sidenav").css("display", "none");
+  					$("#homecontent").removeClass("nine columns").addClass("twelve columns");
+  				}else if($("#sidenav").css("display")==="none"){
+  					$("#homecontent").removeClass("twelve columns").addClass("nine columns"); 
+  					$("#sidenav").css("display", "block");
+  				}
+			});
+		});
+		//orderFood and Remove Food Button
+		$(function(){
+			//order food
+			$("#orderFood").click(function(event){
+				event.preventDefault();
+				var init =  parseInt($("#count").text());
+				var order_id = [];
+				var qnty =[];
+				var checkAllSelection = 0;
+				for (var i = init; i > 0; i--) {
+					var inputName = "O"+i;
+					var selectName = "S"+i;
+					var isChecked = $("input[name='"+inputName+"']").prop('checked');
+					if (isChecked==true) {
+						order_id[i] = $("input[name='"+inputName+"']").val(); 
+						qnty[i] = $("select[name='"+selectName+"']").val(); 
+						checkAllSelection = $("input[name='"+inputName+"']").val(); 
+					}else{
+						order_id[i] = 0;
+						qnty[i] = 1;
+					}
+				}
+				if (checkAllSelection ==0) {
+					alert("SELECT A FOOOD ORDER FIRST!!");
+				}else{
+					for (var i = init; i > 0; i--) {
+						//alert(order_id[i]);
+						//var id=$(".a1").attr("name");
+						if (order_id[i]>0) {
+							$.post("foodCart.php",
+						    {
+						        foodOrder_id: order_id[i],
+						        foodQnty: qnty[i]
+						    },
+						    function(data, status){
+						        //alert("Data: " + data + "\nStatus: " + status);
+						    });
+						}
+					}
+					$.ajax({
+						url: 'selectedOrder.php',
+						method: 'GET',
+						data: selected=true,
+						success: function(response){
+							$("#getLocation").html(response);
+							$("#restaurantsTableDiv").css("display", "none");
+						},
+						error: function(){
+							alert("error"+url);
+						}
+					});
+					
+				}
+				
+			});
+			//remove food
+			$("#removeOrder").click(function(){
+				event.preventDefault();
+				var init =  parseInt($("#count").text());
+				var order_id = [];
+				var checkAllSelection = 0;
+				for (var i = init; i > 0; i--) {
+					var inputName = "O"+i;
+					var isChecked = $("input[name='"+inputName+"']").prop('checked');
+					if (isChecked==true) {
+						order_id[i] = $("input[name='"+inputName+"']").val();
+						checkAllSelection = $("input[name='"+inputName+"']").val(); 
+					}else{
+						order_id[i] = 0;
+					}
+				}
+				if (checkAllSelection ==0) {
+					alert("SELECT A FOOOD ORDER FIRST!!");
+				}else{
+					for (var i = init; i > 0; i--) {
+						if (order_id[i]>0) {
+							$.post("foodCart.php",
+						    {
+						        foodDelete_id: order_id[i]
+						    },
+						    function(data, status){
+						        if (data==1) {
+						        	//UNCHECK
+						        	for (var j = init; j >= 0; j--) {
+						        		if (order_id[j]>0) {
+						        			var name = "O"+j;
+						        			$("input[name='"+name+"']").prop('checked', false);
+						        			$("#"+name).css("display", "none");
+						        		}
+						        	}
+						        }else if (data==0) {
+						        	alert("UNSUCCESFUL");
+						        }else{
+						        	alert("UNSUCCESSFUL ");	
+						        }
+						    });
+						}
+					}
+				}
+			});
+		});
+		//CHECK USER ACTIVITY
+		$(function(){
+			setInterval(function(){
+				checkActivity();
+			}, 300000);
+		});
+		//CHECK NOTIFICATIONS
+		$(function(){
+			setInterval(function(){
+				checkNotifications();
+			}, 30000);
+		});
+		function checkNotifications(){
+			$.post("index.php",
+		    {
+		        notification_activity: true
+		    },
+		    function(data, status){
+		    	if (data==0) {
+		    		//no notifications
+		    	}else{
+		    		alert("Data: " + data + "\nStatus: " + status);
+		    	}
+		    });	
+		}
+	</script>
+	<script type="text/javascript" src="/e-cafe/assets/js/userActivity.js"></script>
+</body>
+</html>

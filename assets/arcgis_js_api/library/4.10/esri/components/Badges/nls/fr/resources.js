@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({authoritative:"Officiel",deleted:"Supprim\u00e9",deprecated:"Obsol\u00e8te",livingAtlas:"Living Atlas",marketplace:"Boutique",openData:"Open Data",premium:"Premium",subscriber:"Abonn\u00e9",tooltips:{altAuthoritative:"Officiel : recommand\u00e9(e) par",authoritative:"Officiel : recommand\u00e9(e) par votre organisation",deprecated:"Obsol\u00e8te : utilisation non recommand\u00e9e",livingAtlas:"Living Atlas : contenu organis\u00e9 par Esri",marketplace:"R\u00e9pertori\u00e9(e) dans ArcGIS Marketplace",
+openData:"Utilisation publique",premiumAnon:"Premium : n\u00e9cessite de se connecter via un abonnement ArcGIS Online et consomme des cr\u00e9dits",subscriberAnon:"Abonn\u00e9 : n\u00e9cessite de se connecter via un abonnement ArcGIS Online",premiumPublic:"Premium : requiert un abonnement ArcGIS Online et consomme des cr\u00e9dits",subscriberPublic:"Abonn\u00e9 : requiert un abonnement ArcGIS Online",premiumOrg:"Premium : contenu exclusif r\u00e9serv\u00e9 aux abonn\u00e9s. Consomme des cr\u00e9dits.",
+subscriberOrg:"Abonn\u00e9 : contenu exclusif r\u00e9serv\u00e9 aux abonn\u00e9s"}});

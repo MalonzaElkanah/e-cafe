@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({itemType:"Type d\u2019\u00e9l\u00e9ment",filters:{maps:"Cartes",webMaps:"Cartes web",mapFiles:"Fichiers de cartes",layers:"Couches",featureLayers:"Couches d'entit\u00e9s",tileLayers:"Couches de tuiles",mapImageLayers:"Couches d\u2019images de carte",imageryLayers:"Couches d\u2019imagerie",sceneLayers:"Couches de sc\u00e8nes",tables:"Tables",layerFiles:"Fichiers de couches",scenes:"Sc\u00e8nes",apps:"Applications",webApps:"Applications web",mobileApps:"Applications mobiles",desktopApps:"Applications bureautiques",
+tools:"Outils",locators:"Localisateurs",geodatabaseAccess:"Acc\u00e8s \u00e0 la g\u00e9odatabase",geometricOperations:"Op\u00e9ration g\u00e9om\u00e9triques",geoprocessingTasks:"T\u00e2ches de g\u00e9otraitement",networkAnalysis:"Analyse du r\u00e9seau",files:"Fichiers",documents:"Documents",images:"Images",pdfs:"PDF",webTools:"Outils web",notebooks:"Notebooks"}});

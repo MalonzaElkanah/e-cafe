@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({zoom:"\u091c\u0942\u092e \u0915\u0930\u0947\u0902",next:"\u0905\u0917\u0932\u0940 \u0935\u093f\u0936\u0947\u0937\u0924\u093e",previous:"\u092a\u093f\u091b\u0932\u0940 \u0935\u093f\u0936\u0947\u0937\u0924\u093e",dock:"\u0921\u0949\u0915 \u0915\u0930\u0947\u0902",undock:"\u0921\u0949\u0915 \u0939\u091f\u093e\u092f\u0947",pageText:"{total} \u0915\u093e {index}",selectedFeature:"\u091a\u092f\u0928\u093f\u0924 \u0938\u0941\u0935\u093f\u0927\u093e",selectedFeatures:"{total} \u092a\u0930\u093f\u0923\u093e\u092e"});

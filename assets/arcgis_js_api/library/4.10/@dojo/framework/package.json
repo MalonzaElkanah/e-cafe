@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      "@dojo/framework@4.0.0",
+      "C:\\Users\\xiao2192\\.jenkins\\workspace\\hydra"
+    ]
+  ],
+  "_from": "@dojo/framework@4.0.0",
+  "_id": "@dojo/framework@4.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-0yNtfIQVBZiI6Ipdsn9cOTsnwfj0NUflHIRqAgbhKv3vCn7rbKiTephJ271SvXn3+6DlXReDWSLJ5LvkeoAvoQ==",
+  "_location": "/@dojo/framework",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@dojo/framework@4.0.0",
+    "name": "@dojo/framework",
+    "escapedName": "@dojo%2fframework",
+    "scope": "@dojo",
+    "rawSpec": "4.0.0",
+    "saveSpec": null,
+    "fetchSpec": "4.0.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@dojo/framework/-/framework-4.0.0.tgz",
+  "_spec": "4.0.0",
+  "_where": "C:\\Users\\xiao2192\\.jenkins\\workspace\\hydra",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/dojo/framework/issues"
+  },
+  "dependencies": {
+    "@types/cldrjs": "0.4.20",
+    "@types/globalize": "0.0.34",
+    "@webcomponents/webcomponentsjs": "1.1.0",
+    "cldrjs": "0.4.8",
+    "css-select-umd": "1.3.0-rc0",
+    "diff": "3.4.0",
+    "globalize": "1.3.0",
+    "intersection-observer": "0.4.2",
+    "pepjs": "0.4.2",
+    "tslib": "1.8.1",
+    "web-animations-js": "2.3.1"
+  },
+  "description": "The Dojo Framework",
+  "devDependencies": {
+    "@dojo/loader": "^2.0.0",
+    "@dojo/scripts": "~3.0.1",
+    "@types/benchmark": "~1.0.0",
+    "@types/jsdom": "2.0.*",
+    "@types/multer": "~1.3.3",
+    "@types/node": "~9.6.5",
+    "@types/ramda": "0.25.5",
+    "@types/selenium-webdriver": "^3.0.8",
+    "@types/sinon": "~4.1.2",
+    "benchmark": "^1.0.0",
+    "bootstrap": "^3.3.7",
+    "chromedriver": "2.40.0",
+    "cldr-data": "32.0.1",
+    "codecov": "~3.0.4",
+    "cpx": "~1.5.0",
+    "husky": "~0.14.3",
+    "jsdom": "^9.5.0",
+    "jstat": "^1.7.1",
+    "lint-staged": "6.0.0",
+    "multer": "~1.3.0",
+    "npm-run-all": "~4.1.3",
+    "ramda": "0.25.0",
+    "rimraf": "~2.6.2",
+    "selenium-webdriver": "3.6.0",
+    "sinon": "~4.1.3",
+    "typescript": "~2.6.2",
+    "whatwg-fetch": "^2.0.4"
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "tests"
+  },
+  "homepage": "https://github.com/dojo/framework#readme",
+  "license": "BSD-3-Clause",
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "name": "@dojo/framework",
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 4,
+    "useTabs": true,
+    "printWidth": 120,
+    "arrowParens": "always"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dojo/framework.git"
+  },
+  "version": "4.0.0"
+}

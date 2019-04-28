@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define("require exports ../../../../../core/tsSupport/extendsHelper ../../../../../core/libs/gl-matrix-2/gl-matrix ./MomentumController ../../utils/navigationUtils ../../../support/mathUtils".split(" "),function(b,e,f,d,g,h,k){Object.defineProperty(e,"__esModule",{value:!0});b=function(b){function c(a,l,c){a=b.call(this,a,1)||this;a.momentum=l;a.zoomCenter=d.vec3f64.create();d.vec3.copy(a.zoomCenter,c);a.constraintOptions.interactionDirection=d.vec3f64.create();return a}f(c,b);c.prototype.momentumStep=
+function(a,b){d.vec3.copy(this.constraintOptions.interactionDirection,b.eye);a=this.momentum.valueDelta(0,a);h.applyZoomToPoint(b,this.zoomCenter,a,this.view.state.constraints.minimumPoiDistance);this.constraintOptions.interactionDirection=k.directionFromTo(this.constraintOptions.interactionDirection,b.eye,this.constraintOptions.interactionDirection)};return c}(g.MomentumController);e.ZoomPlanarMomentumController=b});

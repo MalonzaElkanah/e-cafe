@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({other:"Altul",sumOfCategories:"Suma categoriilor",predominantCategory:"Categorie predominant\u0103",strengthOfPredominance:"Nivelul predominan\u0163ei",ageInfo_years:"Vechimea \u00een ani, de la {startTime} p\u00e2n\u0103 la {endTime}",ageInfo_months:"Vechimea \u00een luni, de la {startTime} p\u00e2n\u0103 la {endTime}",ageInfo_days:"Vechimea \u00een zile, de la {startTime} p\u00e2n\u0103 la {endTime}",ageInfo_hours:"Vechimea \u00een ore, de la {startTime} p\u00e2n\u0103 la {endTime}",ageInfo_minutes:"Vechimea \u00een minute, de la {startTime} p\u00e2n\u0103 la {endTime}",
+ageInfo_seconds:"Vechimea \u00een secunde, de la {startTime} p\u00e2n\u0103 la {endTime}",relationship:{legendTitle:"Rela\u021bie",HL:"Ridicat - Sc\u0103zut",HH:"Ridicat - Ridicat",LL:"Sc\u0103zut - Sc\u0103zut",LH:"Sc\u0103zut - Ridicat",HM:"Ridicat - Mediu",ML:"Mediu - Sc\u0103zut",MM:"Mediu - Mediu",MH:"Mediu - Ridicat",LM:"Sc\u0103zut - Mediu",HM1:"High - Mild",HM2:"High - Medium",M2L:"Medium - Low",M2M1:"Mediu - Moderat",M2M2:"Mediu - Mediu",M2H:"Medium - High",M1L:"Mild - Low",M1M1:"Moderat - Moderat",
+M1M2:"Moderat - Mediu",M1H:"Mild - High",LM1:"Low - Mild",LM2:"Low - Medium"}});

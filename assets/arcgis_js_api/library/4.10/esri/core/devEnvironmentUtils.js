@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports"],function(k,c){Object.defineProperty(c,"__esModule",{value:!0});c.isDevEnvironment=function(a){a=a||window.location.hostname;return d.some(function(b){return null!=a.match(b)})};c.adjustStaticAGOUrl=function(a,b){if(!a)return a;b=b||window.location.hostname;return null!=b.match(e)||null!=b.match(f)?a.replace("static.arcgis.com","staticdev.arcgis.com"):null!=b.match(g)||null!=b.match(h)?a.replace("static.arcgis.com","staticqa.arcgis.com"):a};c.isTelemetryDevEnvironment=
+function(a){a=a||window.location.hostname;return[/^zrh-.+?\.esri\.com$/].concat(d).some(function(b){return null!=a.match(b)})};var e=/^devext.arcgis.com$/,g=/^qaext.arcgis.com$/,f=/^[\w-]*\.mapsdevext.arcgis.com$/,h=/^[\w-]*\.mapsqa.arcgis.com$/,d=[e,g,/^jsapps.esri.com$/,f,h]});

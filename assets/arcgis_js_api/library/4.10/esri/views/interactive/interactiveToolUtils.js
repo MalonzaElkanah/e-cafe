@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports"],function(g,d){function e(a,b){a.attach&&a.attach();b&&b()}function f(a,b){a.detach&&a.detach();b&&b()}Object.defineProperty(d,"__esModule",{value:!0});d.setActive=function(a,b){var c=a.view;b&&c.ready&&c.activeTool!==a?(c.activeTool=a,c.focus()):b||c.activeTool!==a||(c.activeTool=null)};d.swap=function(a,b){var c=a.activeTool;b!==c&&(c&&c.deactivate&&c.deactivate(),a._set("activeTool",b),b&&b.activate&&b.activate(),a.tools.forEach(function(a){var c=!b||b===a;"enableEditing"in
+a&&"disableEditing"in a?c?a.enableEditing():a.disableEditing():"editable"in a&&(a.editable=c)}))};d.setupCollectionHandlers=function(a,b){return[a.tools.on("after-add",function(c){a.ready&&e(c.item,b)}),a.tools.on("after-remove",function(a){f(a.item,b)})]};d.attachTool=e;d.detachTool=f});

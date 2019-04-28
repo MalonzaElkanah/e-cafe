@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define("require exports ../../../../core/tsSupport/extendsHelper ../../../../core/ObjectPool ../../engine/Bitmap ../../engine/Tiled ../../tiling/TileKey".split(" "),function(b,c,d,e,f,g,h){Object.defineProperty(c,"__esModule",{value:!0});b=function(b){function a(a){a=b.call(this,a)||this;a.key=new h(0,0,0,0);return a}d(a,b);a.prototype.acquire=function(a){};a.prototype.release=function(){this.key.set(0,0,0,0)};a.pool=new e(a,!0);return a}(g(f.Bitmap));c.BitmapTile=b;c.default=b});

@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({sort:"Sorteren",sortBy:"Sorteren op",sortDir:"Sorteervolgorde",relevance:"Relevantie",title:"Titel",owner:"Eigenaar",created:"Aanmaakdatum",modified:"Gewijzigd op",numviews:"Keer bekeken",avgrating:"Beoordeling",ascending:{relevance:"Van het minst tot het meest relevant",title:"Alfabetisch",owner:"Alfabetisch",created:"Minst recent",modified:"Minst recent",numviews:"Minst naar meest",avgrating:"Van laag naar hoog beoordeeld"},descending:{relevance:"Van het meest tot het minst relevant",title:"Omgekeerd-alfabetisch",
+owner:"Omgekeerd-alfabetisch",created:"Meest recent",modified:"Meest recent",numviews:"Meest naar minst",avgrating:"Van hoog naar laag beoordeeld"}});

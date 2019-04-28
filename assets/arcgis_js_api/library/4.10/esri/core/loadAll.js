@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define("require exports ./tsSupport/generatorHelper ./tsSupport/awaiterHelper ./asyncUtils ./Collection ./Loadable".split(" "),function(t,d,l,m,n,p,q){function f(d,f){return m(this,void 0,void 0,function(){var h,g,e,r=this;return l(this,function(k){switch(k.label){case 0:return[4,d.load()];case 1:return k.sent(),h=[],g=function(){for(var c=[],a=0;a<arguments.length;a++)c[a]=arguments[a];for(a=0;a<c.length;a++){var b=c[a];b&&(Array.isArray(b)?g.apply(void 0,b):p.isCollection(b)?b.forEach(function(a){return g(a)}):
+b.isInstanceOf&&b.isInstanceOf(q)&&h.push(b))}},f(g),e=null,[4,n.map(h,function(c){return m(r,void 0,void 0,function(){var a;return l(this,function(b){switch(b.label){case 0:return[4,n.result("loadAll"in c&&"function"===typeof c.loadAll?c.loadAll():c.load())];case 1:return a=b.sent(),!1!==a.ok||e||(e=c),[2]}})})})];case 2:k.sent();if(e)throw e.loadError;return[2,d]}})})}Object.defineProperty(d,"__esModule",{value:!0});d.loadAll=f;d.default=f});

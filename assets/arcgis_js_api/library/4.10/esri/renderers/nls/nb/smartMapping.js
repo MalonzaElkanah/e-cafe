@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({other:"Annet",sumOfCategories:"Sum for kategorier",predominantCategory:"Dominerende kategori",strengthOfPredominance:"Dominansgrad",ageInfo_years:"Alder, i \u00e5r, fra {startTime} til {endTime}",ageInfo_months:"Alder, i m\u00e5neder, fra {startTime} til {endTime}",ageInfo_days:"Alder, i dager, fra {startTime} til {endTime}",ageInfo_hours:"Alder, i timer, fra {startTime} til {endTime}",ageInfo_minutes:"Alder, i minutter, fra {startTime} til {endTime}",ageInfo_seconds:"Alder, i sekunder, fra {startTime} til {endTime}",
+relationship:{legendTitle:"Relasjon",HL:"H\u00f8y - lav",HH:"H\u00f8y - h\u00f8y",LL:"Lav - lav",LH:"Lav - h\u00f8y",HM:"H\u00f8y - middels",ML:"Middels - lav",MM:"Middels - middels",MH:"Middels - h\u00f8y",LM:"Lav - middels",HM1:"High - Mild",HM2:"High - Medium",M2L:"Medium - Low",M2M1:"Middels - mild",M2M2:"Middels - middels",M2H:"Medium - High",M1L:"Mild - Low",M1M1:"Mild - mild",M1M2:"Mild - middels",M1H:"Mild - High",LM1:"Low - Mild",LM2:"Low - Medium"}});

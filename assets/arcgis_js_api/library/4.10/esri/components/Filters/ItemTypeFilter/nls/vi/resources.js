@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({itemType:"Lo\u1ea1i M\u1ee5c",filters:{maps:"B\u1ea3n \u0111\u1ed3",webMaps:"B\u1ea3n \u0111\u1ed3 web",mapFiles:"T\u1ec7p B\u1ea3n \u0111\u1ed3",layers:"L\u1edbp",featureLayers:"L\u1edbp \u0111\u1ed1i t\u01b0\u1ee3ng",tileLayers:"L\u1edbp Tile",mapImageLayers:"L\u1edbp H\u00ecnh \u1ea3nh B\u1ea3n \u0111\u1ed3",imageryLayers:"L\u1edbp H\u00ecnh \u1ea3nh",sceneLayers:"L\u1edbp Scene",tables:"B\u1ea3ng",layerFiles:"C\u00e1c t\u1ec7p l\u1edbp",scenes:"Scene",apps:"\u1ee8ng d\u1ee5ng",webApps:"\u1ee8ng d\u1ee5ng web",
+mobileApps:"\u1ee8ng d\u1ee5ng di \u0111\u1ed9ng",desktopApps:"\u1ee8ng d\u1ee5ng d\u00e0nh cho m\u00e1y t\u00ednh \u0111\u1ec3 b\u00e0n",tools:"C\u00f4ng c\u1ee5",locators:"B\u1ed9 \u0111\u1ecbnh v\u1ecb",geodatabaseAccess:"Truy c\u1eadp Geodatabase",geometricOperations:"Thao t\u00e1c H\u00ecnh h\u1ecdc",geoprocessingTasks:"T\u00e1c v\u1ee5 \u0110\u1ecba x\u1eed l\u00fd",networkAnalysis:"Ph\u00e2n t\u00edch M\u1ea1ng l\u01b0\u1edbi",files:"T\u1ec7p",documents:"T\u00e0i li\u1ec7u",images:"H\u00ecnh \u1ea3nh",
+pdfs:"C\u00e1c b\u1ea3n PDF",webTools:"C\u00f4ng c\u1ee5 Web",notebooks:"Notebook"}});

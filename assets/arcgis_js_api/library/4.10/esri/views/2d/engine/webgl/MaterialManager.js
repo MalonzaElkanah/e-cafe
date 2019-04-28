@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define("require exports ./enums ./MaterialInfoUtils ./shaders/MaterialPrograms ../../../webgl/programUtils".split(" "),function(k,l,d,g,e,h){return function(){function f(b){this._programByKey=new Map;this._programCache=new h.ProgramCache(b)}f.prototype.dispose=function(){this._programCache&&this._programCache.dispose()};f.prototype.getProgram=function(b,a){b|=a===d.WGLDrawPhase.HITTEST?8:0;b|=a===d.WGLDrawPhase.HIGHLIGHT?16:0;if(this._programByKey[b])return this._programByKey[b];a=g.getMaterialVariations(b);
+var c=null;switch(a.geometryType){case d.WGLGeometryType.MARKER:c=this._programCache.getProgram(e.icon,a.programOptions);break;case d.WGLGeometryType.TEXT:c=this._programCache.getProgram(e.text,a.programOptions);break;case d.WGLGeometryType.LABEL:c=this._programCache.getProgram(e.label,a.programOptions);break;case d.WGLGeometryType.FILL:c=this._programCache.getProgram(e.fill,a.programOptions);break;case d.WGLGeometryType.LINE:c=this._programCache.getProgram(e.line,a.programOptions)}c&&(this._programByKey[b]=
+c);return c};return f}()});

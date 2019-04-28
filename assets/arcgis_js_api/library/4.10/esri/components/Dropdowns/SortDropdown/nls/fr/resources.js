@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({sort:"Trier",sortBy:"Trier par",sortDir:"Direction de tri",relevance:"Pertinence",title:"Titre",owner:"Propri\u00e9taire",created:"Date de cr\u00e9ation",modified:"Date de modification",numviews:"Nombre de vues",avgrating:"\u00c9valuation",ascending:{relevance:"Du moins au plus pertinent",title:"Alphab\u00e9tique",owner:"Alphab\u00e9tique",created:"Le moins r\u00e9cent",modified:"Le moins r\u00e9cent",numviews:"Moins vers plus",avgrating:"Du moins bien \u00e9valu\u00e9 au mieux \u00e9valu\u00e9"},
+descending:{relevance:"Du plus pertinent au moins pertinent",title:"Alphab\u00e9tique inverse",owner:"Alphab\u00e9tique inverse",created:"La plus r\u00e9cente",modified:"La plus r\u00e9cente",numviews:"Plus vers moins",avgrating:"Du mieux \u00e9valu\u00e9 au moins bien \u00e9valu\u00e9"}});

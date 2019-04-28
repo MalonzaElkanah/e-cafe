@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({sort:"R\u016b\u0161iuoti",sortBy:"R\u016b\u0161iuoti pagal",sortDir:"R\u016b\u0161iavimo tvarka",relevance:"Aktualumas",title:"Pavadinimas",owner:"Savininkas",created:"Suk\u016brimo data",modified:"Pakeitimo data",numviews:"Per\u017ei\u016bros",avgrating:"Vertinimas",ascending:{relevance:"Nuo ma\u017eiausiai svarbaus iki svarbiausio",title:"Ab\u0117c\u0117l\u0117s tvarka",owner:"Ab\u0117c\u0117l\u0117s tvarka",created:"Seniausi",modified:"Seniausi",numviews:"Nuo seniausio iki naujausio",avgrating:"Nuo pras\u010diausiai \u012fvertinto iki geriausiai \u012fvertinto"},
+descending:{relevance:"Nuo svarbiausio iki ma\u017eiausiai svarbaus",title:"Atvirk\u0161tin\u0117 ab\u0117c\u0117l\u0117s tvarka",owner:"Atvirk\u0161tin\u0117 ab\u0117c\u0117l\u0117s tvarka",created:"Naujausi",modified:"Naujausi",numviews:"Nuo did\u017eiausio iki ma\u017eiausio",avgrating:"Nuo geriausiai \u012fvertinto iki pras\u010diausio"}});

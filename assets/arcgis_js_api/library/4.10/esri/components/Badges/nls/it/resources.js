@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({authoritative:"Autorevole",deleted:"Eliminato",deprecated:"Deprecato",livingAtlas:"Living Atlas",marketplace:"Marketplace",openData:"Open Data",premium:"Premium",subscriber:"Sottoscrittore",tooltips:{altAuthoritative:"Autorevole: consigliato da",authoritative:"Autorevole: consigliato dall\u2019organizzazione",deprecated:"Deprecato: non consigliato per l\u2019uso",livingAtlas:"Atlante dinamico: contenuti a cura di Esri",marketplace:"Disponibile su ArcGIS Marketplace",openData:"Disponibile per uso pubblico",
+premiumAnon:"Premium: sono richiesti l'accesso con un abbonamento ArcGIS Online e l'utilizzo di crediti",subscriberAnon:"Abbonato: \u00e8 richiesto l'accesso con un abbonamento ArcGIS Online",premiumPublic:"Premium: sono richiesti un abbonamento ArcGIS Online e l\u2019utilizzo di crediti",subscriberPublic:"Abbonato: \u00e8 richiesto un abbonamento ArcGIS Online",premiumOrg:"Premium: contenuto esclusivo per abbonati Consuma crediti.",subscriberOrg:"Abbonato: contenuto esclusivo per abbonati"}});

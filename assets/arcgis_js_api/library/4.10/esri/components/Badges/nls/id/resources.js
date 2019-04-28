@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({authoritative:"Otoritatif",deleted:"Dihapus",deprecated:"Ditolak",livingAtlas:"Living Atlas",marketplace:"Marketplace",openData:"Open Data",premium:"Premium",subscriber:"Pelanggan",tooltips:{altAuthoritative:"Otoritatif: Disarankan oleh",authoritative:"Otoritatif: Disarankan oleh organisasi Anda",deprecated:"Ditolak: Tidak disarankan untuk digunakan",livingAtlas:"Living Atlas: Konten yang dikurasi Esri",marketplace:"Tercantum di ArcGIS Marketplace",openData:"Tersedia untuk penggunaan publik",
+premiumAnon:"Premium: Harus masuk dengan langganan ArcGIS Online dan menggunakan kredit",subscriberAnon:"Pelanggan: Harus masuk dengan langganan ArcGIS Online",premiumPublic:"Premium: Harus menggunakan langganan ArcGIS Online dan menggunakan kredit",subscriberPublic:"Pelanggan: Harus menggunakan langganan ArcGIS Online",premiumOrg:"Premium: Konten eksklusif untuk pelanggan. Menggunakan kredit.",subscriberOrg:"Pelanggan: Konten eksklusif untuk pelanggan"}});

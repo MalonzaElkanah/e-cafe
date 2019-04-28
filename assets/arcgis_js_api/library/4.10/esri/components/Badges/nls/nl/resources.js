@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({authoritative:"autoritatief",deleted:"Verwijderd",deprecated:"Verouderd",livingAtlas:"Living Atlas",marketplace:"Marketplace",openData:"Open Data",premium:"Premium",subscriber:"Abonnee",tooltips:{altAuthoritative:"Autoritatief: aanbevolen door",authoritative:"Autoritatief: aanbevolen door uw organisatie",deprecated:"Verouderd: niet aanbevolen voor gebruik",livingAtlas:"Levende Atlas: door Esri gecureerde content",marketplace:"Vermeld op de ArcGIS Marketplace",openData:"Beschikbaar voor openbaar gebruik",
+premiumAnon:"Premium: vereist aanmelding met een ArcGIS Online-abonnement en verbruikt credits",subscriberAnon:"Abonnee: vereist aanmelding met een ArcGIS Online-abonnement",premiumPublic:"Premium: vereist een ArcGIS Online-abonnement en verbruikt credits",subscriberPublic:"Abonnee: vereist een ArcGIS Online-abonnement",premiumOrg:"Premium: exclusieve content voor abonnees. Verbruikte credits.",subscriberOrg:"Abonnee: exclusieve content voor abonnees"}});

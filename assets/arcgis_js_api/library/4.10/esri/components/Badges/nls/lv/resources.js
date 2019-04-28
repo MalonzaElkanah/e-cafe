@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({authoritative:"Rekomend\u0113ts",deleted:"Izdz\u0113sts",deprecated:"Noraid\u012bts",livingAtlas:"Living Atlas",marketplace:"Marketplace",openData:"Open Data",premium:"Augst\u0101k\u0101 l\u012bme\u0146a",subscriber:"Abonents",tooltips:{altAuthoritative:"Autoritat\u012bvs: iesaka",authoritative:"Autoritat\u012bvs: iesaka j\u016bsu organiz\u0101cija",deprecated:"Novecojis: lieto\u0161anai nav ieteicams",livingAtlas:"Living Atlas: Esri p\u0101rraudz\u012bts saturs",marketplace:"Iek\u013cauts sada\u013c\u0101 ArcGIS Marketplace",
+openData:"Pieejams publiskai lieto\u0161anai",premiumAnon:"Premium: j\u0101pierakst\u0101s ar ArcGIS Online abonementu un j\u0101t\u0113r\u0113 servisa kred\u012bti.",subscriberAnon:"Abonents: j\u0101pierakst\u0101s ar ArcGIS Online abonementu",premiumPublic:"Premium: nepiecie\u0161ams ArcGIS Online abonements un j\u0101t\u0113r\u0113 servisa kred\u012bti.",subscriberPublic:"Abonents: nepiecie\u0161ams ArcGIS Online abonements",premiumOrg:"Premium: abonentiem paredz\u0113ts ekskluz\u012bvs saturs. Pat\u0113r\u0113 servisa kred\u012btus.",
+subscriberOrg:"Abonents: abonentiem paredz\u0113ts ekskluz\u012bvs saturs"}});

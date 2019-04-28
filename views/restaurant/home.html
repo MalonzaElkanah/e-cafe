@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"/>
+	<script src= /e-cafe/assets/js/jquery.js ></script>
+	
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="/e-cafe/assets/css/normalize.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/skeleton.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/style.css" rel="stylesheet" type="text/css"/>
+
+	<link rel="stylesheet" href="/e-cafe/assets/lobibox-master/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/e-cafe/assets/lobibox-master/demo/demo.css"/>
+        
+    <link rel="stylesheet" href="/e-cafe/assets/lobibox-master/dist/css/Lobibox.min.css"/>
+	<title>ecafe.com</title>
+  	<link rel="icon" type="image/png" href="/e-cafe/assets/images/favicon.png">
+	
+	<style type="text/css">
+	#navigation{
+		height: 50px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border: 1px solid #e7e7e7;
+    	background-color: #f3f3f3;
+		text-align: center;
+	}
+	#navigation a {
+		text-decoration: none;
+		color: black;
+
+	}
+	#restaurantlogo{
+		font-size: 40px;
+		text-align: center;
+		font-family: forte;
+	    color: maroon;
+	}
+	#restaurantlogo a{
+		font-size: 40px;
+		text-align: center;
+		font-family: forte;
+	    color: maroon;
+	}
+	#sidenav{
+		display: block;
+		border: 1px solid #b7b7b7;
+		color: #6a6c70; 
+		background-color: #2d3035;
+		height: 100%;
+	}
+	#content{
+		background-color: white;
+		border: 0px solid #e7e7e7;
+		height: 100%;
+	}
+	#homecontent{
+		border: 0px solid #e7e7e7;
+		height: 100%;	
+	}
+	#miniprofile{
+		height: 100px;
+		padding-top: 25px;
+		padding-left: 25px;
+
+	}
+	#profilepic{
+		/*border: 0px solid black;
+		/*height: 90px;*/
+
+
+	    width: 60px;
+    	height: 60px;
+	    border-radius: 50%;
+	    overflow: hidden;
+	    margin-right: 15px;
+	    background: #6a6c70;
+	    padding: 4px;
+	    border: 3px solid #282b2f;
+	}
+	#proileicon{
+		width: 60px;
+    	height: 60px;
+	    border-radius: 50%;
+	}
+	#profilename{
+		padding-top: 10px;
+		border: 0px solid black;
+		height: 60px;
+		text-align: center;
+		color: #6a6c70; 
+	}
+	#maintitle{
+		
+		background-color: #2d3035;
+		height: 30px;
+		
+		font-weight: bold;
+	}
+	#maintitle h6{
+		font-weight: 700;
+	    margin-left: 20px;
+	    color: #494d53;
+	    font-size: 1.2rem;
+	    margin-bottom: 15px
+	}
+	#extrastitle{
+		background-color: #2d3035;
+		height: 30px;
+		
+		font-weight: bold;
+	}
+	#extrastitle h6{
+		font-weight: 700;
+	    margin-left: 20px;
+	    color: #494d53;
+	    font-size: 1.2rem;
+	    margin-bottom: 15px
+	}
+	#homenav{
+		/*border-bottom: 1px solid maroon;
+		/*border: 1px solid #b7b7b7;*/
+		height: 50px;
+	}
+	#sidebaricon{
+		height: 30px;
+		width: 60px;
+		border-right: 1px solid #6a6c70;
+		padding-left: 15px;
+	}
+	#sidenavname{
+		padding-left: 5px;
+		padding-top: 5px;
+	}
+	#extranav{
+		/*border-bottom: 1px solid maroon;
+		border: 1px solid #b7b7b7;*/
+		height: 50px;
+	}
+
+	#homeHeader{
+		height: 30px;
+		/*padding-top: 20px;
+		padding-bottom: 20px;
+		border: 0px solid #e7e7e7;
+    	background-color: #f3f3f3;
+		text-align: center;*/
+	}
+	#subAbout{
+			align-content: center;
+			text-align: center;
+	}
+	#subAbout h4{
+		font-weight: bold;
+	}
+	#subAbout p{
+		font-size: 16px;
+		color: black;
+	}
+
+	.panelicon{
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.menuCategory{
+		align-content: center;
+		text-align: center;
+		/*background-color:#f3f3f3 ; -*/
+		font-weight: bold;		
+	}
+	#sectionTitle h3{
+	    margin-bottom: 2em;
+	    font-size: 30px;
+	    color: maroon;
+	    border-bottom: 1px solid #e5e5e5;
+	    text-align: center;
+	    font-weight: 600;
+	    padding-bottom: 20px;
+	    padding-top: 20px;
+	}
+	#rowform{
+		padding-left: 50px;
+	}
+	#addfoodlabel{
+		padding-right: 10px;
+		color: maroon;
+	}
+	#columnform{
+		padding-bottom: 45px;
+	}
+	.error{
+		display:none;
+		color: red;
+		padding-top: 0px;
+		padding-left: 100px;
+	}
+	
+	/*input[type="text"], textarea*/
+	#price, #foodName, #foodCategory, #quantity, #foodDescription{
+		outline: none;
+	    background: none;
+	    border: none;
+	    border-bottom: 2px solid #212121;
+	    font-size: 14px;
+	    font-style: normal;
+	    color: #212121;
+	    padding: 1em 1em 1em 2em;
+	    width: 85.5%;
+	    font-weight: 600;
+	    font-family: 'Raleway', sans-serif;
+	    border-radius: 0px;
+	}
+	#addFoodButton{
+		background: maroon; 
+		color: white; 
+		float: right; 
+		padding: 0px 45px;
+	}
+	 button#step1Prev, button#step2Prev {
+		font-size: 14px;
+	    color: white;
+	    font-weight: 600;
+	    padding: 0px 45px;
+	    background: maroon;
+	    /*outline: none;
+
+	    cursor: pointer;
+		border: none;*/
+		
+	}
+
+	#uploadheader{
+		font-family: "Roboto", sans-serif;
+		font-size: 26px;
+		line-height: 1;
+		color: maroon;
+		margin-bottom: 0;
+		text-align: center;
+		padding-bottom: 30px;
+	}
+	#file-upload{
+		display: none;
+	}
+	#file-drag {
+	    float: left;
+	    clear: both;
+	    width: 100%;
+	    padding: 2rem 1.5rem;
+	    text-align: center;
+	    background: #fff;
+	    border-radius: 7px;
+	    border: 3px solid #eee;
+	    transition: all .2s ease;
+	    user-select: none;
+
+	    &:hover {
+	      border-color: $theme;
+	    }
+	    &.hover {
+	      border: 3px solid $theme;
+	      box-shadow: inset 0 0 0 6px #eee;
+	      
+	      #start {
+	        i.fa {
+	          transform: scale(0.8);
+	          opacity: 0.3;
+	        }
+	      }
+	    }
+  	}
+  	#start {
+    float: left;
+    clear: both;
+    width: 100%;
+    &.hidden {
+      display: none;
+    }
+    i.fa {
+      font-size: 50px;
+      margin-bottom: 1rem;
+      transition: all .2s ease-in-out;
+    }
+  }
+  #response {
+    float: left;
+    clear: both;
+    width: 100%;
+    & .hidden {
+      display: none;
+    }
+    #messages {
+      margin-bottom: .5rem;
+    }
+  }
+
+  #file-image {
+    display: inline;
+    margin: 0 auto .5rem auto;
+    width: auto;
+    height: auto;
+    max-width: 180px;
+    & .hidden {
+      display: none;
+    }
+  }
+  
+  #notimage {
+    display: block;
+    float: left;
+    clear: both;
+    width: 100%;
+    & .hidden {
+      display: none;
+    }
+  }
+
+  progress,
+  .progress {
+    // appearance: none;
+    display: inline;
+    clear: both;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 180px;
+    height: 8px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #eee;
+    overflow: hidden;
+  }
+
+  .progress[value]::-webkit-progress-bar {
+    border-radius: 4px;
+    background-color: #eee;
+  }
+
+  .progress[value]::-webkit-progress-value {
+    background: linear-gradient(to right, darken($theme,8%) 0%, $theme 50%);
+    border-radius: 4px; 
+  }
+  .progress[value]::-moz-progress-bar {
+    background: linear-gradient(to right, darken($theme,8%) 0%, $theme 50%);
+    border-radius: 4px; 
+  }
+
+  input[type="file"] {
+    display: ;
+  }
+
+  div {
+    margin: 0 0 .5rem 0;
+    color: $dark-text;
+  }
+  .btn {
+    display: inline-block;
+    margin: .5rem .5rem 1rem .5rem;
+    clear: both;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: initial;
+    border: none;
+    border-radius: .2rem;
+    outline: none;
+    padding: 0 1rem;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    background: $theme;
+    border-color: $theme;
+    cursor: pointer;
+  }
+  		#tableTitle{
+			text-align: center;
+			font-weight: bold;
+			padding-bottom: 20px;
+		}
+
+		#currentDeliveriesBlock, #viewMenuBlock, #viewMenuBlock, #prevDeliveriesBlock{
+			/*<div class="row" id="restaurantsTableDiv" style=" height: 300px; "> </div>*/
+			background-color: ;
+			display: none;
+		}
+		#tableButtons{
+			background-color: #f3f3f3;
+			border: 1px solid #e7e7e7;
+			height: 100px;
+		}
+		table{
+			width: 100%;
+			background-color: #f3f3f3;
+		}
+		th{
+			color: maroon;
+			text-align: center;
+		}
+		td{
+			text-align: center;
+		}
+
+		table#restaurantTable tr:nth-child(even) {
+		    background-color: #eee;
+		}
+		table#restaurantTable tr:nth-child(odd) {
+		    background-color: #f3f3f3;
+		}
+		table#restaurantTable th {
+		    color: maroon;
+		    background-color: #f3f3f3;
+		}
+		/*button#removeOrder{
+			float: left;
+			padding-left: 50px;
+		}
+		button#orderFood{
+			float: right;
+			padding-right: 50px;
+		}*/
+		button#dispatchOrder, button#removeOrder {
+			float: right;
+			/*padding-right: 50px;*/
+		    font-size: 14px;
+		    color: #fff;
+		    font-weight: 600;
+		    padding: 0px 45px;
+		    background: maroon;
+		    outline: none;
+    		border: none;
+    		cursor: pointer;
+		}
+		/**/
+		.sectionHead{
+			color: maroon;
+			font-size: 25px;
+			text-align: center;
+		}
+		#map{
+			height: 500px;
+			border-left: 1px solid #e7e7e7; 
+			border-right: 1px solid #e7e7e7; 
+			border-bottom: 1px solid #e7e7e7; 
+		}
+		#divMapMenu{
+			height: 65px;
+		}
+		#mapMenu{
+			list-style-type:none;
+			overflow: hidden;
+   	 		height: 50px;
+    		top: 0px;
+    		text-align: center;
+    		padding: 0px;
+
+    		border: 1px solid #e7e7e7;
+    		background-color: #f3f3f3;
+		}
+
+		#mapMenu li{
+			padding: 5px;
+			float: left;
+			margin-bottom: 10px;
+    		margin-top: 10px;
+	
+		}
+
+		#mapMenu li select{
+			display: block;
+			text-align:center;
+		    margin-top: 1px;
+		    border-radius: 0px;
+		    text-decoration: none;
+
+		    color: #666;
+		}
+		#scheduleTab, #currentTab{
+			border-bottom: 1px solid #e7e7e7;
+			min-height: 200px;
+			display: none;
+		}
+		.radio{
+			color: maroon;
+		}
+		#applyScheduleButton, #applyCurrentButton{ 
+			border-radius: 0px;
+			background-color: maroon;
+			color: white;
+		}
+
+		#cancelScheduleButton, #cancelCurrentButton{ 
+			border-radius: 0px;
+			background-color: #494949;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+
+		<!-- Navigation area  &nbsp; -->
+
+		<div class="row" id="navigation">
+			<div class="three columns" id="restaurantlogo">
+				<div class="one column">
+					<img alt="" src="/e-cafe/assets/images/sidenavicon.png" id="sidenavicon" style="width: 25px; height:25px; padding-left: 5px" >
+				</div>
+				<div class="ten columns">
+					<a href="#" >E-CAFE</a>
+				</div>
+			</div>
+			<div class="five columns"> <p> </p></div>
+			<div class="four columns">
+				<div class="two columns">
+					<img alt="" src="/e-cafe/assets/images/search.png" id="search" style="width: 25px; height:25px; padding-left: px" >
+				</div>
+				<div class="two columns">
+					<a href="notifications.php">
+						<img alt="" src="/e-cafe/assets/images/notificationIcon.png" id="notificationicon" style="width: 25px; height:25px;" >
+					</a>
+				</div>
+				<div class="two columns">
+					<a href="messages.php">
+						<img alt="" src="/e-cafe/assets/images/messageicon.png" id="messageicon" style="width: 25px; height:25px; " >
+					</a>
+				</div>
+				<div class="six columns">
+					<?php if(Session::get("loggedin")): ?>
+						<p class="iblk log">
+							<?php echo ' '.$_SESSION["username"].' | '; ?> 
+							<a href=<?= BASE_URL."login.php?exitId=0"?>>Logout</a>
+						</p>
+					<?php endif;?> 
+				</div>
+				
+			</div>
+				
+		</div>
+
+		<!-- Navigation area ends &nbsp; -->
+
+		<div class="row" id="content">
+
+		<!-- SideBar area Bigins &nbsp; -->
+			<?php foreach($this->home_restaurant_data as $profile): 
+				$profilePic = null;
+				if($profile['profile_picture']==null){
+					$profilePic = "/e-cafe/assets/profilePictures/default.png";
+				}else{
+					$profilePic = $profile['profile_picture'];
+				}
+			?>
+			<div class="three columns" id="sidenav">
+
+				<div class="twelve columns" id="miniprofile">
+					<div class="four columns" id="profilepic">
+						<img alt="add food" src="<?= $profilePic?>" title="profile pic" id="proileicon">
+					</div>
+					<div class="seven columns" id="profilename">
+						<div class="twelve columns" ><h7 style ="font-weight: bold;">
+							<?php 
+								echo' '.$_SESSION["restaurant_name"];
+							?>
+							
+						</h7> </div>
+						<div class="twelve columns" ><h7>restaurant category</h7>  </div>
+					</div>
+				</div>	
+				<div class="twelve columns" id="maintitle">
+					<h6>MAIN</h6>
+				</div>
+				<div class="twelve columns" id="homenav">
+					<a href="index.php" style="text-decoration: none;">
+						<div class="two columns" id="sidebaricon">
+							<img alt="add food" src="/e-cafe/assets/images/homeicon.png" title="home" id="homeicon" style="width: 30px; height:30px;">
+						</div>
+						<div class="eight columns" id="sidenavname"> <h8>Home</h8></div>
+					</a>
+				</div>
+				<div class="twelve columns" id="homenav">
+					<a href="profile.php" style="text-decoration: none;">
+						<div class="two columns" id="sidebaricon">
+							<img alt="add food" src="/e-cafe/assets/images/profileicon.png" title="profile" id="homeicon" style="width: 30px; height:30px;">
+						</div>
+						<div class="eight columns" id="sidenavname"> <h8>Profile</h8></div>
+					</a>
+				</div>	
+				<div class="twelve columns" id="homenav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/statsicon.png" title="profile" id="homeicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Statistics</h8></div>
+				</div>
+				<div class="twelve columns" id="homenav"></div>	
+				<div class="twelve columns" id="homenav"></div>
+				<div class="twelve columns" id="extrastitle">
+					<h6>EXTRAS</h6>
+				</div>
+				<div class="twelve columns" id="extranav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/settingsicon.png" title="settings" id="settingsicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Settings</h8></div>
+				</div>
+				<div class="twelve columns" id="extranav"></div>	
+				<div class="twelve columns" id="extranav"></div>
+						
+			</div>
+			<?php endforeach; ?>
+
+			<!-- Sidebar area ends &nbsp; -->
+
+			<div class="nine columns" id="homecontent">
+
+			<!-- Home Menu area Begins &nbsp; -->	
+				
+				<div class="row" id="homeHeader">
+					<h3 id="foodMenu"> </h3>
+				</div>
+				<div class="row" >
+					
+					<div class="three columns menuCategory" id="addFoodDiv" style=" height: 220px; border: 1px solid #e7e7e7;" > 
+						<a href="" id="addFoodNav" style="text-decoration: none;">
+							<img alt="add food" src="/e-cafe/assets/images/plus.png" id="addFoodImage" class="panelicon" title="add food" style="width: 100px; height:100px;" >
+							
+							<p> Add Food </p> 
+						</a>	
+					</div>
+					
+
+					<div class="three columns menuCategory" id="" style=" height: 220px; border: 1px solid #e7e7e7;" > 
+						<a href="" id="currentDeliveriesNav" style="text-decoration: none;">
+							<img alt="Recent Orders" src="/e-cafe/assets/images/food.png" class="panelicon" title="Recent Orders" style="width: 100px; height:100px;">
+							
+							<p> deliveries </p> 
+						</a>
+					</div>
+					<div class="three columns menuCategory" id="" style=" height: 220px; border: 1px solid #e7e7e7;" > 
+						<a href="" id="viewMenuNav" style="text-decoration: none;">
+							<img alt="4. Enjoy" src="/e-cafe/assets/images/burger.png" class="panelicon" title="4. Enjoy" style="width: 100px; height:100px;">
+							
+							<p> view Menu </p> 
+						</a>
+					</div>
+
+					<div class="three columns menuCategory" id="" style=" height: 220px; border: 1px solid #e7e7e7;" > 
+						<a href="" id="trackDeliveriesNav" style="text-decoration: none;">
+							<img alt="4. Enjoy" src="/e-cafe/assets/images/route.png" class="panelicon" title="4. Enjoy" style="width: 100px; height:100px;">
+							
+							<p> Track Deliveries </p> 
+						</a>
+					</div>
+				</div>
+
+			<!-- Home-Menu area ends &nbsp; -->	
+
+				<div class="row" style="height:30px; "> <p> </p></div>
+
+			<!-- AddFood area Begins &nbsp; -->
+
+				<div class="row" id="addFoodBlock" style="height:800px; border: 1px solid #e7e7e7; background-color: #f3f3f3; ">
+					<div class="twelve columns" id="sectionTitle"> 
+						<h3>ADD NEW FOOD</h3> 
+					</div>
+					<div class="twelve columns">
+						<form id="addFoodForm" action="index.php" class="add_food_form" method="post" enctype="multipart/form-data" ">
+
+
+							<fieldset id="formSection0">
+								<div class="row" id="rowform">
+								<!--Food Name Margin  -->
+									<div class="six columns" id="columnform">
+										<div class="twelve columns">
+											<label id="addfoodlabel" style="float: left;"> Food Name: </label>
+											<input id="foodName" class="addfoodinput" type="text" name="food_name" placeholder=" " style="float: left;">
+										</div>
+										<div class="twelve columns">
+											<em id="food_name-error" class="error">This field is required.</em>
+										</div>	
+									</div>
+
+								<!--food category  -->
+									<div class="six columns" id="columnform" >
+										<div class="twelve columns">
+											<label id="addfoodlabel" style="float: left;"> Food Category:</label>
+											<input id="foodCategory" type="text" name="food_category" class="addfoodinput" placeholder=" " style="float: left;">
+										</div>
+										
+										<div class="twelve columns">
+											<em id="food_category-error" class="error">This field is required.</em>
+										</div>
+									</div>
+								</div>
+								<div class="row" id="rowform">
+								<!--quantity  -->
+									<div class="six columns" id="columnform">
+										<div class="twelve columns">
+											<label id="addfoodlabel" style="float: left;">Food Quantity: </label>
+											<input id="quantity" type="text" name="quantity" class="addfoodinput" placeholder=" " style="float: left;">
+										</div>
+										
+										<div class="twelve columns">
+											<em id="quantity-error" class="error">This field is required.</em>
+										</div>
+									</div>
+
+								<!--price  -->
+									<div class="six columns" id="columnform">
+										<div class="twelve columns" style="padding-bottom: 0px;">
+											<label id="addfoodlabel" style="float: left;"> Food Price: </label>
+											<input id="price" type="text" name="price" class="addfoodinput"  placeholder=" " style="float: left;">
+										</div>
+										<div class="twelve columns">
+											<em id="price-error" class="error">This field is required.</em>
+										</div>
+									</div>
+								</div>
+								<div class="row" id="rowform">
+								<!--food description  -->
+									<div class="six columns" id="columnform">
+										<div class="twelve columns">
+											<label id="addfoodlabel" style="float: left;"> Food Description: </label>
+											<textarea id="foodDescription" name="food_description" placeholder=" " class="addfoodinput" style="float: left;"></textarea>
+										</div>
+									</div>
+								</div>
+
+								<!-- button  -->
+									<div class="row" style="padding-right: 60px; padding-top: 60px;">
+										
+										<button href="#" id="nextSectionButton" style="background: maroon; color: white; float: right; " >Next &gt;</button>
+									</div>
+
+							</fieldset>	
+
+							<fieldset id="formSection1" style="display: none;">
+								<!--upload picture  -->
+								<div class="row" id="upload images">
+									<div>
+										<h2 id="uploadheader">Upload Food Image </h2>
+									</div>
+									
+									<!-- Upload  -->
+									<div class="row">
+										<div class="three columns">
+											<h3> </h3>
+										</div>
+										<div class="six columns">
+										    <input type="file" name="fileToUpload" id="file-upload" accept="image/*">
+										    <label for="file-upload" id="file-drag">
+											    <img id="file-image" src="/e-cafe/assets/images/camera.png" alt="Preview" class="hidden">
+											    <div id="start">
+											     	<i class="fa fa-download" aria-hidden="true"></i>
+											      	<div>Select a file or drag here</div>
+											      	<div id="notimage" class="hidden">Please select an image</div>
+											      	<span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+											    </div>
+											    <div id="response" class="hidden">
+											      	<div id="messages"><p id="message"> </p> </div>
+											      	<progress class="progress" id="file-progress" value="0">
+											        	<span>0</span>%
+											      	</progress>
+											    </div>
+										  	</label>
+										</div>
+										<div class="three columns">
+											<h3> </h3>
+										</div>
+									</div>
+									
+								</div>
+
+
+
+								<!-- button  -->
+									<div class="row" style=" padding-right: 60px; padding-left: 60px; padding-top: 60px;">
+										<button href="#" id="step1Prev">&lt; BACK</button>
+
+										<button href="#" id="addFoodButton" name="addFoodButton" style="" >ADD FOOD</button>
+									</div>
+								
+							</fieldset>
+
+
+						</form>
+					</div>
+				</div>
+
+			<!--AddFood area Ends -->
+
+			<!-- SCHEDULE DELIVERIES BEGINS   -->
+				<div id="scheduleDeliveriesBlock" style="display: none;">
+					<div class="row" id="tableTitle" style="height:30px; ">
+						<h4> SCHEDULE DELIVERIES</h4>
+					</div>
+					<div class="row" id="getRestaurant">
+						<table id="restaurantTable" style="margin-bottom: 0px;">
+							<tr>
+								<th> </th>
+								<th>FOOD NAME</th>
+								<th>QUANTITY</th>
+								<th>PRICE</th>
+								<th>CUSTOMER NAME</th>
+								<th>DELIVERY PERSON </th>
+								<th>MORE INFO</th>
+								<th>DISPATCH</th>
+							</tr>
+							<?php 
+								$i=0;
+								foreach($this->schedule_delivery_data as $order): 
+								$i++;
+							?>
+							<tr>
+								<td>
+									<img alt=" " src="/e-cafe/assets/<?= $order['picture_id']?>" title=" " id="foodImage" style="width: 50px; height:50px; padding-left: 30px;">
+								</td>
+								<td><?= $order['food_name']?></td>
+								<td><?= $order['food_quantity']?></td>
+								<td><?= $order['food_price']?></td>
+								<td><?= $order['customer_first_name']?> <?= $order['customer_second_name']?></td>
+								<td>
+									<?= $order['delivery_person_first_name']?> 
+									<?= $order['delivery_person_second_name']?>
+								</td>
+								<td>
+									<img alt=" " src="/e-cafe/assets/images/info.png" title=" " id="foodImage" style="width: 30px; height:30px; padding-left: 0px;">
+								</td>
+								<td>
+									<input id="dispatch<?= $i?>" type="checkbox" name="dispatchCheckbox" value="<?= $order['order_id']?>">
+								</td>
+							</tr>
+							<?php endforeach; ?>
+							<p id="scheduleCount" value="<?= $i?>" style="display: none;"><?= $i?></p>
+						</table>
+						<?php if($i==0): ?>
+							<p style="color: grey; font-size: 25px; text-align: center;">No Schedule Deliveries</p>
+							<style type="text/css"> #tableButtons{ display: none; }</style>
+						<?php endif;?> 
+						<div id="tableButtons">
+							<div class="two columns" style="padding-right: 20px; float: right; padding-top: 20px;">
+								<button href="#" id="dispatchOrder" class=" "> DISPATCH </button></div>
+							<div class="two columns" style="padding-right: 30px; float: right; padding-top: 20px;">
+								<button href="#" id="removeOrder" > REMOVE</button>
+							</div>  
+						</div>
+					</div>
+				</div>	
+			<!-- SCHEDULE DELIVERIES END-->
+
+			<div class="row" style="height:30px; "> <p> </p></div>
+
+			<!--CURRENT Deliveries area Bigins-->
+				<div id="currentDeliveriesBlock" style="display: none;">
+					
+					<div class="row" id="tableTitle" style="height:30px; ">
+						<h4> CURRENT DELIVERIES</h4>
+					</div>
+					<div class="row" id="getRestaurant">
+						<table id="restaurantTable">
+							<tr>
+								<th> </th>
+								<th>FOOD NAME</th>
+								<th>QUANTITY</th>
+								<th>PRICE</th>
+								<th>CUSTOMER NAME</th>
+								<th>DELIVERY PERSON</th>
+								<th>TRACK FOOD</th>
+								<th>MORE INFO</th>
+							</tr>
+							<?php 
+								$c=0;
+								foreach($this->current_delivery_data as $c_order): 
+								$c++;
+							?>
+							<tr>
+								<td>
+									<img alt=" " src="/e-cafe/assets/<?= $c_order['picture_id']?>" title=" " id="foodImage" style="width: 50px; height:50px; padding-left: 30px;">
+								</td>
+								<td><?= $c_order['food_name']?></td>
+								<td><?= $c_order['food_quantity']?></td>
+								<td><?= $c_order['food_price']?></td>
+								<td><?= $c_order['customer_first_name']?> <?= $c_order['customer_second_name']?></td>
+								<td>
+									<?= $c_order['delivery_person_first_name']?> 
+									<?= $c_order['delivery_person_second_name']?>
+								</td>
+								<td>
+									<img alt=" " src="/e-cafe/assets/images/trackOrder.png" title=" " id="foodImage" style="width: 30px; height:30px; padding-left: 0px;">
+								</td>
+								<td>
+									<img alt=" " src="/e-cafe/assets/images/info.png" title=" " id="foodImage" style="width: 30px; height:30px; padding-left: 0px;">
+								</td>
+							</tr>
+							<?php endforeach; ?>
+						</table>
+						<?php if($c==0): ?>
+							<p style="color: grey; font-size: 25px; text-align: center;">No Current Deliveries</p>
+						<?php endif;?> 
+					</div>
+				</div>
+			<!--CURRENT Deliveries area Ends --> 
+
+			<!--View Menu area Bigins-->
+				<div id="viewMenuBlock" style="display: none;">
+					<div class="row" id="tableTitle" style="height:30px; ">
+						<h4> MY MENU</h4>
+					</div>
+					<div class="row" id="getRestaurant">
+						<table id="restaurantTable">
+							<tr>
+								<th> </th>
+								<th>FOOD NAME</th>
+								<th>QUANTITY</th>
+								<th>PRICE</th>
+								<th>FOOD CATEGORY</th>
+								<th>edit</th>
+								<th>more info</th>
+							</tr>
+							<?php 
+								$fm=0;
+								foreach($this->menu_data as $order): 
+								$fm++;
+							?>
+							<tr>
+								<td>
+									<img alt=" " src="/e-cafe/assets/<?= $order['picture_id']?>" title=" " id="foodImage" style="width: 50px; height:50px; padding-left: 30px;">
+								</td>
+								<td><?= $order['food_name']?></td>
+								<td><?= $order['quantity']?></td>
+								<td><?= $order['price']?></td>
+								<td><?= $order['restaurant_name']?></td>
+								<td>
+									<a href="#" id="editFood<?= $fm?>" value="<?= $order['food_id']?>">
+										<img alt="edit" src="/e-cafe/assets/images/edit1.png" style="width: 15px; height:15px; padding-left: 30px;">
+									</a>
+								</td>
+								<td>
+									<a href="#" id="foodInfo<?= $fm?>" value="<?= $order['food_id']?>">
+										<img alt="info" src="/e-cafe/assets/images/info.png" style="width: 30px; height:30px; padding-left: 0px;">
+									</a>
+								</td>
+							</tr>
+							<?php endforeach; ?>
+						</table>
+						<p id="menuCount" style="display: none;"><?= $fm?></p>
+						<?php if($fm==0): ?>
+							<p style="color: grey; font-size: 25px; text-align: center;">No FOOD IN YOUR MENU</p>
+						<?php endif;?> 
+					</div>
+
+				</div>
+			<!--View Menu area Ends --> 
+
+			<!--PREV Deliveries area Bigins-->
+				<div id="prevDeliveriesBlock" style="display: none;">
+					<div class="row" id="tableTitle" style="height:30px; ">
+						<h4> PREVIOUS ORDERS AND DELIVERIES</h4>
+					</div>
+					<div class="row" id="getRestaurant">
+						<table id="restaurantTable">
+							<tr>
+								<th> </th>
+								<th>FOOD NAME</th>
+								<th>QUANTITY</th>
+								<th>PRICE</th>
+								<th>FOOD CATEGORY</th>
+								<th>INFO</th>
+							</tr>
+							<?php foreach($this->prev_deliveries_data as $order): ?>
+							<tr>
+								<td>
+									<img alt=" " src="/e-cafe/assets/<?= $order['picture_id']?>" title=" " id="foodImage" style="width: 50px; height:50px; padding-left: 30px;">
+								</td>
+								<td><?= $order['food_name']?></td>
+								<td><?= $order['food_quantity']?></td>
+								<td><?= $order['food_price']?></td>
+								<td><?= $order['restaurant_name']?></td>
+								<td>
+									<img alt=" " src="/e-cafe/assets/images/info.png" title=" " id="foodImage" style="width: 30px; height:30px; padding-left: 0px;">
+								</td>
+							</tr>
+							<?php endforeach; ?>
+						</table>
+					</div>
+				</div>
+			<!--PREV Deliveries area Ends -->
+
+			<!--DISPATCH order PANEL area Bigins-->
+				<div id="dispatchOrderBlock" style="display: none;">
+					<div class="row" id="getDispatchOrder"> 
+						
+					</div>
+				</div>
+			<!--DISPATCH order PANEL area Ends -->
+
+			<!--TRACK orders PANEL area Bigins-->
+				<div id="trackOrderBlock" style="display: none;">
+					<!-- Info To Display area Begins &nbsp; -->
+						<div class = "row" id="divMapMenu">
+							<ul id="mapMenu">
+								<li> VIEW: </li>
+
+								<li style="margin-top: 1px;">
+									<select id="currentDeliveries">
+										<option>PICK ORDER </option>		
+									</select>
+								</li>
+								<li style="float: right; padding-right: 30px;">TRACK MY LOCATION </li>
+								<li style="float: right;">
+									<input type="checkbox" id="trackCurrentPos"> 
+								</li>
+								<li style="float: right; padding-right: 100px;">  </li>
+							</ul>
+						</div>
+					<!-- Info To Display area Ends B; -->
+
+					<!-- Current Deliveries Tab Begins-->
+						<div class="row" id="currentTab">
+							<div class="twelve columns sectionHead"> <h5>CURRENT DELIVERIES</h5></div>
+							<div class="twelve columns" id="schudeleTableDiv">
+								<table id="scheduleTable" style="width: 100%;">
+									<tr style="color: maroon;">
+										<th> </th>
+										<th>FOOD </th>
+										<th>FROM</th>
+										<th>DESTNATION</th>
+										<th> DELIVERY PRICE</th>
+										<th>DELIVERY TIME</th>
+										<th>DISTANCE</th>
+										<th> view </th>
+									</tr>
+
+									<?php 
+										$i = 0; 
+										foreach($this->current_delivery_data as $current_data): 
+										$i++;
+									?>
+									<tr>
+										<td>
+											<img alt=" " src="/e-cafe/assets/<?= $current_data['picture_id']?>" title=" " id="foodImage" style="width: 50px; height:50px; padding-left: 30px;">
+										</td>
+										<td id="c_lati_cd<?= $i?>" value="<?= $current_data['c_latitude_cood']?>">
+											<?= $current_data['food_name']?>
+										</td>
+										<td id="c_longi_cd<?= $i?>" value="<?= $current_data['c_longitude_cood']?>"> 
+											<?= $current_data['r_pos_name']?>
+										</td>
+										<td id="r_lati_cd<?= $i?>" value="<?= $current_data['r_latitude_cood']?>"> 
+											<?= $current_data['c_pos_name']?>		
+										</td>
+										<td id="r_longi_cd<?= $i?>" value="<?= $current_data['r_longitude_cood']?>">
+											kSH <?= $current_data['delivery_price']?>
+										</td>
+										<td id="d_pos_cd<?= $i?>" value="<?= $current_data['d_pos_id']?>"> 
+											<?= $current_data['delivery_date']?> 
+											<?= $current_data['deliver_time']?>
+										</td>
+										<td> <?= $current_data['delivery_distance']?> KMs</td>
+										<td> <input type="radio" name="current_del" value="<?= $i?>"></td>
+									</tr>
+									
+									<?php endforeach; ?>
+
+								</table>
+								<?php if($i==0): ?>
+									<p style="color: grey; font-size: 25px; text-align: center;">No Current Deliveries</p>
+								<?php endif;?> 
+							</div>
+							<div class="row">
+								<div class="twelve columns" style="padding-bottom: 20px;">
+									<button id="applyCurrentButton">APPLY</button>
+									<button id="cancelCurrentButton">CANCEL</button>
+								</div>
+							</div>
+						</div>
+					<!-- Current Deliveries Tab Ends---->
+					<!-- Map area Begins &nbsp; -->	
+						<div class="row" id="map">
+							
+						</div>
+					<!-- Map area ends &nbsp; -->
+
+
+				</div>
+			<!--TRACK orders PANEL area Ends -->
+
+			</div>
+		</div>
+		
+	</div>
+	<script src="/e-cafe/assets/lobibox-master/lib/jquery.1.11.min.js"></script>
+    <script src="/e-cafe/assets/lobibox-master/js/Lobibox.js"></script>
+	<script type="text/javascript">
+		//SIDE NAV BUTTON
+		$(function(){
+			$("#sidenavicon").click(function(){
+				if($("#sidenav").css("display")==="block"){
+  					$("#sidenav").css("display", "none");
+  					$("#homecontent").removeClass("nine columns").addClass("twelve columns");
+  				}else if($("#sidenav").css("display")==="none"){
+  					$("#homecontent").removeClass("twelve columns").addClass("nine columns"); 
+  					$("#sidenav").css("display", "block");
+  				}
+			});
+		});
+		//Navigation
+		$(function(){
+			$("#addFoodNav").click(function(event){
+				event.preventDefault();
+				$("#addFoodBlock").css("display", "block");
+				$("#scheduleDeliveriesBlock").css("display", "none");
+				$("#currentDeliveriesBlock").css("display", "none");
+				$("#viewMenuBlock").css("display", "none");
+				$("#prevDeliveriesBlock").css("display", "none");	
+				$("#dispatchOrderBlock").css("display", "none");
+				$("#trackOrderBlock").css("display", "none");
+			});
+			$("#trackDeliveriesNav").click(function(event){
+				event.preventDefault();
+				$("#trackOrderBlock").css("display", "block");
+				$("#prevDeliveriesBlock").css("display", "none");
+				$("#addFoodBlock").css("display", "none");
+				$("#scheduleDeliveriesBlock").css("display", "none");
+				$("#currentDeliveriesBlock").css("display", "none");
+				$("#viewMenuBlock").css("display", "none");
+				$("#dispatchOrderBlock").css("display", "none");
+			});
+			$("#currentDeliveriesNav").click(function(event){
+				event.preventDefault();
+				$("#scheduleDeliveriesBlock").css("display", "block");
+				$("#currentDeliveriesBlock").css("display", "block");
+				$("#addFoodBlock").css("display", "none");
+				$("#viewMenuBlock").css("display", "none");
+				$("#prevDeliveriesBlock").css("display", "block");
+				$("#dispatchOrderBlock").css("display", "none");
+				$("#trackOrderBlock").css("display", "none");	
+			});
+			$("#viewMenuNav").click(function(){
+				event.preventDefault();
+				$("#viewMenuBlock").css("display", "block");
+				$("#scheduleDeliveriesBlock").css("display", "none");
+				$("#currentDeliveriesBlock").css("display", "none");
+				$("#addFoodBlock").css("display", "none");
+				$("#prevDeliveriesBlock").css("display", "none");
+				$("#dispatchOrderBlock").css("display", "none");
+				$("#trackOrderBlock").css("display", "none");	
+			});
+		});
+
+
+		//ADD FOOD FORM
+		$(function(){
+			$("input[type='text']").change(function(){
+				var name = $(this).attr('name');
+				var errorName = "#"+name+"-error";
+				if ($("input[name='"+name+"']").val().trim()==="") {
+					$(""+errorName).css("display", "block");
+				}else{
+					$(""+errorName).css("display", "none");
+				}
+			});
+			$("#nextSectionButton").click(function(event){
+				event.preventDefault();
+				var intError = 0;
+				if($("input[id='foodName']").val()===""){
+					//alert("kjhg");
+					intError = 1;
+					$("#food_name-error").css("display", "block");
+				}
+				if($("input[id='foodCategory']").val()===""){
+					intError = 2;
+					$("#food_category-error").css("display", "block");
+				}
+				if ($("input[id='quantity']").val()==="") {
+					intError = 3;
+					$("#quantity-error").css("display", "block");
+				}
+				if ($("input[id='price']").val()==="") {
+					intError = 4;
+					$("#price-error").css("display", "block");
+				}
+
+				if(intError===0){
+						
+						$("#formSection0").css("display", "none");
+						$("#formSection1").css("display","block");
+					}
+			});
+			$("#step1Prev").click(function(event){
+				event.preventDefault();
+				$("#formSection1").css("display", "none");
+				$("#formSection0").css("display","block");
+			});
+			$("#addFoodButton").submit(function(event){
+				event.preventDefault();
+				$("#addFoodButton").unbind('submit').submit();
+				alert("USER CREATED");
+			});
+		});
+		$("#file-upload").change(function(e){
+			readURL(this);
+			var imageName = e.target.files[0].name;
+			var isGood = (/\.(?=gif|jpg|png|jpeg)/gi).test(imageName);
+		    if (isGood) {
+		      $("#start").css("display", "none");
+		      $("#response").css("display", "block");
+		      $("#notimage").css("display", "none");
+		      $("#file-image").css("display", "block");
+		      $("#messages").append( "<p>"+imageName+ "</p>");
+		      $("#file-progress").val("50");
+		    } else {
+		      $("#file-image").css("display", "none");
+		      $("#notimage").css("display", "block");
+		      $("#start").css("display", "block");
+		      $("#response").css("display", "none");
+		    }
+			
+		});
+		function readURL(input){
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function(e){
+					$("#file-image").attr('src', e.target.result);
+					
+				};
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+		function getFileName(input){
+
+		}
+
+		//DISPATCH FOOD
+		$("#dispatchOrder").click(function(event){
+			event.preventDefault();
+			var s_count = $("#scheduleCount").attr("value");
+			
+			var chkdStatus = 0;
+			for (var i = s_count; i > 0; i--) {
+				var chkid = "dispatch"+i;
+				if ($("input[id='"+chkid+"']").is(':checked')) {
+					chkdStatus = chkdStatus+1;
+					var odr_id = $("#"+chkid).attr("value");
+					
+					$.post("index.php",
+				    {
+				        remove_dispatch: true
+				    },
+				    function(data, status){
+				    	alert(data+"..."+status);
+				    });
+
+					$.post("index.php",
+				    {
+				        pre_dispatch: odr_id
+				    },
+				    function(data, status){
+				    	alert(data+"..."+status);
+				    });
+				}
+			}
+			if (chkdStatus==0) {
+				alert("NO ORDER WAS SELECTED!!");
+			}else{
+				$.ajax({
+					url: 'index.php',
+					method: 'GET',
+					data: {
+						select_preDispatch: true
+					},
+					success: function(response){
+						//alert("zxcv:- "+response);
+						$("#addFoodBlock").css("display", "none");
+						$("#scheduleDeliveriesBlock").css("display", "none");
+						$("#currentDeliveriesBlock").css("display", "none");
+						$("#viewMenuBlock").css("display", "none");
+						$("#prevDeliveriesBlock").css("display", "none");
+						$("#dispatchOrderBlock").css("display", "block");
+						$("#getDispatchOrder").html(response);
+					},
+					error: function(){
+						alert("error"+url);
+					}
+				});
+			}
+		});
+		//FOOD MENU
+		$(function(){
+			var menuCount = $("#menuCount").text();
+			for (var i = menuCount; i > 0; i--) {
+				var editFood = "#editFood"+i+"";
+				var foodInfo = "#foodInfo"+i+"";
+				$(editFood).click(function(event){
+					event.preventDefault();
+					var foodId = $(this).attr("value");
+					$.ajax({
+						url: 'index.php',
+						method: 'GET',
+						data: {FoodID: foodId},
+						success: function(response){
+							alert(response);
+							Lobibox.window({
+		                    	title: 'Edit Food',
+		                    	content: response,
+		                    	width: 1000,
+		                    	height: 800,
+		                    	draggable: false
+		                	});
+						},
+						error: function(){
+							alert("error"+url);
+						}
+					});
+				})
+				$(foodInfo).click(function(event){
+					event.preventDefault();
+					var foodId = $(this).attr("value");
+					$.ajax({
+						url: 'index.php',
+						method: 'GET',
+						data: {FoodInfo: foodId},
+						success: function(response){
+							alert(response);
+							Lobibox.window({
+		                    	title: 'Edit Food',
+		                    	content: response,
+		                    	width: 1000,
+		                    	height: 800,
+		                    	draggable: false
+		                	});
+						},
+						error: function(){
+							alert("error"+url);
+						}
+					});
+				});
+			}
+		});
+
+		
+
+		//TRACK DELIVERY
+
+
+
+		//CHECK USER ACTIVITY
+		$(function(){
+			setInterval(function(){
+				checkActivity();
+			}, 300000);
+		});
+		//CHECK NOTIFICATIONS
+		$(function(){
+			setInterval(function(){
+				checkNotifications();
+			}, 30000);
+		});
+		function checkNotifications(){
+			$.post("index.php",
+		    {
+		        notification_activity: true
+		    },
+		    function(data, status){
+		    	if (data==0) {
+		    		//no notifications
+		    	}else{
+		    		alert("Data: " + data + "\nStatus: " + status);
+		    	}
+		    });	
+		}
+	</script>
+	<script type="text/javascript" src="/e-cafe/assets/js/userActivity.js"></script>
+
+	<link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+  	<script src="https://js.arcgis.com/4.10/"></script>
+    <script type="text/javascript" src="/e-cafe/assets/js/trackFoodOrder.js"></script>
+    <script type="text/javascript">
+		
+		showrouteAndDirection();
+
+		//map menu drop downs
+	  	$(function(){
+	  		$("#scheduleDeliveries").click(function(event){
+	  			event.preventDefault();
+	  			this.blur();
+	  			window.focus();
+	  			if($("#scheduleTab").css("display")==="block"){
+	  				$("#scheduleTab").css("display", "none");
+	  			}else if($("#scheduleTab").css("display")==="none"){
+	  				//$("#priceDropDown").css("display", "none");
+	  				$("#currentTab").css("display", "none");
+	  				$("#scheduleTab").css("display", "block");
+	  			}
+	  		});
+
+	  		$("#currentDeliveries").click(function(event){
+	  			event.preventDefault();
+	  			this.blur();
+	  			window.focus();
+	  			if($("#currentTab").css("display")==="block"){
+	  				$("#currentTab").css("display", "none");
+	  			}else if($("#currentTab").css("display")==="none"){
+	  				//$("#foodDropDown").css("display", "none");
+	  				$("#scheduleTab").css("display", "none");
+	  				$("#currentTab").css("display", "block");
+	  			}
+	  		});
+
+	  		$("#cancelScheduleButton").click(function(event){
+	  			event.preventDefault();
+	  			$("#scheduleTab").css("display", "none");
+	  		});
+	  		$("#cancelCurrentButton").click(function(event){
+	  			event.preventDefault();
+	  			$("#currentTab").css("display", "none");
+	  		});
+	  	});
+	</script>  	
+</body>
+</html>

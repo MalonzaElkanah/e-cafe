@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports","dojo/Deferred"],function(f,g,e){return function(){function b(){this._password=this._username="";this._token=null}b.fromUserName=function(a,c,d){d=new b;d._username=a;d._password=c;d._token=null;return d};b.fromArcadeDictionary=function(a){var c=new b;a.hasField("username")&&(c._username=a.field("username"));a.hasField("password")&&(c._password=a.field("password"));a.hasField("token")&&(c._token=a.field("token"));return c};b.fromToken=function(a){var c=new b;c._token=a;
+return c};Object.defineProperty(b.prototype,"username",{get:function(){return this._username},enumerable:!0,configurable:!0});Object.defineProperty(b.prototype,"password",{get:function(){return this._password},enumerable:!0,configurable:!0});b.prototype.getToken=function(){var a=new e;null===this._token?a.reject("No Token Provided"):a.resolve(this._token);return a.promise};return b}()});

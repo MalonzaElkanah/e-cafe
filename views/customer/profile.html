@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"/>
+	<script src= /e-cafe/assets/js/jquery.js ></script>
+	
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="/e-cafe/assets/css/normalize.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/skeleton.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/style.css" rel="stylesheet" type="text/css"/>
+	<title>ecafe.com</title>
+  	<link rel="icon" type="image/png" href="/e-cafe/assets/images/favicon.png">
+	
+	<style type="text/css">
+	#navigation{
+		height: 50px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border: 1px solid #e7e7e7;
+    	background-color: #f3f3f3;
+		text-align: center;
+	}
+	#navigation a {
+		text-decoration: none;
+		color: black;
+
+	}
+	#restaurantlogo{
+		font-size: 40px;
+		text-align: center;
+		font-family: forte;
+	    color: maroon;
+	}
+	#restaurantlogo a{
+		font-size: 40px;
+		text-align: center;
+		font-family: forte;
+	    color: maroon;
+	}
+	#sidenav{
+		display: block;
+		border: 1px solid #b7b7b7;
+		color: #6a6c70; 
+		background-color: #2d3035;
+		height: 1200px;
+	}
+	#content{
+		background-color: white;
+		border: 0px solid #e7e7e7;
+		height: 100%;
+	}
+	#homecontent{
+		border: 0px solid #e7e7e7;
+		height: 100%;	
+	}
+	#miniprofile{
+		height: 100px;
+		padding-top: 25px;
+		padding-left: 25px;
+
+	}
+	#profilepic{
+	    width: 60px;
+    	height: 60px;
+	    border-radius: 50%;
+	    overflow: hidden;
+	    margin-right: 15px;
+	    background: #6a6c70;
+	    padding: 4px;
+	    border: 3px solid #282b2f;
+	}
+	#proileicon{
+		width: 60px;
+    	height: 60px;
+	    border-radius: 50%;
+	}
+	#profilename{
+		padding-top: 10px;
+		border: 0px solid black;
+		height: 60px;
+		text-align: center;
+		color: #6a6c70; 
+	}
+	#maintitle{
+		
+		background-color: #2d3035;
+		height: 30px;
+		
+		font-weight: bold;
+	}
+	#maintitle h6{
+		font-weight: 700;
+	    margin-left: 20px;
+	    color: #494d53;
+	    font-size: 1.2rem;
+	    margin-bottom: 15px
+	}
+	#extrastitle{
+		background-color: #2d3035;
+		height: 30px;
+		
+		font-weight: bold;
+	}
+	#extrastitle h6{
+		font-weight: 700;
+	    margin-left: 20px;
+	    color: #494d53;
+	    font-size: 1.2rem;
+	    margin-bottom: 15px
+	}
+	#homenav{
+		/*border-bottom: 1px solid maroon;
+		/*border: 1px solid #b7b7b7;*/
+		height: 50px;
+	}
+	#sidebaricon{
+		height: 30px;
+		width: 60px;
+		border-right: 1px solid #6a6c70;
+		padding-left: 15px;
+	}
+	#sidenavname{
+		padding-left: 5px;
+		padding-top: 5px;
+	}
+	#sidenavname a{
+		text-decoration: none;
+	}
+
+	#extranav{
+		/*border-bottom: 1px solid maroon;
+		border: 1px solid #b7b7b7;*/
+		height: 50px;
+	}
+
+	#homeHeader{
+		height: 30px;
+		/*padding-top: 20px;
+		padding-bottom: 20px;
+		border: 0px solid #e7e7e7;
+    	background-color: #f3f3f3;
+		text-align: center;*/
+	}
+	#profilePicture{
+		height: 220px;
+		width: 220px; 
+		/*border: 2px solid #e7e7e7; 
+		/*float: none;
+		margin: auto;
+		float: left;*/
+		text-align: center;
+		background-color: #f3f3f3;
+		border-radius: 50%;
+		/*box-shadow: 0 0 50PX rgba(0,0,0,.5);*/
+	}
+	#profileImage{
+		height: 220px;
+		width: 220px; 
+		border: 2px solid white; 
+		text-align: center;
+		background-color: #f3f3f3;
+		border-radius: 50%;
+	}
+	#restaurantName{
+		font-weight: bold; 
+		font-size: 30px;
+		color: maroon;
+	}
+	#editProfDiv{
+		padding-top: 30px;
+	}
+	#editProfileButton{
+		border: 1px solid cyan;
+		color: cyan;
+	}
+	#myMenu{
+		padding-top: 50px;
+	}
+	#menuTitle{
+		text-align: center;
+		font-size: 30px;
+		padding-bottom: 25px;
+		color: maroon;
+
+	}
+	#foodImage{
+			padding-left: 10px;
+			padding-top: 20px;
+	}
+	#foodDetails{
+
+	}
+	#foodName{
+		padding-top: 5px;
+		font-weight: bold;
+		font-size: 20px;
+		text-align: center;
+		color: maroon; 
+	}
+	#restaurantName1{
+		font-weight: bold;
+		color: maroon; 
+
+	}
+	#foodPrice{
+		font-weight: bold;
+		color: maroon; 
+	}
+	.foodAction{
+		padding-top: 10px;
+	}
+	#cartImage{
+		padding-left: 10px;
+	}
+	.addToCart{
+		background-color:maroon ;
+		color:white ;
+		font-size: 15px;
+	}
+	#likeImage, #infoImage{
+		padding-right: 10px;
+	}
+	
+	</style>
+</head>
+<body>
+	<div class="container">
+
+		<!-- Navigation area  &nbsp; -->
+
+		<div class="row" id="navigation">
+			<div class="three columns" id="restaurantlogo">
+				<div class="one column">
+					<img alt="" src="/e-cafe/assets/images/sidenavicon.png" id="sidenavicon" style="width: 25px; height:25px; padding-left: 5px" >
+				</div>
+				<div class="ten columns">
+					<a href="#" >E-CAFE</a>
+				</div>
+			</div>
+			<div class="five columns"> <p> </p></div>
+			<div class="four columns">
+				<div class="two columns">
+					<img alt="" src="/e-cafe/assets/images/search.png" id="search" style="width: 25px; height:25px; padding-left: px" >
+				</div>
+				<div class="two columns">
+					<a href="notifications.php">
+						<img alt="" src="/e-cafe/assets/images/notificationIcon.png" id="notificationicon" style="width: 25px; height:25px;" >
+					</a>
+				</div>
+				<div class="two columns">
+					<a href="messages.php">
+						<img alt="" src="/e-cafe/assets/images/messageicon.png" id="messageicon" style="width: 25px; height:25px; " >
+					</a>
+				</div>
+				<div class="six columns">
+					<?php if(Session::get("loggedin")): ?>
+						<p class="iblk log">
+							<?php echo ' '.$_SESSION["username"].' | '; ?> 
+							<a href=<?= BASE_URL."login.php?exitId=0"?>>Logout</a>
+						</p>
+					<?php endif;?> 
+				</div>
+				
+			</div>
+				
+		</div>
+
+		<!-- Navigation area ends &nbsp; -->
+
+		<div class="row" id="content">
+		<?php foreach($this->profile_data as $profile): 
+			$profilePic = null;
+			$coverPic = null;
+
+			if(isset($profile['profile_picture'])){
+				if($profile['profile_picture']==null){
+					$profilePic = "/e-cafe/assets/profilePictures/default.png";
+				}else{
+					$profilePic = $profile['profile_picture'];
+				}
+			}else{
+				$profilePic = "/e-cafe/assets/profilePictures/default.png";
+			}
+			
+			if(isset($profile['cover_photo'])){
+				if($profile['cover_photo']==null){
+					$coverPic = "/e-cafe/assets/coverPhotos/default.jpg";
+				}else{
+					$coverPic = $profile['cover_photo'];
+				}
+			}else{
+				$coverPic = "/e-cafe/assets/coverPhotos/default.jpg";
+			}
+			
+		?>
+		<!-- SideBar area Bigins &nbsp; -->	
+
+			<div class="three columns" id="sidenav">
+				<div class="twelve columns" id="miniprofile">
+					<div class="four columns" id="profilepic">
+						<img alt="add food" src="<?= $profilePic?>" title="profile pic" id="proileicon">
+					</div>
+					<div class="seven columns" id="profilename">
+						<div class="twelve columns" >
+							<h7 style ="font-weight: bold;">
+							<?php 
+								echo' '.$_SESSION["customer_name"];
+							?>
+							
+							</h7> 
+						</div>
+						<div class="twelve columns" ><h7>restaurant category</h7>  </div>
+					</div>
+				</div>	
+				<div class="twelve columns" id="maintitle">
+					<h6>MAIN</h6>
+				</div>
+				<div class="twelve columns" id="homenav">
+					<a href="index.php" style="text-decoration: none;">
+						<div class="two columns" id="sidebaricon">
+							<img alt="add food" src="/e-cafe/assets/images/homeicon.png" title="home" id="homeicon" style="width: 30px; height:30px;">
+						</div>
+						<div class="eight columns" id="sidenavname"><a href="index.php"> <h8>Home</h8> </a></div>
+					</a>
+				</div>
+				<div class="twelve columns" id="homenav">
+					<a href="profile.php" style="text-decoration: none;">
+						<div class="two columns" id="sidebaricon">
+							<img alt="add food" src="/e-cafe/assets/images/profileicon.png" title="profile" id="homeicon" style="width: 30px; height:30px;">
+						</div>
+						<div class="eight columns" id="sidenavname"><a href="profile.php">  <h8>Profile</h8> </a></div>
+					</a>
+				</div>	
+				<div class="twelve columns" id="homenav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/statsicon.png" title="profile" id="homeicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Statistics</h8></div>
+				</div>
+				<div class="twelve columns" id="homenav"></div>	
+				<div class="twelve columns" id="homenav"></div>
+				<div class="twelve columns" id="extrastitle">
+					<h6>EXTRAS</h6>
+				</div>
+				<div class="twelve columns" id="extranav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/settingsicon.png" title="settings" id="settingsicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Settings</h8> </div>
+				</div>
+				<div class="twelve columns" id="extranav"></div>	
+				<div class="twelve columns" id="extranav"></div>			
+			</div>
+			<!-- Sidebar area ends &nbsp;  style="background-image:url('/e-cafe/assets/images/burger.png'); "-->
+
+			<div class="nine columns" id="homecontent">
+				<!-- Profile and Cover area Begins &nbsp; -->
+				<div class="row" style=" height: 220px; border: 1px solid #e7e7e7; 
+					background-image:url('<?= $coverPic?>'); ">
+
+
+					<div class="twelve columns" style=" height: 110px; border: 0px solid #e7e7e7; background: transparent;">
+						
+					</div>
+					<div class="twelve columns" style=" border: 0px solid #e7e7e7;">
+						<div class="one column"> </div>
+						<div class="three columns" id="profilePicture"  >
+							<img  src="<?= $profilePic?>" id="profileImage" style="">
+						</div>
+					</div>
+				</div>
+				<!-- Profile and Cover area ends &nbsp; -->	
+
+				<!-- Profile Detail area Begins &nbsp; -->
+				<div class="row" style="">
+					<div class="one column">
+						
+					</div>
+					<div class="three columns" style="text-align: center;">
+						<div class="twelve columns" id="restaurantName" >
+							<?php 
+								echo' '.$_SESSION["customer_name"];
+							?>
+						</div>
+						<div class="twelve columns" style="font-weight: ; font-size: 20px;">
+							Restaurant Category
+						</div>
+					</div>
+				</div>
+
+				<div class="row" style=" padding-top: 50px;">
+					<div class="one column">
+						
+					</div>
+					<div class="eleven columns">
+						<div class="twelve columns" style=""> 
+							<label style=" float: left;"></label>
+						</div>
+						
+						<div class="twelve columns" style="font-weight: bold; padding-top: 15px; color: maroon;">
+							<img src="/e-cafe/assets/images/location.png" style="float: left; height:20px; width:20px; padding-right:20px;">
+							<label style="float: left;"> </label>
+						</div>
+						<div class="twelve columns" style="font-weight: bold; padding-top: 15px; color: maroon;">
+							<img src="/e-cafe/assets/images/phone.png" style="float: left; height: 20px; width: 20px; padding-right: 20px;">
+							<label style="float: left;">+254<?= $profile['phone_number']?> </label>
+						</div>
+						<div class="twelve columns" style="font-weight: bold; padding-top: 15px; color: maroon;">
+							<img src="/e-cafe/assets/images/email.png" style=" float: left; height: 20px; width:20px; padding-right: 20px;">
+							<label style="float: left;"><?= $profile['email']?> </label>
+						</div>
+					</div>
+				</div>
+				<!--Profile Detail area Ends -->
+
+				<!--Edit Profile Button area Bigins-->
+				<div class="row" id="editProfDiv">
+					<div class="one column"> </div>
+					<div class="five columns">
+						<a href="editProfile.php?edit=2"> <button id="editProfileButton" > EDIT PROFILE </button> </a> 
+					</div>
+					
+				</div>
+				<!--Edit Profile Button area Ends --> 
+
+				
+
+				<!--PREV Deliveries area Bigins-->
+				<div style="height: 20px;">
+					
+				</div>
+				<!--PREV Deliveries area Ends -->	
+			</div>
+			<?php endforeach; ?>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		//SIDE NAV BUTTON
+		$(function(){
+			$("#sidenavicon").click(function(){
+				if($("#sidenav").css("display")==="block"){
+  					$("#sidenav").css("display", "none");
+  					$("#homecontent").removeClass("nine columns").addClass("twelve columns");
+  				}else if($("#sidenav").css("display")==="none"){
+  					$("#homecontent").removeClass("twelve columns").addClass("nine columns"); 
+  					$("#sidenav").css("display", "block");
+  				}
+			});
+		});
+		//CHECK USER ACTIVITY
+		$(function(){
+			setInterval(function(){
+				checkActivity();
+			}, 300000);
+		});
+		//CHECK NOTIFICATIONS
+		$(function(){
+			setInterval(function(){
+				checkNotifications();
+			}, 30000);
+		});
+		function checkNotifications(){
+			$.post("index.php",
+		    {
+		        notification_activity: true
+		    },
+		    function(data, status){
+		    	if (data==0) {
+		    		//no notifications
+		    	}else{
+		    		alert("Data: " + data + "\nStatus: " + status);
+		    	}
+		    });	
+		}
+	</script>
+	<script type="text/javascript" src="/e-cafe/assets/js/userActivity.js"></script>
+</body>
+</html>

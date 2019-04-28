@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({sort:"Ordenar",sortBy:"Ordenar por",sortDir:"Ordenar direcci\u00f3n",relevance:"Relevancia",title:"T\u00edtulo",owner:"Propietario",created:"Fecha de creaci\u00f3n",modified:"Fecha de modificaci\u00f3n",numviews:"Recuento de vistas",avgrating:"Calificaci\u00f3n",ascending:{relevance:"De menos relevante a m\u00e1s relevante",title:"Alfab\u00e9tico",owner:"Alfab\u00e9tico",created:"Menos recientes",modified:"Menos recientes",numviews:"De menos a m\u00e1s",avgrating:"De calificaci\u00f3n m\u00e1s baja a calificaci\u00f3n m\u00e1s alta"},
+descending:{relevance:"De m\u00e1s relevante a menos relevante",title:"Alfab\u00e9tico inverso",owner:"Alfab\u00e9tico inverso",created:"M\u00e1s reciente",modified:"M\u00e1s reciente",numviews:"De m\u00e1s a menos",avgrating:"De clasificaci\u00f3n m\u00e1s alta a clasificaci\u00f3n m\u00e1s baja"}});

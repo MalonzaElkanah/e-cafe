@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports"],function(l,f){Object.defineProperty(f,"__esModule",{value:!0});f.encodeSymbolColor=function(a,d,c,b){void 0===b&&(b=0);null==a||"ignore"===d?(c[b+0]=255,c[b+1]=255,c[b+2]=255,c[b+3]=255):(c[b+0]=Math.floor(255*a[0]),c[b+1]=Math.floor(255*a[1]),c[b+2]=Math.floor(255*a[2]),a=Math.floor(a[3]*e),c[b+3]=0===a?0:"tint"===d?a:"replace"===d?a+g:a+h)};f.isOpaqueSymbolColor=function(a,d){void 0===d&&(d=0);a=a[d+3];return a===g||a===h||a===k};var e=85,g=e,h=2*e,k=3*e});

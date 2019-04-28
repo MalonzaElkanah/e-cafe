@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({itemType:"Tip element",filters:{maps:"H\u0103r\u0163ile",webMaps:"H\u0103r\u0163i web",mapFiles:"Fi\u015fiere de hart\u0103",layers:"Straturi tematice",featureLayers:"Straturi tematice de obiecte spa\u0163iale",tileLayers:"Straturi tematice optimizate (tile)",mapImageLayers:"Straturi tematice de imagini cartografice",imageryLayers:"Straturi tematice de imagini satelitare",sceneLayers:"Straturi tematice scen\u0103",tables:"Tabele",layerFiles:"Fi\u015fiere de strat tematic",scenes:"Scene",apps:"Aplica\u0163ii",
+webApps:"Aplica\u0163ii Web",mobileApps:"Aplica\u0163ii mobile",desktopApps:"Aplica\u0163ii desktop",tools:"Instrumente",locators:"Localizatoare",geodatabaseAccess:"Accesare baz\u0103 de date geografice",geometricOperations:"Opera\u0163ii geometrice",geoprocessingTasks:"Opera\u0163ii de geoprocesare",networkAnalysis:"Analiz\u0103 \u00een re\u0163ea",files:"Fi\u015fiere",documents:"Documente",images:"Imagini",pdfs:"PDF-uri",webTools:"Instrumente Web",notebooks:"Notebook-uri"}});

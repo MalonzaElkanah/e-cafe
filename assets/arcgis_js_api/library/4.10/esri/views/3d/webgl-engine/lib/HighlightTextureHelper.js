@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports","../../../webgl/FramebufferObject"],function(g,h,f){return function(){function c(a){this._rctx=a;this.viewportToRestore=this.fbo=null}c.prototype.dispose=function(){this.fbo&&(this.fbo.dispose(),this.fbo=null)};Object.defineProperty(c.prototype,"framebuffer",{get:function(){return this.fbo},enumerable:!0,configurable:!0});c.prototype.prepareHighlightPass=function(a){var b=this._rctx,c=b.gl;a=a.fullViewport;var d=a[2],e=a[3];this.updateFBO(d,e);this.viewportToRestore=a;
+this._rctx.setViewport(0,0,d,e);b.bindFramebuffer(this.fbo);b.setClearColor(0,0,0,0);b.clear(c.COLOR_BUFFER_BIT|c.DEPTH_BUFFER_BIT)};c.prototype.finish=function(a){var b=this._rctx;b.bindFramebuffer(a);b.setViewport(this.viewportToRestore[0],this.viewportToRestore[1],this.viewportToRestore[2],this.viewportToRestore[3])};c.prototype.updateFBO=function(a,b){this.fbo?this.fbo.resize(a,b):this.fbo=f.createWithAttachments(this._rctx,{target:3553,pixelFormat:6408,dataType:32819,samplingMode:9729,wrapMode:33071,
+width:a,height:b},{colorTarget:0,depthStencilTarget:1})};return c}()});

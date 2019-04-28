@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports","../lib/DefaultVertexAttributeLocations","./sources/resolver","../../../webgl/programUtils"],function(g,b,e,c,f){Object.defineProperty(b,"__esModule",{value:!0});var d=function(a){return f.glslifyDefineMap({VERTEX_COLORS:a.vertexColors,SLICE:a.slice})};b.colorPass={name:"color-color",shaders:function(a){return{vertexShader:d(a)+c.resolveIncludes("materials/color/color.vert"),fragmentShader:d(a)+c.resolveIncludes("materials/color/color.frag")}},attributes:e.Default3D}});

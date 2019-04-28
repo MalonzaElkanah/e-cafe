@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({sort:"Razvrsti",sortBy:"Razvrsti po",sortDir:"Smer sortiranja",relevance:"Ustreznost",title:"Ime",owner:"Lastnik",created:"Datum ustvarjanja",modified:"Datum spremembe",numviews:"\u0160tevilo ogledov",avgrating:"Ocena",ascending:{relevance:"Najmanj do najbolj pomembno",title:"Po abecednem vrstnem redu",owner:"Po abecednem vrstnem redu",created:"Najmanj nedavno",modified:"Najmanj nedavno",numviews:"Najmanj do najbolj",avgrating:"Od najni\u017eje do najvi\u0161je ocene"},descending:{relevance:"Najbolj do najmanj pomembno",
+title:"Po obratnem abecednem vrstnem redu",owner:"Po obratnem abecednem vrstnem redu",created:"Najnovej\u0161e",modified:"Najnovej\u0161e",numviews:"Najbolj do najmanj",avgrating:"Od najvi\u0161je do najni\u017eje ocene"}});

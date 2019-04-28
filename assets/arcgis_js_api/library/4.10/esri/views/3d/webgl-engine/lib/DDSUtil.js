@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports","../../../webgl/Texture"],function(w,f,r){function e(d){return d.charCodeAt(0)+(d.charCodeAt(1)<<8)+(d.charCodeAt(2)<<16)+(d.charCodeAt(3)<<24)}Object.defineProperty(f,"__esModule",{value:!0});var t=e("DXT1"),u=e("DXT3"),v=e("DXT5");f.createDDSTexture=function(d,b,e,g){var a=new Int32Array(e,0,31);if(542327876!==a[0])return console.error("Invalid magic number in DDS header"),null;if(!(a[20]&4))return console.error("Unsupported format, must contain a FourCC code"),null;
+var c=a[21],h;switch(c){case t:c=8;h=33776;break;case u:c=16;h=33778;break;case v:c=16;h=33779;break;default:return console.error("Unsupported FourCC code:",String.fromCharCode(c&255,c>>8&255,c>>16&255,c>>24&255)),null}var k=1;a[2]&131072&&!1!==g&&(k=Math.max(1,a[7]));g=a[4];for(var l=a[3],f=a[1]+4,n,m,p=[],q=0;q<k;++q)m=Math.floor((g+3)/4)*Math.floor((l+3)/4)*c,n=new Uint8Array(e,f,m),p.push(n),f+=m,g=Math.max(1,g>>1),l=Math.max(1,l>>1);b.samplingMode=1<k?9987:9729;b.hasMipmap=1<k;b.width=a[4];b.height=
+a[3];b.internalFormat=h;b=new r(d,b,{type:"compressed",levels:p});d.bindTexture(b);return b}});

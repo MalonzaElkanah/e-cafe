@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports","./common"],function(B,f,A){Object.defineProperty(f,"__esModule",{value:!0});f.transformMat4=function(b,c,a){if(b.count!==c.count)A.logger.error("source and destination buffers need to have the same number of elements");else{var f=b.count,p=a[0],q=a[1],r=a[2],t=a[4],u=a[5],v=a[6],w=a[8],x=a[9],m=a[10],n=a[12],l=a[13];a=a[14];var g=b.typedBuffer;b=b.typedBufferStride;var d=c.typedBuffer;c=c.typedBufferStride;for(var e=0;e<f;e++){var h=e*b,k=e*c,y=d[k],z=d[k+1],k=d[k+2];
+g[h]=p*y+t*z+w*k+n;g[h+1]=q*y+u*z+x*k+l;g[h+2]=r*y+v*z+m*k+a}}};f.transformMat3=function(b,c,a){if(b.count!==c.count)A.logger.error("source and destination buffers need to have the same number of elements");else{var f=b.count,p=a[0],q=a[1],r=a[2],t=a[3],u=a[4],v=a[5],w=a[6],x=a[7];a=a[8];var m=b.typedBuffer;b=b.typedBufferStride;var n=c.typedBuffer;c=c.typedBufferStride;for(var l=0;l<f;l++){var g=l*b,d=l*c,e=n[d],h=n[d+1],d=n[d+2];m[g]=p*e+t*h+w*d;m[g+1]=q*e+u*h+x*d;m[g+2]=r*e+v*h+a*d}}}});

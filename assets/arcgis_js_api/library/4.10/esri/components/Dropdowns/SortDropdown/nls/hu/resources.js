@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({sort:"Rendez\u00e9s",sortBy:"Rendez\u00e9si szempont",sortDir:"Rendez\u00e9s ir\u00e1nya",relevance:"Fontoss\u00e1g",title:"C\u00edm",owner:"Tulajdonos",created:"L\u00e9trehoz\u00e1s d\u00e1tuma",modified:"M\u00f3dos\u00edt\u00e1s d\u00e1tuma",numviews:"Megtekint\u00e9sek sz\u00e1ma",avgrating:"\u00c9rt\u00e9kel\u00e9s",ascending:{relevance:"Fontoss\u00e1g szerint n\u00f6vekv\u0151",title:"Bet\u0171rend szerint",owner:"Bet\u0171rend szerint",created:"Legr\u00e9gebbi",modified:"Legr\u00e9gebbi",
+numviews:"El\u0151fordul\u00e1s szerint n\u00f6vekv\u0151",avgrating:"\u00c9rt\u00e9kel\u00e9s szerint n\u00f6vekv\u0151"},descending:{relevance:"Fontoss\u00e1g szerint cs\u00f6kken\u0151",title:"Bet\u0171rend szerint visszafel\u00e9",owner:"Bet\u0171rend szerint visszafel\u00e9",created:"Legfrissebb",modified:"Legfrissebb",numviews:"El\u0151fordul\u00e1s szerint cs\u00f6kken\u0151",avgrating:"\u00c9rt\u00e9kel\u00e9s szerint cs\u00f6kken\u0151"}});

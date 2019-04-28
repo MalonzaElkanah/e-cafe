@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"/>
+	<script src= /e-cafe/assets/js/jquery.js ></script>
+	
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="/e-cafe/assets/css/normalize.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/skeleton.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/style.css" rel="stylesheet" type="text/css"/>
+	<title>ecafe.com</title>
+  	<link rel="icon" type="image/png" href="/e-cafe/assets/images/favicon.png">
+	<link rel="stylesheet" href="/e-cafe/assets/arcgis_js_api/library/4.10/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" href="/e-cafe/assets/arcgis_js_api/library/4.10/esri/css/main.css" />
+    <script src="/e-cafe/assets/arcgis_js_api/library/4.10/"></script>
+	<style type="text/css">
+	#navigation{
+		height: 50px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border: 1px solid #e7e7e7;
+    	background-color: #f3f3f3;
+		text-align: center;
+	}
+	#navigation a {
+		text-decoration: none;
+		color: black;
+
+	}
+	#restaurantlogo{
+		font-size: 40px;
+		text-align: center;
+		font-family: forte;
+	    color: maroon;
+	}
+	#restaurantlogo a{
+		font-size: 40px;
+		text-align: center;
+		font-family: forte;
+	    color: maroon;
+	}
+	#sidenav{
+		display: block;
+		border: 1px solid #b7b7b7;
+		color: #6a6c70; 
+		background-color: #2d3035;
+		height: 1200px;
+	}
+	#content{
+		background-color: white;
+		border: 0px solid #e7e7e7;
+		height: 100%;
+	}
+	#homecontent{
+		border: 0px solid #e7e7e7;
+		height: 100%;	
+	}
+	#miniprofile{
+		height: 100px;
+		padding-top: 25px;
+		padding-left: 25px;
+
+	}
+	#profilepic{
+	    width: 60px;
+    	height: 60px;
+	    border-radius: 50%;
+	    overflow: hidden;
+	    margin-right: 15px;
+	    background: #6a6c70;
+	    padding: 4px;
+	    border: 3px solid #282b2f;
+	}
+	#proileicon{
+		width: 60px;
+    	height: 60px;
+	    border-radius: 50%;
+	}
+	#profilename{
+		padding-top: 10px;
+		border: 0px solid black;
+		height: 60px;
+		text-align: center;
+		color: #6a6c70; 
+	}
+	#maintitle{
+		
+		background-color: #2d3035;
+		height: 30px;
+		
+		font-weight: bold;
+	}
+	#maintitle h6{
+		font-weight: 700;
+	    margin-left: 20px;
+	    color: #494d53;
+	    font-size: 1.2rem;
+	    margin-bottom: 15px
+	}
+	#extrastitle{
+		background-color: #2d3035;
+		height: 30px;
+		
+		font-weight: bold;
+	}
+	#extrastitle h6{
+		font-weight: 700;
+	    margin-left: 20px;
+	    color: #494d53;
+	    font-size: 1.2rem;
+	    margin-bottom: 15px
+	}
+	#homenav{
+		/*border-bottom: 1px solid maroon;
+		/*border: 1px solid #b7b7b7;*/
+		height: 50px;
+	}
+	#sidebaricon{
+		height: 30px;
+		width: 60px;
+		border-right: 1px solid #6a6c70;
+		padding-left: 15px;
+	}
+	#sidenavname{
+		padding-left: 5px;
+		padding-top: 5px;
+	}
+	#sidenavname a{
+		text-decoration: none;
+	}
+	#extranav{
+		/*border-bottom: 1px solid maroon;
+		border: 1px solid #b7b7b7;*/
+		height: 50px;
+	}
+	#contentTitle{
+		height: 30px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		color: maroon;
+    	/*background-color: #f3f3f3;*/
+		text-align: center;
+	}
+	.sectionTitle{
+		
+		height: 50px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		color: maroon;
+    	background-color: #f3f3f3;
+		text-align: left;
+		border: 1px solid #e3e3e3;
+	}
+	.sectionTitle h5{
+		padding-left: 30px;
+		font-size: 17px;
+		float: left;
+	}
+	.sectionTitle img{
+		width: 20px; 
+		height:20px;
+		padding-left: 10px;
+		float: left;
+	}
+	.closeIcon{
+		display: none;
+	}
+	.editSection{
+		display: none;
+		min-height: 350px;
+	}
+	#cover-upload, #profile-upload{
+		display: none;
+	}
+	#profileButtons{
+		height: 100px;
+		padding-bottom: 40px;
+		padding-top: 30px;
+	}
+	#updateButton{
+		float: right;
+		padding-right: 50px;
+	}
+	#cancelButton{
+		float: left;
+		padding-left: 50px;
+	}
+		.profilebutton{
+			font-size: 14px;
+		    color: #fff;
+		    font-weight: 600;
+		    padding: 0px 45px;
+		    background: maroon;
+		    outline: none;
+    		border: none;
+    		cursor: pointer;
+		}
+		.input-label{
+			text-align: center;
+			color: maroon;
+		}
+		.w3_agileits_margin {
+   			margin-right: 1.5em;
+		}
+
+		.agileits_w3layouts_form {
+    		width: 48.05%;
+    		float: left;
+    		margin-bottom: 1.5em;
+		}
+		.form-group{
+			padding-bottom: 30px;
+		}
+
+		.wthree_input, .w3ls_description {
+    		position: relative;
+		}
+
+		.wthree_input i {
+    		position: absolute;
+    		left: 0%;
+    		top: 25%;
+    		color: #38a90e;
+		}
+		.wthree_input input[type="text"], .w3ls_description textarea, .wthree_input select, .wthree_input input[type="email"], .wthree_input input[type="password"] {
+    		outline: none;
+    		background: none;
+    		border: none;
+    		border-bottom: 2px solid #212121;
+    		font-size: 14px;
+    		font-style: normal;
+    		color: #212121;
+    		padding: 1em 1em 1em 2em;
+    		width: 85.5%;
+    		font-weight: 600;
+    		font-family: 'Raleway', sans-serif;
+    		border-radius: 0px;
+		}
+		.w3_agileits_margin select {
+    		width: 100% ;
+    		padding-top: 7px;
+		}
+		#areaCode{
+			width: 30% !important;
+			float: left;
+		}
+		#phoneNumber{
+			width: 65.5% !important;
+			float: left;
+			margin-left: 5px;	
+		}
+		#County{
+
+		}
+		.error{
+    		color: #d65c0d;
+    		display: none;
+    		font-size: 13px;
+    		font-style: italic;
+		}
+
+		.clear {
+    		clear: both;
+		}
+
+		.commands {
+    		overflow: hidden;
+    		margin-top: 30px;
+		}
+		
+		.locationHeader, .otherDetailsHeader{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+
+		<!-- Navigation area  &nbsp; -->
+
+		<div class="row" id="navigation">
+			<div class="three columns" id="restaurantlogo">
+				<div class="one column">
+					<img alt="" src="/e-cafe/assets/images/sidenavicon.png" id="sidenavicon" style="width: 25px; height:25px; padding-left: 5px" >
+				</div>
+				<div class="ten columns">
+					<a href="#" >E-CAFE</a>
+				</div>
+			</div>
+			<div class="five columns"> <p> </p></div>
+			<div class="four columns">
+				<div class="two columns">
+					<img alt="" src="/e-cafe/assets/images/search.png" id="search" style="width: 25px; height:25px; padding-left: px" >
+				</div>
+				<div class="two columns">
+					<a href="notifications.php">
+						<img alt="" src="/e-cafe/assets/images/notificationIcon.png" id="notificationicon" style="width: 25px; height:25px;" >
+					</a>
+				</div>
+				<div class="two columns">
+					<a href="messages.php">
+						<img alt="" src="/e-cafe/assets/images/messageicon.png" id="messageicon" style="width: 25px; height:25px; " >
+					</a>
+				</div>
+				<div class="six columns">
+					<?php if(Session::get("loggedin")): ?>
+						<p class="iblk log">
+							<?php echo ' '.$_SESSION["username"].' | '; ?> 
+							<a href=<?= BASE_URL."login.php?exitId=0"?>>Logout</a>
+						</p>
+					<?php endif;?> 
+				</div>
+				
+			</div>
+				
+		</div>
+
+		<!-- Navigation area ends &nbsp; -->
+
+		<div class="row" id="content">
+			<?php foreach($this->profile_data1 as $profile): 
+
+				$coverURL = null;
+				$profilePic = null;
+				if($profile['cover_photo']==null){
+					$coverURL = "/e-cafe/assets/coverPhotos/default.jpg";
+				}else{
+					$coverURL = $profile['cover_photo'];
+				}
+
+				if($profile['profile_picture']==null){
+					$profilePic = "/e-cafe/assets/profilePictures/default.png";
+				}else{
+					$profilePic = $profile['profile_picture'];
+				}
+			?>
+
+		<!-- SideBar area Bigins &nbsp; -->	
+
+			<div class="three columns" id="sidenav">
+				<div class="twelve columns" id="miniprofile">
+					<div class="four columns" id="profilepic">
+						<img alt="add food" src="<?= $profilePic?>" title="profile pic" id="proileicon">
+					</div>
+					<div class="seven columns" id="profilename">
+						<div class="twelve columns" >
+							<h7 style ="font-weight: bold;">
+							<?php 
+								echo' '.$_SESSION["customer_name"];
+							?>
+							
+							</h7> 
+						</div>
+						<div class="twelve columns" ><h7>Delivery Personnel</h7>  </div>
+					</div>
+				</div>	
+				<div class="twelve columns" id="maintitle">
+					<h6>MAIN</h6>
+				</div>
+				<div class="twelve columns" id="homenav">
+					<a href="index.php" style="text-decoration: none;">
+						<div class="two columns" id="sidebaricon">
+							<img alt="add food" src="/e-cafe/assets/images/homeicon.png" title="home" id="homeicon" style="width: 30px; height:30px;">
+						</div>
+						<div class="eight columns" id="sidenavname"><a href="index.php"> <h8>Home</h8></a> </div>
+					</a>
+				</div>
+				<div class="twelve columns" id="homenav">
+					<a href="profile.php" style="text-decoration: none;">
+						<div class="two columns" id="sidebaricon">
+							<img alt="add food" src="/e-cafe/assets/images/profileicon.png" title="profile" id="homeicon" style="width: 30px; height:30px;">
+						</div>
+						<div class="eight columns" id="sidenavname"><a href="profile.php"> <h8>Profile</h8> </a></div>
+					</a>
+				</div>	
+				<div class="twelve columns" id="homenav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/statsicon.png" title="profile" id="homeicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Statistics</h8></div>
+				</div>
+				<div class="twelve columns" id="homenav"></div>	
+				<div class="twelve columns" id="homenav"></div>
+				<div class="twelve columns" id="extrastitle">
+					<h6>EXTRAS</h6>
+				</div>
+				<div class="twelve columns" id="extranav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/settingsicon.png" title="settings" id="settingsicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Settings</h8> </div>
+				</div>
+				<div class="twelve columns" id="extranav"></div>	
+				<div class="twelve columns" id="extranav"></div>			
+			</div>
+			<!-- Sidebar area ends &nbsp; -->
+
+				<div class="nine columns" id="homecontent">
+					<form action="editProfile.php" method="post" enctype="multipart/form-data">
+						<div class="row" id="contentTitle"><h3>EDIT PROFILE</h3> </div>
+						<!-- Profile and Cover Edit area Begins &nbsp; -->
+						<div class="row" id="profilePicture">
+							<div class="twelve columns sectionTitle" id="editProfilePic"> 
+								<img alt="open" src="/e-cafe/assets/images/open.png" title="edit profile" id="openProfilePic">
+								<img alt="close" src="/e-cafe/assets/images/close.png" class="closeIcon" id="closeProfilePic">
+								<h5>Profile and Cover Picture</h5>
+							</div>
+							<div class="row editSection" id="profilePicEdit" style="height: 400px;">
+								<div class="twelve columns" id="image-file" style="height: 250px; position: relative; border: 1px solid #e3e3e3; background-image: url('<?= $coverURL?>'); ">
+									<div class="twelve columns" style="height: 170px; ">
+										
+									</div>
+									
+									<div class="twelve columns" style="height: 100px;" >
+										<div class="one column">
+											
+										</div>
+										<div class="two columns" style="border: 0px solid white; height: 150px; width: 150px; border-radius: 50%; background-color: grey;">
+											<img  src="<?= $profilePic?>" id="profile-file" style="height: 150px; width: 150px; border-radius: 50%; border: 2px solid white;">
+
+										</div>
+										
+										<div class="two columns" style="float: right; height: 100px; width: 100px; padding-top: 30px;">
+											<input type="file" name="coverToUpload" id="cover-upload" accept="image/*">
+											<label for="cover-upload" id="coverPic">
+												<img src="/e-cafe/assets/images/camera.png" style=" position: relative; float: auto;">
+											</label>
+										</div>
+									</div>
+									
+								</div>
+								<div class="twelve columns">
+									<div class="one column" style=" ">
+											
+										</div>
+										<div class="two columns" style=" ">
+											<input type="file" name="profileToUpload" id="profile-upload" accept="image/*">
+											<label for="profile-upload" id="profilePic">
+												<img src="/e-cafe/assets/images/camera.png" style="padding-top: 25px; height: 50px; width: 50px; position: relative;">
+											</label>
+										</div>
+								</div>
+
+							</div>
+						</div>
+						<!-- Profile and Cover Edit area ends &nbsp; -->	
+
+						<!-- Profile Detail area Begins &nbsp; -->
+						<div class="row" id="profileDetails">
+							<div class="twelve columns sectionTitle" id="editProfileDetails">
+								<img alt="open" src="/e-cafe/assets/images/open.png" title="edit profile" id="openProfileDetails">
+								<img alt="close" src="/e-cafe/assets/images/close.png" class="closeIcon" id="closeProfileDetails">
+								<h5> Profile Details</h5> 
+							</div>
+							<div class="row editSection" id="profileDetailsEdit" style=" height: 350px;">
+								
+								<div class="row" style="padding-top: 100px;">
+									<!--First Name Margin  -->
+									<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+										<div class="row input-label">
+											<label>First Name</label>
+										</div>
+										<div class="wthree_input row">
+											<i class="fa fa-user" aria-hidden="true"></i>
+											<input id="FirstName" type="text" name="first_name" class="form-control" value="<?= $profile['first_name']?>" required="" aria-required="true" aria-describedby="Name-error" aria-invalid="true">
+											<em id="first_name-error" class="error">This field is required.</em>
+										</div>
+									</div>
+									<!--Restaurant Category (no margin)  -->
+									<div class="form-group agileits_w3layouts_form">
+										<div class="row input-label">
+											<label>Second Name</label>
+										</div>
+										<div class="wthree_input row">
+											<i class="fa fa-user" aria-hidden="true"></i>
+											<input id="SecondName" type="text" name="second_name" class="form-control" value="<?= $profile['second_name']?>" required="" aria-required="true" aria-describedby="Name-error" aria-invalid="true">
+											<em id="second_name-error" class="error">This field is required.</em>
+										</div>
+									</div>
+
+									<!--Phone Num (margin)  -->
+									<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+										<div class="row input-label">
+											<label>Phone Number</label>
+										</div>
+										<div class="wthree_input">
+											<i class="fa fa-globe" aria-hidden="true"></i>
+											<select class="form-control valid" id="areaCode" aria-invalid="false" >
+												<option value="Country" selected="">+254</option>
+												<option value="Afghanistan"> +253 </option>
+												<option value="Albania"> +255 </option>
+												<option value="Algeria"> +234 </option>
+												<option value="American Samoa"> +1 </option>
+												<option value="Andorra"> +5 </option>
+												<option value="Angola"> +9 </option>
+												<option value="Anguilla"> +5 </option>
+												<option value="Antarctica"> +3 </option>
+												<option value="...">...</option>
+											</select>
+											<input id="phoneNumber" type="text" name="phone_number" class="form-control" placeholder="phone Number" value="<?= $profile['phone_number']?>" required="" aria-required="true" aria-describedby="Subject-error" aria-invalid="true">
+											<em id="restaurant_phone_number-error" class="error">This field is required.</em>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--Profile Detail area Ends -->
+
+						<!--Location Information area Bigins-->
+						<div class="locationInfomation">
+							<div class="twelve columns sectionTitle" id="editLocationDetails"> 
+								<img alt="open" src="/e-cafe/assets/images/open.png" title="edit profile" id="openLocInfo">
+								<img alt="close" src="/e-cafe/assets/images/close.png" class="closeIcon" id="closeLocInfo">
+								<h5> Location Details</h5>
+							</div>
+							<div class="row editSection" id="locationDetailsEdit">
+								
+								<div class="row locationHeader"><h5>SPECIFIC LOCATION</h5></div>
+								<div class="row">
+									<div class="twelve columns" id="map" style="height: 400px; border: 1px solid black;">
+										
+									</div>
+									<div class="row">
+										<!--Location Name Margin  -->
+										<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+											<div class="row input-label">
+												<label>Location Name</label>
+											</div>
+											<div class="wthree_input row">
+												<i class="fa fa-user" aria-hidden="true"></i>
+												<input id="PositionName" type="text" name="pos_name" class="form-control" value=" "  aria-required="true" aria-describedby="Name-error" aria-invalid="true">
+											</div>
+										</div>
+										<!--Lattitude Coordinates (no margin)  -->
+										<div class="form-group agileits_w3layouts_form">
+											<div class="row input-label">
+												<label>Latitude Coodinates</label>
+											</div>
+											<div class="wthree_input">
+												<i class="fa fa-user" aria-hidden="true"></i>
+												<input id="latitude_cood" type="text" name="latitude_cood" 
+												value=" " class="form-control" required="" aria-required="true" aria-describedby="Name-error" aria-invalid="true">
+											</div>
+										</div>
+
+										<!--Logitude coodinates Margin  -->
+										<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+											<div class="row input-label">
+												<label>Longitude Coodinates</label>
+											</div>
+											<div class="wthree_input row">
+												<i class="fa fa-user" aria-hidden="true"></i>
+												<input id="longitude_cood" type="text" name="longitude_cood" class="form-control" value=" " required="" aria-required="true" aria-describedby="Name-error" aria-invalid="true">
+											</div>
+										</div>
+										<!--Accuracy (no margin)  -->
+										<div class="form-group agileits_w3layouts_form">
+											<div class="row input-label">
+												<label>Accuracy</label>
+											</div>
+											<div class="wthree_input">
+												<i class="fa fa-user" aria-hidden="true"></i>
+												<input id="accuracy" type="text" name="accuracy" 
+												value=" " class="form-control" required="" aria-required="true" aria-describedby="Name-error" aria-invalid="true">
+											</div>
+										</div>
+										<!--Altitude Margin  -->
+										<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+											<div class="row input-label">
+												<label>Altitude </label>
+											</div>
+											<div class="wthree_input row">
+												<i class="fa fa-user" aria-hidden="true"></i>
+												<input id="altitude" type="text" name="altitude" class="form-control" value=" " aria-required="true" aria-describedby="Name-error" aria-invalid="true">
+											</div>
+										</div>
+										<!--Altitude Accuracy (no margin)  -->
+										<div class="form-group agileits_w3layouts_form">
+											<div class="row input-label">
+												<label>Altitude Accuracy</label>
+											</div>
+											<div class="wthree_input">
+												<i class="fa fa-user" aria-hidden="true"></i>
+												<input id="altitude_accuracy" type="text" name="altitude_accuracy" 
+												value=" " class="form-control" aria-required="true" aria-describedby="Name-error" aria-invalid="true">
+											</div>
+										</div>
+									</div>
+									<div class="clear"> </div>
+								</div>
+							</div>
+						</div>
+						<!--Location Information area Ends --> 
+
+						<!--Login Information area Bigins-->
+						<div class="row" id="loginInformation">
+							<div class="twelve columns sectionTitle" id="editLoginInfo"> 
+								<img alt="open" src="/e-cafe/assets/images/open.png" title="edit profile" id="openLoginInfo">
+								<img alt="close" src="/e-cafe/assets/images/close.png" class="closeIcon" id="closeLoginInfo">
+								<h5>Login Details </h5>
+							</div>
+							<div class="row editSection" id="loginInfoEdit">
+								<div class="row clear" style=" height: 50px;"> <p> </p></div>
+								<!--UserName Margin  -->
+								<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+									<div class="wthree_input">
+										<i class="fa fa-user" aria-hidden="true"></i>
+										<input id="UserName" type="text" name="user_name" class="form-control" placeholder="Username" aria-required="false" aria-describedby="UserName-error" aria-invalid="true">
+										<em id="user_name-error" class="error">This field is required.</em>
+									</div>
+								</div>
+
+								<!--Password (no margin)  -->
+								<div class="form-group agileits_w3layouts_form">
+									<div class="wthree_input">
+										<i class="fa fa-key" aria-hidden="true"></i>
+										<input id="OldPassword" type="password" name="old_password" class="form-control" placeholder="*Old Password" aria-required="false" aria-describedby="Password-error" aria-invalid="true">
+										<em id="old_password-error" class="error">This field is required.</em>
+									</div>
+								</div>
+
+								<!--Password (no margin)  -->
+								<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+									<div class="wthree_input">
+										<i class="fa fa-key" aria-hidden="true"></i>
+										<input id="NewPassword" type="password" name="new_password" class="form-control" placeholder="*new Password" aria-required="false" aria-describedby="Password-error" aria-invalid="true">
+										<em id="new_password-error" class="error">This field is required.</em>
+									</div>
+								</div>
+
+								<!--confirm Password (margin)  -->
+								<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+									<div class="wthree_input">
+										<i class="fa fa-key" aria-hidden="true"></i>
+										<input id="confirmPassword" type="password" name="confirm_password" class="form-control" placeholder=" *confirm new Password" aria-required="false" aria-describedby="Password-error" aria-invalid="true">
+										<em id="ConfirmPassword-error" class="error"><p id="ConfirmPassword-error1">This field is required.</p></em>
+									</div>
+								</div>
+
+							<div class="clear"> </div>
+							</div>
+						</div>
+						<!--Login Information area Ends --> 
+
+						<!--Button area Begins -->
+						<div class="row" id="updateProfile">
+							<div class="twelve columns sectionTitle" id="profileButtons">
+								<div id="cancelButton"> <button class="profilebutton"> CANCEL </button></div>
+								<div id="updateButton">
+									<button class="profilebutton" name="newProfile">UPDATE PROFILE </button>
+								</div>	
+							</div>
+						</div>
+						<!--Button area Ends -->
+						<div style="height: 30px;">
+							<h3> </h3>
+						</div>
+					</form>
+				</div>
+			<?php endforeach; ?>	
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		//SIDE NAV BUTTON
+		$(function(){
+			$("#sidenavicon").click(function(){
+				if($("#sidenav").css("display")==="block"){
+  					$("#sidenav").css("display", "none");
+  					$("#homecontent").removeClass("nine columns").addClass("twelve columns");
+  				}else if($("#sidenav").css("display")==="none"){
+  					$("#homecontent").removeClass("twelve columns").addClass("nine columns"); 
+  					$("#sidenav").css("display", "block");
+  				}
+			});
+		});
+
+		//UPDATE DETAILSECTION
+		$(function(){
+			//profile and cover pictures
+			$("#editProfilePic").click(function(event){
+				if ($("#profilePicEdit").css("display")=="none") {
+					$("#profilePicEdit").css("display",  "block");
+					$("#openProfilePic").css("display",  "none");
+					$("#closeProfilePic").css("display",  "block");
+				}else if ($("#profilePicEdit").css("display")=="block") {
+					$("#profilePicEdit").css("display",  "none");
+					$("#openProfilePic").css("display",  "block");
+					$("#closeProfilePic").css("display",  "none");
+				}
+			});
+
+			//profile Details
+			$("#editProfileDetails").click(function(event){
+				if ($("#profileDetailsEdit").css("display")=="none") {
+					$("#profileDetailsEdit").css("display",  "block");
+					$("#openProfileDetails").css("display",  "none");
+					$("#closeProfileDetails").css("display",  "block");
+				}else if ($("#profileDetailsEdit").css("display")=="block") {
+					$("#profileDetailsEdit").css("display",  "none");
+					$("#openProfileDetails").css("display",  "block");
+					$("#closeProfileDetails").css("display",  "none");
+				}
+			});
+
+			//location Information
+			$("#editLocationDetails").click(function(event){
+				if ($("#locationDetailsEdit").css("display")=="none") {
+					$("#locationDetailsEdit").css("display",  "block");
+					$("#openLocInfo").css("display",  "none");
+					$("#closeLocInfo").css("display",  "block");
+				}else if ($("#locationDetailsEdit").css("display")=="block") {
+					$("#locationDetailsEdit").css("display",  "none");
+					$("#openLocInfo").css("display",  "block");
+					$("#closeLocInfo").css("display",  "none");
+				}
+			});
+
+			//login information
+			$("#editLoginInfo").click(function(event){
+				if ($("#loginInfoEdit").css("display")=="none") {
+					$("#loginInfoEdit").css("display", "block");
+					$("#openLoginInfo").css("display","none");
+					$("#closeLoginInfo").css("display","block");
+				}else if ($("#loginInfoEdit").css("display")=="block") {
+					$("#loginInfoEdit").css("display", "none");
+					$("#openLoginInfo").css("display","block");
+					$("#closeLoginInfo").css("display","none");
+				}
+			});
+			//other DetailSection
+			$("#editOtherDetails").click(function(event){
+				if ($("#otherDetailsEditSection").css("display")=="none") {
+					$("#otherDetailsEditSection").css("display","block");
+					$("#openOrDls").css("display", "none");
+					$("#closeOrDls").css("display", "block");
+				}else if($("#otherDetailsEditSection").css("display")=="block"){
+					$("#otherDetailsEditSection").css("display","none");
+					$("#openOrDls").css("display", "block");
+					$("#closeOrDls").css("display", "none");
+				}
+			});
+		});
+
+		//UPLOAD PICS
+		$(function(){
+			//cover pics
+			$("#cover-upload").change(function(e){
+				readURL(this);
+				var imageName = e.target.files[0].name;
+				var isGood = (/\.(?=gif|jpg|png|jpeg)/gi).test(imageName);
+			    if (isGood) {
+			      /*$("#start").css("display", "none");
+			      $("#response").css("display", "block");
+			      $("#notimage").css("display", "none");
+			      $("#file-image").css("display", "block");
+			      $("#messages").append( "<p>"+imageName+ "</p>");
+			      $("#file-progress").val("50");*/
+			    } else {
+			     /* $("#file-image").css("display", "none");
+			      $("#notimage").css("display", "block");
+			      $("#start").css("display", "block");
+			      $("#response").css("display", "none");*/
+			    }	
+			});
+			//profile pic
+			$("#profile-upload").change(function(e){
+				profileURL(this);
+				var imageName = e.target.files[0].name;
+				var isGood = (/\.(?=gif|jpg|png|jpeg)/gi).test(imageName);
+			    if (isGood) {
+			      /*$("#start").css("display", "none");
+			      $("#response").css("display", "block");
+			      $("#notimage").css("display", "none");
+			      $("#file-image").css("display", "block");
+			      $("#messages").append( "<p>"+imageName+ "</p>");
+			      $("#file-progress").val("50");*/
+			    } else {
+			     /* $("#file-image").css("display", "none");
+			      $("#notimage").css("display", "block");
+			      $("#start").css("display", "block");
+			      $("#response").css("display", "none");*/
+			    }	
+			});
+
+
+			function readURL(input){
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function(e){
+						//$("#file-image").attr('src', e.target.result);
+						var	url = "url('"+e.target.result+"')";
+						$("#image-file").css("background-image", ""+url);
+					};
+					reader.readAsDataURL(input.files[0]);
+				}
+			}
+			function profileURL(input){
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function(e){
+						$("#profile-file").attr('src', e.target.result);
+					};
+					reader.readAsDataURL(input.files[0]);
+				}
+			}
+		});
+
+	</script>
+	<script src="/e-cafe/assets/arcgis_js_api/library/4.10/init.js"></script>
+    <script src="/e-cafe/assets/arcgis_js_api/library/4.10/dojo/dojo.js"></script>
+    <script type="text/javascript">
+		var options = {
+			enableHighAccuracy: true,
+			maximumAge: 1000,
+			timeout: 45000
+		};
+		if (window.navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(successCallback,
+			errorCallback, options);
+		} else {
+			alert('Your browser does not natively support geolocation.');
+		}
+		function successCallback(position) {
+			var lati = position.coords.latitude;
+			var long = position.coords.longitude;
+			var accuracy = position.coords.accuracy;
+			var	alti = null;
+			var alti_accy = null;
+			if (position.coords.altitude) {
+				alti = position.coords.altitude;
+			}
+			if (position.coords.altitudeAccuracy) {
+				alti_accy = position.coords.altitudeAccuracy ;
+			}
+
+			require([
+				"esri/tasks/Locator",
+			  	"esri/Map",
+			  	"esri/views/MapView",
+			  	"esri/geometry/Point",
+			  	"esri/layers/TileLayer",
+			  	"esri/symbols/SimpleMarkerSymbol",
+			  	"esri/Graphic"
+			], 
+			function(Locator, Map, MapView, Point, TileLayer, SimpleMarkerSymbol, Graphic) {
+				var point = {
+				  type: "point",  // autocasts as new Point()
+				  longitude: long,
+				  latitude: lati
+				};
+				var point1 = new Point(long, lati);
+
+				var locatorTask = new Locator({
+			       url: "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer"
+			    });
+				
+				var transportationLayer = new TileLayer({
+			    	url: "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer",
+			    	id: "streets",
+	  				opacity: 0.7
+			    });
+
+				var map = new Map({
+					basemap: "streets",
+					layers: [transportationLayer]  // layers can be added as an array to the map's constructor
+				});
+
+				var view = new MapView({
+					container: "map",  // Reference to the DOM node that will contain the view
+					map: map,               // References the map object created in step 3
+					zoom: 15,  // Sets zoom level based on level of detail (LOD)
+					center: [long, lati]  // Sets center point of view using longitude,latitude
+				});	
+				
+				var graphic1 = new Graphic({
+					    geometry: point,
+					    symbol: {
+					    type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+					    color: "blue",
+					    size: 8,
+					    outline: { // autocasts as new SimpleLineSymbol()
+					    width: 0.5,
+				        color: "darkblue"
+				      }
+				    }
+				});
+				view.graphics.add(graphic1);
+				view.popup.autoOpenEnabled = false;
+				view.popup.open({
+				 	title: "Reverse geocode: [" + long + ", " + lati + "]",
+				   location: point // Set the location of the popup to the clicked location
+				});
+				locatorTask.locationToAddress(point1).then(function(response) {
+				  // If an address is successfully found, show it in the popup's content
+				  view.popup.content = response.address;
+				  $("#PositionName").val(response.address);
+				  $("#latitude_cood").val(lati);
+				  $("#longitude_cood").val(long);
+				  $("#accuracy").val(accuracy);
+				  $("#altitude").val(alti);
+				  $("#altitude_accuracy").val(alti_accy);
+				}).catch(function(error) {
+				  // If the promise fails and no result is found, show a generic message
+				  view.popup.content = "No address was found for this location";
+				});
+
+				view.popup.autoOpenEnabled = false;
+				view.on("click", function(event) {
+					// Get the coordinates of the click on the view
+					// around the decimals to 3 decimals
+					var lat = Math.round(event.mapPoint.latitude * 1000) / 1000;
+					var lon = Math.round(event.mapPoint.longitude * 1000) / 1000;
+					view.popup.open({
+					    // Set the popup's title to the coordinates of the clicked location
+					    title: "Reverse geocode: [" + lon + ", " + lat + "]",
+					    location: event.mapPoint // Set the location of the popup to the clicked location
+					});
+					// Execute a reverse geocode using the clicked location
+					locatorTask.locationToAddress(event.mapPoint).then(function(response) {
+						// If an address is successfully found, show it in the popup's content
+						view.popup.content = response.address;
+						$("#PositionName").val(response.address);
+						$("#latitude_cood").val(event.mapPoint.latitude);
+						$("#longitude_cood").val(event.mapPoint.longitude);
+					}).catch(function(error) {
+						// If the promise fails and no result is found, show a generic message
+						view.popup.content = "No address was found for this location";
+					});
+				});
+			
+			});
+		}
+		function errorCallback(error) {
+			alert("There was a problem getting the location");
+		}
+	</script>
+
+</body>
+</html>

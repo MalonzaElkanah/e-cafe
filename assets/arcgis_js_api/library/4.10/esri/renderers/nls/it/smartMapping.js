@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({other:"Altro",sumOfCategories:"Somma di categorie",predominantCategory:"Categoria predominante",strengthOfPredominance:"Intensit\u00e0 di predominanza",ageInfo_years:"Et\u00e0 in anni, da {startTime} a {endTime}",ageInfo_months:"Et\u00e0 in mesi, da {startTime} a {endTime}",ageInfo_days:"Et\u00e0, in giorni, da {startTime} a {endTime}",ageInfo_hours:"Et\u00e0, in ore, da {startTime} a {endTime}",ageInfo_minutes:"Et\u00e0, in minuti, da {startTime} a {endTime}",ageInfo_seconds:"Et\u00e0, in secondi, da {startTime} a {endTime}",
+relationship:{legendTitle:"Relazione",HL:"Alto - Basso",HH:"Alto - Alto",LL:"Basso - Basso",LH:"Basso - Alto",HM:"Alto - Medio",ML:"Medio - Basso",MM:"Medio - Medio",MH:"Medio - Alto",LM:"Basso - Medio",HM1:"High - Mild",HM2:"High - Medium",M2L:"Medium - Low",M2M1:"Medio - Leggero",M2M2:"Medio - Medio",M2H:"Medium - High",M1L:"Mild - Low",M1M1:"Leggero - Leggero",M1M2:"Leggero - Medio",M1H:"Mild - High",LM1:"Low - Mild",LM2:"Low - Medium"}});

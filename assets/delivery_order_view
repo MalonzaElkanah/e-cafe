@@ -1,0 +1,344 @@
+CREATE VIEW delivery_order_view AS
+SELECT order_id, food_id, food_name, food_price, food_quantity, picture_id, order_time, order_date, STATUS, delivery_date, deliver_time, delivery_order.delivery_price, delivery_order.delivery_distance, delivery_order.price_per_km, delivery_status,
+customer.customer_id, customer.first_name AS customer_first_name, customer.second_name AS customer_second_name, customer.id_number, customer.email AS customer_email, customer.phone_number AS customer_phone_number, customer.profile_picture AS customer_profile_picture, customer.cover_photo AS customer_cover_photo,
+restaurants.restaurant_id, restaurants.restaurant_name, restaurants.restaurant_category, restaurants.restaurant_description, restaurants.restaurant_email AS restaurant_restaurant_email, restaurants.restaurant_phone_number, restaurants.profile_picture AS restaurant_profile_picture, restaurants.cover_photo AS restaurant_cover_photo,
+delivery_people.delivery_person_id, delivery_people.first_name AS delivery_person_first_name, delivery_people.second_name AS delivery_person_second_name, delivery_people.e_mail AS delivery_person_email, delivery_people.phone_number AS delivery_person_phone_number, delivery_people.delivery_means, delivery_people.profile_picture AS delivery_person_profile_picture, delivery_people.cover_photo AS delivery_person_cover_photo,
+customer_geolocation.pos_id AS c_pos_id, customer_geolocation.pos_name AS c_pos_name, customer_geolocation.latitude_cood AS c_latitude_cood, customer_geolocation.longitude_cood AS c_longitude_cood, customer_geolocation.accuracy AS c_accuracy, customer_geolocation.Date AS c_pos_date, customer_geolocation.Time AS c_pos_time, customer_geolocation.description AS c_pos_description,
+restaurant_geolocation.pos_id AS r_pos_id, restaurant_geolocation.pos_name AS r_pos_name, restaurant_geolocation.latitude_cood AS r_latitude_cood, restaurant_geolocation.longitude_cood AS r_longitude_cood, restaurant_geolocation.accuracy AS r_accuracy, restaurant_geolocation.Date AS r_pos_date, restaurant_geolocation.Time AS r_pos_time, restaurant_geolocation.description AS r_pos_description,
+delivery_person_geolocation.pos_id AS d_pos_id, delivery_person_geolocation.pos_name AS d_pos_name, delivery_person_geolocation.latitude_cood AS d_latitude_cood, delivery_person_geolocation.longitude_cood AS d_longitude_cood, delivery_person_geolocation.accuracy AS d_accuracy, delivery_person_geolocation.heading AS d_heading, delivery_person_geolocation.speed AS d_speed
+FROM delivery_order LEFT JOIN customer
+ON delivery_order.customer_id = customer.customer_id
+LEFT JOIN restaurants
+ON delivery_order.restaurant_id = restaurants.restaurant_id
+LEFT JOIN delivery_people
+ON delivery_order.delivery_person_id = delivery_people.delivery_person_id
+LEFT JOIN customer_geolocation
+ON delivery_order.customer_pos_id = customer_geolocation.pos_id
+LEFT JOIN restaurant_geolocation
+ON restaurants.restaurant_id = restaurant_geolocation.restaurant_id
+LEFT JOIN delivery_person_geolocation
+ON delivery_people.delivery_person_id = delivery_person_geolocation.delivery_person_id;
+
+
+MariaDB [e_cafe]> DESCRIBE delivery_order_view;
++---------------------------------+----------------+------+-----+---------+-------+
+| Field                           | Type           | Null | Key | Default | Extra |
++---------------------------------+----------------+------+-----+---------+-------+
+| order_id                        | int(11)        | NO   |     | 0       |       |
+| food_id                         | int(11)        | NO   |     | NULL    |       |
+| food_name                       | varchar(100)   | NO   |     | NULL    |       |
+| food_price                      | float          | NO   |     | NULL    |       |
+| food_quantity                   | float          | NO   |     | NULL    |       |
+| picture_id                      | varchar(500)   | YES  |     | NULL    |       |
+| order_time                      | time           | YES  |     | NULL    |       |
+| order_date                      | date           | YES  |     | NULL    |       |
+| STATUS                          | varchar(50)    | NO   |     | NULL    |       |
+| delivery_date                   | date           | YES  |     | NULL    |       |
+| deliver_time                    | time           | YES  |     | NULL    |       |
+| delivery_price                  | float          | YES  |     | NULL    |       |
+| delivery_distance               | float          | YES  |     | NULL    |       |
+| price_per_km                    | float          | YES  |     | NULL    |       |
+| delivery_status                 | varchar(50)    | YES  |     | NULL    |       |
+| customer_id                     | int(11)        | YES  |     | 0       |       |
+| customer_first_name             | varchar(50)    | YES  |     | NULL    |       |
+| customer_second_name            | varchar(50)    | YES  |     | NULL    |       |
+| id_number                       | varchar(60)    | YES  |     | NULL    |       |
+| customer_email                  | varchar(100)   | YES  |     | NULL    |       |
+| customer_phone_number           | double         | YES  |     | NULL    |       |
+| customer_profile_picture        | varchar(100)   | YES  |     | NULL    |       |
+| customer_cover_photo            | varchar(100)   | YES  |     | NULL    |       |
+| restaurant_id                   | int(11)        | YES  |     | 0       |       |
+| restaurant_name                 | varchar(100)   | YES  |     | NULL    |       |
+| restaurant_category             | varchar(100)   | YES  |     | NULL    |       |
+| restaurant_description          | varchar(500)   | YES  |     | NULL    |       |
+| restaurant_restaurant_email     | varchar(100)   | YES  |     | NULL    |       |
+| restaurant_phone_number         | double         | YES  |     | NULL    |       |
+| restaurant_profile_picture      | varchar(100)   | YES  |     | NULL    |       |
+| restaurant_cover_photo          | varchar(100)   | YES  |     | NULL    |       |
+| delivery_person_id              | int(11)        | YES  |     | 0       |       |
+| delivery_person_first_name      | varchar(100)   | YES  |     | NULL    |       |
+| delivery_person_second_name     | varchar(100)   | YES  |     | NULL    |       |
+| delivery_person_email           | varchar(100)   | YES  |     | NULL    |       |
+| delivery_person_phone_number    | double         | YES  |     | NULL    |       |
+| delivery_means                  | varchar(100)   | YES  |     | NULL    |       |
+| delivery_person_profile_picture | varchar(100)   | YES  |     | NULL    |       |
+| delivery_person_cover_photo     | varchar(100)   | YES  |     | NULL    |       |
+| c_pos_id                        | int(11)        | YES  |     | 0       |       |
+| c_pos_name                      | varchar(100)   | YES  |     | NULL    |       |
+| c_latitude_cood                 | decimal(28,25) | YES  |     | NULL    |       |
+| c_longitude_cood                | decimal(28,25) | YES  |     | NULL    |       |
+| c_accuracy                      | decimal(20,10) | YES  |     | NULL    |       |
+| c_pos_date                      | date           | YES  |     | NULL    |       |
+| c_pos_time                      | time           | YES  |     | NULL    |       |
+| c_pos_description               | varchar(500)   | YES  |     | NULL    |       |
+| r_pos_id                        | int(11)        | YES  |     | 0       |       |
+| r_pos_name                      | varchar(100)   | YES  |     | NULL    |       |
+| r_latitude_cood                 | decimal(28,25) | YES  |     | NULL    |       |
+| r_longitude_cood                | decimal(28,25) | YES  |     | NULL    |       |
+| r_accuracy                      | decimal(20,10) | YES  |     | NULL    |       |
+| r_pos_date                      | date           | YES  |     | NULL    |       |
+| r_pos_time                      | time           | YES  |     | NULL    |       |
+| r_pos_description               | varchar(500)   | YES  |     | NULL    |       |
+| d_pos_id                        | int(11)        | YES  |     | 0       |       |
+| d_pos_name                      | varchar(100)   | YES  |     | NULL    |       |
+| d_latitude_cood                 | decimal(28,25) | YES  |     | NULL    |       |
+| d_longitude_cood                | decimal(28,25) | YES  |     | NULL    |       |
+| d_accuracy                      | decimal(20,10) | YES  |     | NULL    |       |
+| d_heading                       | decimal(20,10) | YES  |     | NULL    |       |
+| d_speed                         | decimal(20,10) | YES  |     | NULL    |       |
++---------------------------------+----------------+------+-----+---------+-------+
+62 rows in set (0.11 sec)
+
+MariaDB [e_cafe]>
+
+
+
+CREATE VIEW messages_view AS SELECT messages.*, message_controller.message_index AS sender_index, message_controller.STATUS AS sender_status,
+customer.customer_id, customer.first_name AS c_first_name, customer.second_name AS c_second_name, customer.profile_picture AS c_profile_picture, customer.message_index AS c_message_index, 
+restaurants.restaurant_id, restaurants.profile_picture AS r_profile_picture, restaurants.restaurant_name, restaurants.message_index AS r_message_index, 
+delivery_people.delivery_person_id, delivery_people.first_name AS d_first_name, delivery_people.second_name AS d_second_name, delivery_people.profile_picture AS d_profile_picture, delivery_people.message_index AS d_message_index
+FROM messages LEFT JOIN message_controller
+ON messages.message_from = message_controller.message_index
+LEFT JOIN customer
+ON customer.message_index = messages.message_from OR customer.message_index = messages.message_to
+LEFT JOIN restaurants
+ON restaurants.message_index = messages.message_from OR restaurants.message_index = messages.message_to
+LEFT JOIN delivery_people
+ON delivery_people.message_index = messages.message_from OR delivery_people.message_index = messages.message_to;
+
+
+MariaDB [e_cafe]> describe messages_view;
++--------------------+---------------+------+-----+---------------------+-------+
+| Field              | Type          | Null | Key | Default             | Extra |
++--------------------+---------------+------+-----+---------------------+-------+
+| message_id         | int(11)       | NO   |     | 0                   |       |
+| message_from       | int(11)       | NO   |     | NULL                |       |
+| message_to         | int(11)       | NO   |     | NULL                |       |
+| message            | varchar(1000) | NO   |     | NULL                |       |
+| timestamp          | timestamp     | NO   |     | 0000-00-00 00:00:00 |       |
+| time               | time          | YES  |     | NULL                |       |
+| date               | date          | YES  |     | NULL                |       |
+| STATUS             | varchar(50)   | YES  |     | NULL                |       |
+| sender_index       | int(11)       | YES  |     | 0                   |       |
+| sender_status      | varchar(50)   | YES  |     | NULL                |       |
+| customer_id        | int(11)       | YES  |     | 0                   |       |
+| c_first_name       | varchar(50)   | YES  |     | NULL                |       |
+| c_second_name      | varchar(50)   | YES  |     | NULL                |       |
+| c_profile_picture  | varchar(100)  | YES  |     | NULL                |       |
+| c_message_index    | int(11)       | YES  |     | NULL                |       |
+| restaurant_id      | int(11)       | YES  |     | 0                   |       |
+| r_profile_picture  | varchar(100)  | YES  |     | NULL                |       |
+| restaurant_name    | varchar(100)  | YES  |     | NULL                |       |
+| r_message_index    | int(11)       | YES  |     | NULL                |       |
+| delivery_person_id | int(11)       | YES  |     | 0                   |       |
+| d_first_name       | varchar(100)  | YES  |     | NULL                |       |
+| d_second_name      | varchar(100)  | YES  |     | NULL                |       |
+| d_profile_picture  | varchar(100)  | YES  |     | NULL                |       |
+| d_message_index    | int(11)       | YES  |     | NULL                |       |
++--------------------+---------------+------+-----+---------------------+-------+
+24 rows in set (0.11 sec)
+
+
+ 
+MariaDB [e_cafe]> CREATE VIEW all_messages_view AS SELECT messages_view.*, message_controller.message_index as reciever_index, message_controller.STATUS AS reciever_status 
+FROM messages_view LEFT JOIN message_controller 
+ON messages_view.message_to = message_controller.message_index; 
+
+
+MariaDB [e_cafe]> DESCRIBE all_messages_view;
++--------------------+---------------+------+-----+---------------------+-------+
+| Field              | Type          | Null | Key | Default             | Extra |
++--------------------+---------------+------+-----+---------------------+-------+
+| message_id         | int(11)       | NO   |     | 0                   |       |
+| message_from       | int(11)       | NO   |     | NULL                |       |
+| message_to         | int(11)       | NO   |     | NULL                |       |
+| message            | varchar(1000) | NO   |     | NULL                |       |
+| timestamp          | timestamp     | NO   |     | 0000-00-00 00:00:00 |       |
+| time               | time          | YES  |     | NULL                |       |
+| date               | date          | YES  |     | NULL                |       |
+| STATUS             | varchar(50)   | YES  |     | NULL                |       |
+| sender_index       | int(11)       | YES  |     | 0                   |       |
+| sender_status      | varchar(50)   | YES  |     | NULL                |       |
+| customer_id        | int(11)       | YES  |     | 0                   |       |
+| c_first_name       | varchar(50)   | YES  |     | NULL                |       |
+| c_second_name      | varchar(50)   | YES  |     | NULL                |       |
+| c_profile_picture  | varchar(100)  | YES  |     | NULL                |       |
+| c_message_index    | int(11)       | YES  |     | NULL                |       |
+| restaurant_id      | int(11)       | YES  |     | 0                   |       |
+| r_profile_picture  | varchar(100)  | YES  |     | NULL                |       |
+| restaurant_name    | varchar(100)  | YES  |     | NULL                |       |
+| r_message_index    | int(11)       | YES  |     | NULL                |       |
+| delivery_person_id | int(11)       | YES  |     | 0                   |       |
+| d_first_name       | varchar(100)  | YES  |     | NULL                |       |
+| d_second_name      | varchar(100)  | YES  |     | NULL                |       |
+| d_profile_picture  | varchar(100)  | YES  |     | NULL                |       |
+| d_message_index    | int(11)       | YES  |     | NULL                |       |
+| reciever_index     | int(11)       | YES  |     | 0                   |       |
+| reciever_status    | varchar(50)   | YES  |     | NULL                |       |
++--------------------+---------------+------+-----+---------------------+-------+
+26 rows in set (0.05 sec)
+
+
+
+    public function loadPreOrders(){
+    
+        $this->view->preOrder_data = $this->model->selectPreOrders($_SESSION["customerid"]);
+        $num = 0;
+        $pos_arr = [];
+        $delivery_arr = [];
+        foreach ($this->view->preOrder_data as $initData) {
+            $pos_arr[$num] = $initData['customer_pos_id'];
+            $delivery_arr[$num] = $initData['delivery_person_id'];
+            
+            $num++;
+        }
+        $remember;
+        $remember1;
+        for ($j=0; $j <$num; $j++) { 
+            for ($i=0; $i < $num; $i++) { 
+                $k=$i+1;
+                if ($k!=$num) {
+                    $remember1 = $pos_arr[$i];
+                    if ($remember1>$pos_arr[$k]) {
+                        $remember = $pos_arr[$k];
+                        $pos_arr[$k] = $remember1; 
+                        $pos_arr[$i] = $remember;
+                    }
+                }
+                if ($k!=$num) {
+                    $remember1 = $delivery_arr[$i];
+                    if ($remember1>$delivery_arr[$k]) {
+                        $remember = $delivery_arr[$k];
+                        $delivery_arr[$k] = $remember1; 
+                        $delivery_arr[$i] = $remember;
+                    }
+                }
+            }
+        }
+        for ($i=0; $i <$num; $i++) { 
+
+            if ($i==0) {
+                $remember = $pos_arr[$i];
+                $remember = $pos_arr[$i];
+                $loc_data = 'loc_data_'.$i;
+                $this->view->$loc_data = $this->model->selectLocationData($remember);
+            }else{
+                $l = 1;
+                $k = $i - $l;
+                $remember = $pos_arr[$k];
+                if ($remember==$pos_arr[$i]) {
+                    $remember = $pos_arr[$i];   
+                }else{
+                    $remember = $pos_arr[$i];
+                    $loc_data = 'loc_data_'.$i;
+                    $this->view->$loc_data = $this->model->selectLocationData($remember);
+                }
+            }
+            if ($i==0) {
+                $del_data = 'delivery_data_'.$i;
+                $remember = $delivery_arr[$i];
+                $this->view->$del_data = $this->model->selectDeliveryData($remember);
+            }else{
+                $l = 1;
+                $k = $i - $l;
+                $remember = $pos_arr[$k];
+                if ($remember==$delivery_arr[$i]) {
+                    $remember = $delivery_arr[$i];  
+                }else{
+                    $del_data = 'delivery_data_'.$i;
+                    $remember = $delivery_arr[$i];
+                    $this->view->$del_data = $this->model->selectDeliveryData($remember);
+                }
+            }
+        }
+    
+        $this->view->init = $num;
+        //echo $num;
+        $this->view->innerRenderView('customer/deliverySummary');
+    }
+
+    //view
+    <?php if(isset($this->init)): ?>
+
+                        <?php 
+                        $ijk = 0;
+                        for ($i=0; $i < $this->init; $i++):
+                        ?>  
+
+                            <?php 
+                            $del_data = 'delivery_data_'.$ijk;
+                            if(isset($this->$del_data)): 
+                            ?>  
+
+                                <?php 
+                                $i = 0; 
+                                foreach($this->$del_data as $delivery_data): 
+                                $i++;
+                                ?>
+
+                                    <div class="row" style="border:1px solid #d4d4d4; min-height: 120px; background-color: #e7e7e7;">
+                                        <div class="three columns" style=" min-height: 100px; ">
+                                            <div class="three columns pic_div" style="width: 110px; height: 110px; ">
+                                                <img class="pic_tag" src="/e-cafe/assets/<?= $delivery_data['profile_picture']?>">
+                                            </div>  
+                                        </div>
+                                        <div class="nine columns" style="border: 0px solid black; min-height: 90px; text-align: left; padding-top: 20px; ">
+                                            <div class="six columns">
+                                                <LABEL>
+                                                    <span class="id_tags">
+                                                        NAME:
+                                                    </span> 
+                                                    <?= $delivery_data['first_name']?> <?= $delivery_data['second_name']?>
+                                                </LABEL>
+                                                <LABEL>
+                                                    <span class="id_tags">TO:</span> 
+                                                    <span id="custLocName"> </span> 
+                                                </LABEL>
+                                                <LABEL>
+                                                    <span class="id_tags">FROM:</span> 
+                                                    <span id="restLocName"> </span>
+                                                </LABEL>
+                                            </div>
+                                            <div class="six columns">
+                                                <LABEL>
+                                                    <span class="id_tags">TOTAL DISTANCE:</span> 
+                                                    <span id="delDistance"></span>
+                                                </LABEL>
+                                                <LABEL>
+                                                    <span class="id_tags">PRICE PER KM:</span> 
+                                                    <span id="priceKM"> </span>
+                                                </LABEL>
+                                                <LABEL>
+                                                    <span class="id_tags">TOTAL PRICE:</span> 
+                                                    <span id="delPrice"> </span> 
+                                                </LABEL>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?> 
+                        <?php $ijk++; endfor; ?>
+                    <?php else: ?>
+                        <h1>INIT NOT SET</h1><p><? echo $this->init; ?></p>
+                    <?php endif; ?> 
+
+
+
+                    <?php if(isset($this->init)): ?>
+
+                        <?php 
+                        $ijk = 0;
+                        for ($i=0; $i < $this->init; $i++):
+                        ?>  
+
+                            <?php 
+                            $del_data = 'delivery_data_'.$ijk;
+                            if(isset($this->$del_data)): 
+                            ?>
+
+
+                            <?php endif; ?> 
+                        <?php $ijk++; endfor; ?>
+                    <?php else: ?>
+                        <h1>INIT NOT SET</h1><p><? echo $this->init; ?></p>
+                    <?php endif; ?> 

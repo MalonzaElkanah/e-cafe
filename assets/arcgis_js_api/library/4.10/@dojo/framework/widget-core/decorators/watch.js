@@ -1,0 +1,2 @@
+//>>built
+(function(a){"object"===typeof module&&"object"===typeof module.exports?(a=a(require,exports),void 0!==a&&(module.exports=a)):"function"===typeof define&&define.amd&&define(["require","exports","./handleDecorator"],a)})(function(a,c){Object.defineProperty(c,"__esModule",{value:!0});var d=a("./handleDecorator");c.watch=function(){return d.default(function(a,b){a.addDecorator("afterConstructor",function(){if(b){var a=this[b];Object.defineProperty(this,b,{set:function(b){a=b;this.invalidate()},get:function(){return a}})}})})}});

@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({itemType:"\u9879\u76ee\u7c7b\u578b",filters:{maps:"\u5730\u56fe",webMaps:"Web \u5730\u56fe",mapFiles:"\u5730\u56fe\u6587\u4ef6",layers:"\u56fe\u5c42",featureLayers:"\u8981\u7d20\u56fe\u5c42",tileLayers:"\u5207\u7247\u56fe\u5c42",mapImageLayers:"\u5730\u56fe\u56fe\u50cf\u56fe\u5c42",imageryLayers:"\u5f71\u50cf\u56fe\u5c42",sceneLayers:"\u573a\u666f\u56fe\u5c42",tables:"\u8868",layerFiles:"\u56fe\u5c42\u6587\u4ef6",scenes:"\u573a\u666f",apps:"\u5e94\u7528\u7a0b\u5e8f",webApps:"Web \u5e94\u7528\u7a0b\u5e8f",
+mobileApps:"\u79fb\u52a8\u5e94\u7528\u7a0b\u5e8f",desktopApps:"\u684c\u9762\u5e94\u7528\u7a0b\u5e8f",tools:"\u5de5\u5177",locators:"\u5b9a\u4f4d\u5668",geodatabaseAccess:"\u5730\u7406\u6570\u636e\u5e93\u8bbf\u95ee",geometricOperations:"\u51e0\u4f55\u8fd0\u7b97",geoprocessingTasks:"\u5730\u7406\u5904\u7406\u4efb\u52a1",networkAnalysis:"\u7f51\u7edc\u5206\u6790",files:"\u6587\u4ef6",documents:"\u6587\u6863",images:"\u56fe\u50cf",pdfs:"PDF",webTools:"Web \u5de5\u5177",notebooks:"Notebook"}});

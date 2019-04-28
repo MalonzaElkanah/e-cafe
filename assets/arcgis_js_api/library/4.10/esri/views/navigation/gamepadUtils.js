@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports","../../core/libs/gl-matrix-2/gl-matrix"],function(g,e,f){function b(a){var b=a*a;0>a&&(b*=-1);return b}Object.defineProperty(e,"__esModule",{value:!0});e.quadraticAccentuation=b;e.resetTransformation=function(a){a.translation[0]=0;a.translation[1]=0;a.translation[2]=0;a.heading=0;a.tilt=0;return a};e.extractTransformation=function(a,e,c){var d=a.state;a=a.device;e="forward-down"===e.tiltDirection?1:-1;"standard"===a.deviceType?(c.translation[0]=b(d.axes[0]),c.translation[1]=
+b(d.axes[1]),c.translation[2]=b(d.buttons[7])-b(d.buttons[6]),c.heading=b(d.axes[2]),c.tilt=b(d.axes[3])):"spacemouse"===a.deviceType&&(c.translation[0]=1.2*b(d.axes[0]),c.translation[1]=1.2*b(d.axes[1]),c.translation[2]=2*-b(d.axes[2]),c.heading=1.2*b(d.axes[5]),c.tilt=1.2*b(d.axes[3]));c.tilt*=e;f.vec3.scale(c.translation,c.translation,1);return c};e.isZeroTransformation=function(a){return 0===a.translation[0]&&0===a.translation[1]&&0===a.translation[2]&&0===a.heading&&0===a.tilt}});

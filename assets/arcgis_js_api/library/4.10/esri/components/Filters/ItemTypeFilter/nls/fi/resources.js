@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({itemType:"Kohteen tyyppi",filters:{maps:"Kartat",webMaps:"Web-kartat",mapFiles:"Karttatiedostot",layers:"Karttatasot",featureLayers:"Kohdekarttatasot",tileLayers:"Tiilitasot",mapImageLayers:"Karttakuvatasot",imageryLayers:"Kuva-aineistotasot",sceneLayers:"Maiseman karttatasot",tables:"Taulut",layerFiles:"Karttatasotiedostot",scenes:"Maisemat",apps:"Sovellukset",webApps:"Web-sovellukset",mobileApps:"Mobiilisovellukset",desktopApps:"Ty\u00f6p\u00f6yt\u00e4sovellukset",tools:"Ty\u00f6kalut",
+locators:"Paikantimet",geodatabaseAccess:"Paikkatietokantaan p\u00e4\u00e4sy",geometricOperations:"Geometriset toiminnot",geoprocessingTasks:"Geoprosessointiteht\u00e4v\u00e4t",networkAnalysis:"Verkkoanalyysi",files:"Tiedostot",documents:"Dokumentit",images:"Kuva-aineistot",pdfs:"PDF-tiedostot",webTools:"Verkkoty\u00f6kalut",notebooks:"Muistikirjat"}});

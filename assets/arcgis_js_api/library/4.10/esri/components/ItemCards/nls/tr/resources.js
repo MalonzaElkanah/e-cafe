@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({remove:"Kald\u0131r",add:"Ekle",by:"kaynak",actions:"\u0130\u015flemler",viewOrg:"Kurulu\u015fu ziyaret et",viewProfile:"Kullan\u0131c\u0131 profilini g\u00f6r\u00fcnt\u00fcle",viewItem:"\u00d6\u011fe ayr\u0131nt\u0131lar\u0131n\u0131 g\u00f6r\u00fcnt\u00fcle",hideItem:"\u00d6\u011fe ayr\u0131nt\u0131lar\u0131n\u0131 gizle",created:"Olu\u015fturuldu",updated:"G\u00fcncellendi",viewCount:"Say\u0131mlar\u0131 G\u00f6r\u00fcnt\u00fcle",rating:"Derecelendirme"});

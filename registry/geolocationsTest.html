@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>Test Map</title>
+    <link rel="stylesheet" href="/e-cafe/assets/arcgis_js_api/library/4.10/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" href="/e-cafe/assets/arcgis_js_api/library/4.10/esri/css/main.css" />
+    <style>
+      html,
+      body,
+      #viewDiv {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <script src="/e-cafe/assets/arcgis_js_api/library/4.10/init.js"></script>
+    <script src="/e-cafe/assets/arcgis_js_api/library/4.10/dojo/dojo.js"></script>
+    <script type="text/javascript">
+	var options = {
+		enableHighAccuracy: true,
+		maximumAge: 1000,
+		timeout: 45000
+	};
+	if (window.navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(successCallback,
+		errorCallback, options);
+	} else {
+		alert('Your browser does not natively support geolocation.');
+	}
+	function successCallback(position) {
+		var lati = position.coords.latitude;
+		var long = position.coords.longitude;
+		require([
+			"esri/tasks/Locator",
+		  	"esri/Map",
+		  	"esri/views/MapView",
+		  	"esri/widgets/Locate",
+        	"esri/widgets/Track",
+        	"esri/widgets/Compass",
+		  	"esri/layers/TileLayer",
+		  	"esri/symbols/SimpleMarkerSymbol",
+		  	"esri/Graphic",
+		  	"dojo/domReady!"
+		], 
+		function(Locator, Map, MapView, Locate, Track, Compass, TileLayer, SimpleMarkerSymbol, Graphic) {
+			var point = {
+			  type: "point",  // autocasts as new Point()
+			  longitude: long,
+			  latitude: lati
+			};
+
+			var locatorTask = new Locator({
+		       url: "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer"
+		    });
+			
+			var transportationLayer = new TileLayer({
+		    	url: "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer",
+		    	id: "streets",
+  				opacity: 0.7
+		    });
+
+			var map = new Map({
+				basemap: "streets",
+				layers: [transportationLayer]  // layers can be added as an array to the map's constructor
+			});
+
+			var view = new MapView({
+				container: "viewDiv",  // Reference to the DOM node that will contain the view
+				map: map,               // References the map object created in step 3
+				zoom: 15,  // Sets zoom level based on level of detail (LOD)
+				center: [long, lati]  // Sets center point of view using longitude,latitude
+			});	
+
+			/** ADDED ON MARCH 15**/
+			var locate = new Locate({
+                view: view,
+                useHeadingEnabled: false,
+                goToOverride: function(view, options) {
+                    options.target.scale = 1500;
+                    return view.goTo(options.target);
+                }
+            });
+            view.ui.add(locate, "top-left");
+            
+            var track = new Track({
+                view: view,
+                graphic: new Graphic({
+                symbol: {
+                    type: "simple-marker",
+                    size: "9px",
+                    color: "green",
+                    outline: {
+                        color: "#efefef",
+                        width: "1.2px"
+                    }
+                }
+                }),
+                useHeadingEnabled: false,
+                goToLocationEnabed: false,
+                goToOverride: function(view, options) {
+                    options.target.scale = null;
+                    return view.goTo(options);
+                }
+            });
+            view.ui.add(track, "top-left");
+
+            var compass = new Compass({
+                view: view
+            });
+
+            // adds the compass to the top left corner of the MapView
+            view.ui.add(compass, "top-left");
+
+            view.when(function() {
+              // track.start();
+              // view.zoom = 12;
+            });
+            /** ADDEED END**/
+
+			
+			var graphic1 = new Graphic({
+				    geometry: point,
+				    symbol: {
+				    type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+				    color: "blue",
+				    size: 8,
+				    outline: { // autocasts as new SimpleLineSymbol()
+				    width: 0.5,
+			        color: "darkblue"
+			      }
+			    }
+			});
+			view.graphics.add(graphic1);
+			view.popup.autoOpenEnabled = false;
+			view.popup.open({
+			 	title: "Reverse geocode: [" + long + ", " + lati + "]",
+			   location: point // Set the location of the popup to the clicked location
+			});
+			view.popup.autoOpenEnabled = false;
+			view.on("click", function(event) {
+				  // Get the coordinates of the click on the view
+				  // around the decimals to 3 decimals
+				  var lat = Math.round(event.mapPoint.latitude * 1000) / 1000;
+				  var lon = Math.round(event.mapPoint.longitude * 1000) / 1000;
+
+				  view.popup.open({
+				    // Set the popup's title to the coordinates of the clicked location
+				    title: "Reverse geocode: [" + lon + ", " + lat + "]",
+				    location: event.mapPoint // Set the location of the popup to the clicked location
+				  });
+				  // Execute a reverse geocode using the clicked location
+					locatorTask.locationToAddress(event.mapPoint).then(function(response) {
+					  // If an address is successfully found, show it in the popup's content
+					  view.popup.content = response.address;
+					}).catch(function(error) {
+					  // If the promise fails and no result is found, show a generic message
+					  view.popup.content = "No address was found for this location";
+					});
+			});
+			
+
+		});
+
+	}
+
+
+
+	function errorCallback(error) {
+		alert("There was a problem getting the location");
+	}
+</script>
+  </head>
+  <body class="claro">
+    <div id="viewDiv"></div>
+  </body>
+</html>

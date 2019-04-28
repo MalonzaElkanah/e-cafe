@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({itemType:"Objekttyp",filters:{maps:"Kartor",webMaps:"Webbkartor",mapFiles:"Kartfiler",layers:"Lager",featureLayers:"geoobjektlager",tileLayers:"Tilelager",mapImageLayers:"Kartbildlager",imageryLayers:"Bildlager",sceneLayers:"Scenlager",tables:"Tabeller",layerFiles:"Lagerfiler",scenes:"Scener",apps:"Appar",webApps:"Webbappar",mobileApps:"Mobila appar",desktopApps:"Desktop-appar",tools:"Verktyg",locators:"Lokaliseringsfiler",geodatabaseAccess:"\u00c5tkomst till geodatabas",geometricOperations:"Geometriska funktioner",
+geoprocessingTasks:"Geobearbetningsuppgifter",networkAnalysis:"N\u00e4tverksanalys",files:"Filer",documents:"Dokument",images:"Bilder",pdfs:"PDF:er",webTools:"Webbverktyg",notebooks:"Anteckningsb\u00f6cker"}});

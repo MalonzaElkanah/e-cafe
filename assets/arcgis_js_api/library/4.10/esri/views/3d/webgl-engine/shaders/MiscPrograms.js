@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports","../lib/DefaultVertexAttributeLocations","./sources/resolver"],function(d,b,c,a){Object.defineProperty(b,"__esModule",{value:!0});b.blendLayers={name:"blend-layers",shaders:{vertexShader:a.resolveIncludes("misc/blendLayers.vert"),fragmentShader:a.resolveIncludes("misc/blendLayers.frag")},attributes:c.Default3D};b.simple={name:"simple",shaders:{vertexShader:a.resolveIncludes("misc/simple.vert"),fragmentShader:a.resolveIncludes("misc/simple.frag")},attributes:c.Default3D};
+b.texOnly={name:"tex-only",shaders:{vertexShader:a.resolveIncludes("misc/texOnly.vert"),fragmentShader:a.resolveIncludes("misc/texOnly.frag")},attributes:c.Default3D};b.showDepth={name:"show-depth",shaders:{vertexShader:a.resolveIncludes("misc/showDepth.vert"),fragmentShader:a.resolveIncludes("misc/showDepth.frag")},attributes:c.Default3D}});

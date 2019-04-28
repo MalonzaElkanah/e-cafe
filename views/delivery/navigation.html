@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"/>
+	<script src= /e-cafe/assets/js/jquery.js ></script>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="/e-cafe/assets/css/normalize.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/skeleton.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/style.css" rel="stylesheet" type="text/css"/>
+	<title>ecafe.com</title>
+  	<link rel="icon" type="image/png" href="/e-cafe/assets/images/favicon.png">
+  	<link rel="stylesheet" href="/e-cafe/assets/arcgis_js_api/library/4.10/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" href="/e-cafe/assets/arcgis_js_api/library/4.10/esri/css/main.css" />
+    <script src="/e-cafe/assets/arcgis_js_api/library/4.10/"></script>
+	
+	<style type="text/css">
+		#navigation{
+			height: 50px;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			border: 1px solid #e7e7e7;
+	    	background-color: #f3f3f3;
+			text-align: center;
+		}
+		#navigation a {
+			text-decoration: none;
+			color: black;
+
+		}
+		#restaurantlogo{
+			font-size: 40px;
+			text-align: center;
+			font-family: forte;
+		    color: maroon;
+		}
+		#restaurantlogo a{
+			font-size: 40px;
+			text-align: center;
+			font-family: forte;
+		    color: maroon;
+		}
+		#sidenav{
+			display: none;
+			border: 1px solid #b7b7b7;
+			color: #6a6c70; 
+			background-color: #2d3035;
+			height: 100%;
+		}
+		#content{
+			background-color: white;
+			border: 0px solid #e7e7e7;
+			height: 100%;
+		}
+		#homecontent{
+			border: 0px solid #e7e7e7;
+			height: 100%;	
+		}
+		#miniprofile{
+			height: 100px;
+			padding-top: 25px;
+			padding-left: 25px;
+
+		}
+		#profilepic{
+
+		    width: 60px;
+	    	height: 60px;
+		    border-radius: 50%;
+		    overflow: hidden;
+		    margin-right: 15px;
+		    background: #6a6c70;
+		    padding: 4px;
+		    border: 3px solid #282b2f;
+		}
+		#profilepic img{
+			/*padding-top: 0px;
+			padding-left: 0px;*/
+
+		}
+		#profilename{
+			padding-top: 10px;
+			border: 0px solid black;
+			height: 60px;
+			text-align: center;
+			color: #6a6c70; 
+		}
+		#maintitle{
+			
+			background-color: #2d3035;
+			height: 30px;
+			
+			font-weight: bold;
+		}
+		#maintitle h6{
+			font-weight: 700;
+		    margin-left: 20px;
+		    color: #494d53;
+		    font-size: 1.2rem;
+		    margin-bottom: 15px
+		}
+		#extrastitle{
+			background-color: #2d3035;
+			height: 30px;
+			
+			font-weight: bold;
+		}
+		#extrastitle h6{
+			font-weight: 700;
+		    margin-left: 20px;
+		    color: #494d53;
+		    font-size: 1.2rem;
+		    margin-bottom: 15px
+		}
+		#homenav{
+			height: 50px;
+		}
+		#sidebaricon{
+			height: 30px;
+			width: 60px;
+			border-right: 1px solid #6a6c70;
+			padding-left: 15px;
+		}
+		#sidenavname{
+			padding-left: 5px;
+			padding-top: 5px;
+		}
+		#extranav{
+			/*border-bottom: 1px solid maroon;
+			border: 1px solid #b7b7b7;*/
+			height: 50px;
+		}
+		#contentNav{
+			height: 40px;
+			border: 1px solid #e7e7e7;
+			background-color: #2d3035;
+			text-align: center;
+		
+		}
+		#contentNav h6{
+			font-weight: bold;
+			color: #f3f3f3;/*#494d53;*/
+			padding-top: 10px;
+		}
+		#contentNav a{
+			text-decoration: none;
+		}
+		.active{
+			background-color: black;
+		}
+		.sectionHead{
+			color: maroon;
+			font-size: 25px;
+			text-align: center;
+		}
+		#map{
+			height: 500px;
+			border-left: 1px solid #e7e7e7; 
+			border-right: 1px solid #e7e7e7; 
+			border-bottom: 1px solid #e7e7e7; 
+		}
+		#divMapMenu{
+			height: 65px;
+		}
+		#mapMenu{
+			list-style-type:none;
+			overflow: hidden;
+   	 		height: 50px;
+    		top: 0px;
+    		text-align: center;
+    		padding: 0px;
+
+    		border: 1px solid #e7e7e7;
+    		background-color: #f3f3f3;
+		}
+
+		#mapMenu li{
+			padding: 5px;
+			float: left;
+			margin-bottom: 10px;
+    		margin-top: 10px;
+	
+		}
+
+		#mapMenu li select{
+			display: block;
+			text-align:center;
+		    margin-top: 1px;
+		    border-radius: 0px;
+		    text-decoration: none;
+
+		    color: #666;
+		}
+		#scheduleTab, #currentTab{
+			border-bottom: 1px solid #e7e7e7;
+			min-height: 200px;
+			display: none;
+		}
+		.radio{
+			color: maroon;
+		}
+		#applyScheduleButton, #applyCurrentButton{ 
+			border-radius: 0px;
+			background-color: maroon;
+			color: white;
+		}
+
+		#cancelScheduleButton, #cancelCurrentButton{ 
+			border-radius: 0px;
+			background-color: #494949;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+
+		<!-- Navigation area  &nbsp; -->
+
+		<div class="row" id="navigation">
+			<div class="three columns" id="restaurantlogo">
+				<div class="one column">
+					<img alt="" src="/e-cafe/assets/images/sidenavicon.png" id="sidenavicon" style="width: 25px; height:25px; padding-left: 5px" >
+				</div>
+				<div class="ten columns">
+					<a href="#" >E-CAFE</a>
+				</div>
+				
+			</div>
+			<div class="four columns"> <p> </p></div>
+			<div class="five columns">
+				<div class="two columns">
+					<img alt="" src="/e-cafe/assets/images/search.png" id="search" style="width: 25px; height:25px; padding-left: px" >
+				</div>
+				<div class="two columns">
+					<a href="notifications.php">
+						<img alt="" src="/e-cafe/assets/images/notificationIcon.png" id="notificationicon" style="width: 25px; height:25px;" >
+					</a>
+				</div>
+				<div class="two columns">
+					<a href="messages.php">
+						<img alt="" src="/e-cafe/assets/images/messageicon.png" id="messageicon" style="width: 25px; height:25px; " >
+					</a>
+				</div>
+				<div class="six columns">
+					<?php if(Session::get("loggedin")): ?>
+						<p class="iblk log">
+							<?php echo ' '.$_SESSION["username"].' | '; ?> 
+							<a href=<?= BASE_URL."login/runLogout"?>>Logout</a>
+						</p>
+					<?php endif;?> 
+					
+				</div>
+				
+			</div>
+				
+		</div>
+
+		<!-- Navigation area ends &nbsp; -->
+
+		<div class="row" id="content">
+
+		<!-- SideBar area Bigins &nbsp; -->	
+
+			<div class="three columns" id="sidenav">
+				<div class="twelve columns" id="miniprofile">
+					<div class="four columns" id="profilepic">
+						<img alt="add food" src="/e-cafe/assets/images/defaultprofilepic.png" title="profile pic" id="proileicon" style="width: 50px; height:50px;">
+					</div>
+					<div class="seven columns" id="profilename">
+						<div class="twelve columns" ><h7 style ="font-weight: bold;">
+							<?php 
+								echo' '.$_SESSION["delivery_person_name"];
+							?>
+							
+						</h7> </div>
+						<div class="twelve columns" ><h7>restaurant category</h7>  </div>
+					</div>
+				</div>	
+				<div class="twelve columns" id="maintitle">
+					<h6>MAIN</h6>
+				</div>
+				<div class="twelve columns" id="homenav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/homeicon.png" title="home" id="homeicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Home</h8></div>
+				</div>
+				<div class="twelve columns" id="homenav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/profileicon.png" title="profile" id="homeicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Profile</h8></div>
+				</div>	
+				<div class="twelve columns" id="homenav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/statsicon.png" title="profile" id="homeicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Statistics</h8></div>
+				</div>
+				<div class="twelve columns" id="homenav"></div>	
+				<div class="twelve columns" id="homenav"></div>
+				<div class="twelve columns" id="extrastitle">
+					<h6>EXTRAS</h6>
+				</div>
+				<div class="twelve columns" id="extranav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/settingsicon.png" title="settings" id="settingsicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Settings</h8></div>
+				</div>
+				<div class="twelve columns" id="extranav"></div>	
+				<div class="twelve columns" id="extranav"></div>
+			</div>
+
+			<!-- Sidebar area ends &nbsp; -->
+
+			<div class="twelve columns" id="homecontent">
+				<!-- Content Navigation area Begins &nbsp; -->	
+					<div class="row" id="contentNav">
+						<div class="three columns" id="menuNav">
+							<a href="index.php"><h6> DELIVERIES </h6></a>
+						</div>
+						<div class="three columns">
+							<a href="navigation.php"><h6>NAVIGATION</h6></a> 
+						</div>
+						<div class="three columns">
+							<a href="#"> <h6> MY ACCOUNT </h6></a>
+						</div>
+						<div class="three columns">
+							<a href="#"><h6> PREV DELIVERIES </h6></a>
+						</div>
+					</div>
+				<!-- Content Navigation area Ends &nbsp; -->
+
+				<!-- Info To Display area Begins &nbsp; -->
+					<div class = "row" id="divMapMenu">
+						<ul id="mapMenu">
+							<li> VIEW: </li>
+
+							<li style="margin-top: 1px;">
+								<select id="scheduleDeliveries">
+									<option>Schedule Deliveries</option>		
+								</select>
+							</li>
+
+							<li style="margin-top: 1px;">
+								<select id="currentDeliveries">
+									<option>Current Deliveries</option>		
+								</select>
+							</li>
+							
+							<li style="float: right; padding-right: 30px;">TRACK MY LOCATION </li>
+							<li style="float: right;">
+								<input type="checkbox" id="trackCurrentPos"> 
+							</li>
+							<li style="float: right; padding-right: 100px;">  </li>
+							<li style="float: right;">MY LOCATION </li>
+							<li style="float: right;">
+								<input type="checkbox" id="currentPos"> 
+							</li>
+						</ul>
+					</div>
+				<!-- Info To Display area Ends B; -->
+
+				<!-- Schedule Deliveries Tab Begins-->
+					<div class="row" id="scheduleTab">
+						<div class="twelve columns sectionHead"> <h5>SCHEDULE DELIVERIES</h5></div>
+						<div class="twelve columns" id="schudeleTableDiv">
+							<table id="scheduleTable" style="width: 100%;">
+								<tr style="color: maroon;">
+									<th> </th>
+									<th>FOOD </th>
+									<th>FROM</th>
+									<th>DESTNATION</th>
+									<th>DELIVERY PRICE</th>
+									<th>DELIVERY TIME</th>
+									<th>DISTANCE</th>
+									<th> view </th>
+								</tr>
+								<?php 
+									$i = 0; 
+									foreach($this->schedule_delivery_data as $schedule_data): 
+									$i++;
+								?>
+								<tr>
+									<td>
+										<img alt=" " src="/e-cafe/assets/<?= $schedule_data['picture_id']?>" title=" " id="foodImage" style="width: 50px; height:50px; padding-left: 30px;">
+									</td>
+									<td id="c_lati<?= $i?>" value="<?= $schedule_data['c_latitude_cood']?>">
+										<?= $schedule_data['food_name']?>
+									</td>
+									<td id="c_longi<?= $i?>" value="<?= $schedule_data['c_longitude_cood']?>">
+										<?= $schedule_data['r_pos_name']?>
+									</td>
+									<td id="r_lati<?= $i?>" value="<?= $schedule_data['r_latitude_cood']?>">
+										<?= $schedule_data['c_pos_name']?>
+									</td>
+									<td id="r_longi<?= $i?>" value="<?= $schedule_data['r_longitude_cood']?>">
+										kSh <?= $schedule_data['delivery_price']?>
+									</td>
+									<td> 
+										<?= $schedule_data['delivery_date']?> 
+										<?= $schedule_data['deliver_time']?>									
+									</td>
+									<td><?= $schedule_data['delivery_distance']?> KMs</td>
+									<td> <input type="radio" value="<?= $i?>" name="scheduled_del"> </td>
+								</tr>
+								<?php endforeach; ?>
+							</table>
+							<?php if($i==0): ?>
+								<p style="color: grey; font-size: 25px; ">No Schedule Deliveries</p>
+							<?php endif;?>
+						</div>
+						<div class="row">
+							<div class="twelve columns" style="padding-bottom: 20px;">
+								<button id="applyScheduleButton">APPLY</button>
+								<button id="cancelScheduleButton">CANCEL</button>
+							</div>
+						</div>
+					</div>
+				<!-- Schedule Deliveries Tab Ends---->
+
+				<!-- Current Deliveries Tab Begins-->
+					<div class="row" id="currentTab">
+						<div class="twelve columns sectionHead"> <h5>CURRENT DELIVERIES</h5></div>
+						<div class="twelve columns" id="schudeleTableDiv">
+							<table id="scheduleTable" style="width: 100%;">
+								<tr style="color: maroon;">
+									<th> </th>
+									<th>FOOD </th>
+									<th>FROM</th>
+									<th>DESTNATION</th>
+									<th> DELIVERY PRICE</th>
+									<th>DELIVERY TIME</th>
+									<th>DISTANCE</th>
+									<th> view </th>
+								</tr>
+
+								<?php 
+									$i = 0; 
+									foreach($this->current_delivery_data as $current_data): 
+									$i++;
+								?>
+								<tr>
+									<td>
+										<img alt=" " src="/e-cafe/assets/<?= $schedule_data['picture_id']?>" title=" " id="foodImage" style="width: 50px; height:50px; padding-left: 30px;">
+									</td>
+									<td id="c_lati_cd<?= $i?>" value="<?= $current_data['c_latitude_cood']?>">
+										<?= $current_data['food_name']?>
+									</td>
+									<td id="c_longi_cd<?= $i?>" value="<?= $current_data['c_longitude_cood']?>"> 
+										<?= $current_data['r_pos_name']?>
+									</td>
+									<td id="r_lati_cd<?= $i?>" value="<?= $current_data['r_latitude_cood']?>"> 
+										<?= $current_data['c_pos_name']?>		
+									</td>
+									<td id="r_longi_cd<?= $i?>" value="<?= $current_data['r_longitude_cood']?>">
+										kSH <?= $current_data['delivery_price']?>
+									</td>
+									<td> 
+										<?= $current_data['delivery_date']?> 
+										<?= $current_data['deliver_time']?>
+									</td>
+									<td> <?= $current_data['delivery_distance']?> KMs</td>
+									<td> <input type="radio" name="current_del" value="<?= $i?>"></td>
+								</tr>
+								
+								<?php endforeach; ?>
+
+							</table>
+							<?php if($i==0): ?>
+								<p style="color: grey; font-size: 25px; text-align: center;">No Current Deliveries</p>
+							<?php endif;?> 
+						</div>
+						<div class="row">
+							<div class="twelve columns" style="padding-bottom: 20px;">
+								<button id="applyCurrentButton">APPLY</button>
+								<button id="cancelCurrentButton">CANCEL</button>
+							</div>
+						</div>
+					</div>
+				<!-- Current Deliveries Tab Ends---->
+
+				<!-- Map area Begins &nbsp; -->	
+					<div class="row" id="map">
+						
+					</div>
+				<!-- Map area ends &nbsp; -->	
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		//SIDE NAV BUTTON
+		$(function(){
+			$("#sidenavicon").click(function(){
+				if($("#sidenav").css("display")==="block"){
+  					$("#sidenav").css("display", "none");
+  					$("#homecontent").removeClass("nine columns").addClass("twelve columns");
+  				}else if($("#sidenav").css("display")==="none"){
+  					$("#homecontent").removeClass("twelve columns").addClass("nine columns"); 
+  					$("#sidenav").css("display", "block");
+  				}
+			});
+		});
+	</script>
+	
+	<link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+  	<script src="https://js.arcgis.com/4.10/"></script>
+    <script type="text/javascript" src="/e-cafe/assets/js/showDeliveryPersonRouteAndDirection.js"></script>
+    <script type="text/javascript">
+		
+		showrouteAndDirection();
+
+		//map menu drop downs
+	  	$(function(){
+	  		$("#scheduleDeliveries").click(function(event){
+	  			event.preventDefault();
+	  			this.blur();
+	  			window.focus();
+	  			if($("#scheduleTab").css("display")==="block"){
+	  				$("#scheduleTab").css("display", "none");
+	  			}else if($("#scheduleTab").css("display")==="none"){
+	  				//$("#priceDropDown").css("display", "none");
+	  				$("#currentTab").css("display", "none");
+	  				$("#scheduleTab").css("display", "block");
+	  			}
+	  		});
+
+	  		$("#currentDeliveries").click(function(event){
+	  			event.preventDefault();
+	  			this.blur();
+	  			window.focus();
+	  			if($("#currentTab").css("display")==="block"){
+	  				$("#currentTab").css("display", "none");
+	  			}else if($("#currentTab").css("display")==="none"){
+	  				//$("#foodDropDown").css("display", "none");
+	  				$("#scheduleTab").css("display", "none");
+	  				$("#currentTab").css("display", "block");
+	  			}
+	  		});
+
+	  		$("#cancelScheduleButton").click(function(event){
+	  			event.preventDefault();
+	  			$("#scheduleTab").css("display", "none");
+	  		});
+	  		$("#cancelCurrentButton").click(function(event){
+	  			event.preventDefault();
+	  			$("#currentTab").css("display", "none");
+	  		});
+	  	});
+
+		//CHECK USER ACTIVITY
+		$(function(){
+			setInterval(function(){
+				checkActivity();
+			}, 300000);
+		});
+		//CHECK NOTIFICATIONS
+		$(function(){
+			setInterval(function(){
+				checkNotifications();
+				getMyLocation();
+			}, 30000);
+		});
+		function checkNotifications(){
+			$.post("index.php",
+		    {
+		        notification_activity: true
+		    },
+		    function(data, status){
+		    	if (data==0) {
+		    		//no notifications
+		    	}else{
+		    		alert("Data: " + data + "\nStatus: " + status);
+		    	}
+		    });	
+		}
+		function getMyLocation(){
+      		var options = {
+				enableHighAccuracy: true,
+				maximumAge: 1000,
+				timeout: 45000
+			};
+			if (window.navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(successCallback,
+				errorCallback, options);
+			} else {
+				//alert('Your browser does not natively support geolocation.');
+			}
+			function successCallback(position) {
+				var lati = position.coords.latitude;
+				var longi = position.coords.longitude;
+				$.post("index.php",
+			    {
+			        update_lati_pos: lati,
+			        update_longi_pos: longi
+			    },
+			    function(data, status){
+			    	//alert(data);
+			    });
+			}
+			function errorCallback(error) {
+				//alert("There was a problem getting the location");
+			}
+		}
+	</script>
+	<script type="text/javascript" src="/e-cafe/assets/js/showDeliveryPersonRouteAndDirection.js"></script>
+	<script type="text/javascript" src="/e-cafe/assets/js/userActivity.js"></script>
+</body>
+</html>

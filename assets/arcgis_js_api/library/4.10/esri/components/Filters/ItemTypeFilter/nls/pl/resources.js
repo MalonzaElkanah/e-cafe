@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({itemType:"Typ elementu",filters:{maps:"Mapy",webMaps:"Mapy internetowe",mapFiles:"Pliki map",layers:"Warstwy",featureLayers:"Warstwy obiektowe",tileLayers:"Warstwy kafli",mapImageLayers:"Warstwy obrazowe map",imageryLayers:"Warstwy zobrazowa\u0144",sceneLayers:"Warstwy scen",tables:"Tabele",layerFiles:"Pliki warstw",scenes:"Sceny",apps:"Aplikacje",webApps:"Aplikacje internetowe",mobileApps:"Aplikacje mobilne",desktopApps:"Aplikacje komputerowe",tools:"Narz\u0119dzia",locators:"Lokalizatory",
+geodatabaseAccess:"Dost\u0119p do geobaz",geometricOperations:"Operacje geometryczne",geoprocessingTasks:"Zadania geoprzetwarzania",networkAnalysis:"Analiza sieciowa",files:"Pliki",documents:"Dokumenty",images:"Obrazy",pdfs:"Pliki PDF",webTools:"Narz\u0119dzia internetowe",notebooks:"Notatniki"}});

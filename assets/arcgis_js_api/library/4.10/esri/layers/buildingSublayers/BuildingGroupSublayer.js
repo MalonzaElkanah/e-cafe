@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define("require exports ../../core/tsSupport/assignHelper ../../core/tsSupport/declareExtendsHelper ../../core/tsSupport/decorateHelper ../../core/Collection ../../core/Warning ../../core/accessorSupport/decorators ./BuildingComponentSublayer ./BuildingSublayer".split(" "),function(r,t,u,m,g,h,n,f,p,q){function k(a,c,b){if(a&&Array.isArray(a))return new h(a.map(function(a){var e="group"===a.layerType?d:p;if(e)return e=new e,e.read(a,b),e;b&&b.messages&&a&&b.messages.push(new n("building-scene-layer:unsupported-sublayer-type",
+"Building scene sublayer of type '"+(a.type||"unknown")+"' are not supported",{definition:a,context:b}))}))}var l={type:h,readOnly:!0,json:{origins:{service:{read:{source:"sublayers",reader:k}}},read:!1}},d=function(a){function c(b){b=a.call(this)||this;b.type="building-group";b.sublayers=null;return b}m(c,a);g([f.property(l)],c.prototype,"sublayers",void 0);return c=g([f.subclass("esri.layers.buildingSublayers.BuildingGroupSublayer")],c)}(f.declared(q));(function(a){function c(a,d){a.forEach(function(a){d(a);
+"building-group"===a.type&&c(a.sublayers,d)})}a.sublayersProperty=l;a.readSublayers=k;a.forEachSublayer=c})(d||(d={}));return d});

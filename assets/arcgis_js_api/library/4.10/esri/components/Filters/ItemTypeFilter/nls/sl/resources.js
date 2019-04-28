@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({itemType:"Tip elementa",filters:{maps:"Karte",webMaps:"Spletne karte",mapFiles:"Datoteke karte",layers:"Sloji",featureLayers:"Geoobjektni sloji",tileLayers:"Plo\u0161\u010di\u010dni sloji",mapImageLayers:"Kartni sloji",imageryLayers:"Slikovni sloji",sceneLayers:"Sloji 3D-prizora",tables:"Tabele",layerFiles:"Datoteke sloja",scenes:"3D-prizori",apps:"Aplikacije",webApps:"Spletne aplikacije",mobileApps:"Mobilne aplikacije",desktopApps:"Namizne aplikacije",tools:"Orodja",locators:"Lokatorji",
+geodatabaseAccess:"Dostop do geopodatkovne baze",geometricOperations:"Geometrijske operacije",geoprocessingTasks:"Opravila geoprocesiranja",networkAnalysis:"Mre\u017ena analiza",files:"Datoteke",documents:"Dokumenti",images:"Slike",pdfs:"PDF-ji",webTools:"Spletna orodja",notebooks:"Bele\u017eke"}});

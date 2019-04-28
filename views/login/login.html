@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="/e-cafe/assets/css/normalize.css" rel="stylesheet" type="text/css"/>
+    <link href="/e-cafe/assets/css/skeleton.css" rel="stylesheet" type="text/css"/>
+    <link href="/e-cafe/assets/css/style.css" rel="stylesheet" type="text/css"/>
+    <title>e-cafe login</title>
+  	<link rel="icon" type="/e-cafe/assets/image/png" href="images/favicon.png">
+  	<style type="text/css">
+  		#Login{
+  			float: none;
+  			margin: auto;
+  			text-align: center;
+  			background-color: #f3f3f3;
+  			border-radius: 6px;
+  			box-shadow: 0 0 50PX rgba(0,0,0,.5);
+  		}
+  		#loginHeader{
+  			padding-top: 13px;
+  			padding-bottom: 13px;
+  			height: 14px;
+  			font-size: 14px;
+  			background-color: #e7e7e7;
+  			text-transform: uppercase;
+  			font-family: sans-serif;
+  			font-weight: bold;
+  			border: #e7e7e7 solid 1px;
+  			margin-bottom: 30px;
+  			border-top-left-radius: 6px;
+  			border-top-right-radius: 6px;
+  		}
+        #loginStatus{
+        color: red;
+        font-weight: normal;
+        font-style: italic;
+        font-size: 12px;
+        }
+  		#loginInput{
+  			outline: none;
+  			color: #141414; 
+  			height: 40px; 
+  			width: 300px; 
+  			font-size: 15px; 
+  			line-height: 25px; 
+  			padding-top: 14px;
+  			padding-bottom: 14px;
+  			padding-left: 40px;
+  			margin: 0px
+  			border: none;
+  		}
+  		#input:focus{
+  			-webkit-box-shadow:4px 0 4px #00a4a2;
+  			-moz-box-shadow:4px 0 4px #00a4a2;
+  			box-shadow:4px 0 4px #00a4a2;
+  		}
+  		#loginInput input[type=text]{
+  			border-top-left-radius: 6px;
+  			border-top-right-radius: 6px;
+  			border-top: #0b0b0b 1px solid;
+  			border-bottom: #353535 1px solid;
+  		}
+  		#loginInput input[type=password]{
+  			border-top-left-radius: 6px;
+  			border-top-right-radius: 6px;
+  			border-top: #0b0b0b 1px solid;
+  			border-bottom: #353535 1px solid;
+  		}
+  		
+  		#loginButton{
+  			/*padding-bottom: 14px;
+  			padding-top: 14px;*/
+  			background-color: maroon;
+  			border-radius: 6px;
+  			height: 40px; 
+  			width: 300px; 
+  			color: white;
+  			border-top: #4eb2a2 1px solid ;
+  			border-bottom: #161616 1px solid;
+  			border: none;
+  			font-size: 16px;
+  			font-weight: bold;
+  			font-family: Arial;
+  			text-shadow: 0 -1PX #1d7464, 0 1px #7bb8b3;
+  		}
+
+  		#adam {
+  			width: 380px;
+  			height: auto;
+  			overflow: hidden;
+  			padding-top: 25px;
+  			padding-bottom: 25px;
+  			font-size: 10px;
+  			text-align: center;
+  		}
+
+  		#col {
+  			width: 50%;
+  			float: left;
+  			height: auto;
+  		}
+  		#col a{
+  			color: maroon;
+  			text-decoration: none;
+  			font-size: 14px;
+  			font-family: Arial;
+  		}
+  	</style>
+
+</head>
+<body>
+  <div class="container">
+  <div id="fixedHeader">
+  <!-- Logo area -->
+  	<div class = "row" id="logo">
+  		<div class="three"><h1>E -CAFE</h1> </div>
+  		<div class="seven">
+  			<select name="category" id="searchOption" style="height: 30px; font-size: 11px; line-height: 25px; padding: 0px; ">
+  				<option value="all">All Categories</option>
+  				<option value="recent">Recent Orders</option>
+				<option value="most">Most Orders</option>
+				<option value="rated">High Rated</option>
+				<option value="near"> Near You</option>
+			</select>
+  			<input id="searchInput" type="text" name="searchInput" placeholder="search.." maxlength="10" size="20" 
+  				style=" height: 30px; width: 300px; line-height: 25px; ">
+  			<button id = "searchButton" style="height: 30px; font-size: 11px; line-height: 25px; padding: 0px;">search</button>
+  		</div>
+  		<div class="two">
+  		<ul>
+  			<li><a href="#">orders</a></li>
+            <li><a href="#"> lked </a></li>
+  		</ul>
+  		</div>
+  	</div>	
+  <!-- end of Logo area -->
+    <!-- Navigation area -->
+		<div class="row">
+			<div class="twelve columns" style="height: 50px;">
+				<nav style="height: 50px;">
+        			<ul id="menu">
+            			<li><a href="/e-cafe/index.php" >HOME</a></li>
+                  <li><a href="/e-cafe/index.php#about"> ABOUT </a></li>
+            			<li><a href="/e-cafe/index.php#foodMenu"> MENU </a></li>
+            			<li><a href="/e-cafe/restaurant.php">RESTAURANTS</a></li>
+            			<li style="float:right;"><a href="/e-cafe/addRestaurant.php"> ADD RESTAURANT </a></li>
+            			<li style="float:right;"><a href="/e-cafe/signup.php"> SIGN UP</a></li>
+            			<li style="float:right;"><a href="/e-cafe/login.php" class="active">LOGIN</a></li>
+        			</ul>
+    			</nav>
+			</div>
+		</div>
+	<!-- Navigation area ends &nbsp; -->
+	</div>
+	<div class="row" style="height: 200px; "></div>
+	<div class="row" >
+		<div class="four columns"> </div>
+		<div class="four columns " id = "Login" style="border: 1px solid #e7e7e7; height: 400px; ">
+			<div id="loginHeader"> log-in </div>
+			<form action="login.php" method="post">
+        <label id="loginStatus">
+          <?php
+            if(isset($_GET['message'])){
+              echo ' '.$_GET['message'];
+            }
+          ?>
+        </label>
+				<input type="text" name="username" placeholder="username" id="loginInput" maxlength="30" size="20"  >
+				<input type="password" name="password" placeholder="password" id="loginInput" maxlength="10" size="20" >
+				<div id="adam">
+					<div id="col">
+						<a href="signup.php">Register</a>
+					</div>
+					<div id="col">
+						<a href="#">Forgot Password?</a>
+					</div>
+				</div>
+				<button id="loginButton" name="loginButton" >LOGIN</button>
+			</form>
+		</div>
+		<div class="four columns" ></div>
+	</div>
+	&nbsp;
+  </div>
+ 
+<!-- End Documentstyle="border: 1px solid black;"
+  ––––––––––––––––––––––––––––––––––––––––––––––––––-->
+  
+</body>
+</html>

@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({other:"Cits",sumOfCategories:"Kategoriju summa",predominantCategory:"Domin\u0113jo\u0161\u0101 kategorija",strengthOfPredominance:"P\u0101rsvara stiprums",ageInfo_years:"Vecums gados, laiks: {startTime}\u2013{endTime}",ageInfo_months:"Vecums m\u0113ne\u0161os, laiks: {startTime}\u2013{endTime}",ageInfo_days:"Vecums dien\u0101s, laiks: {startTime}\u2013{endTime}",ageInfo_hours:"Vecums stund\u0101s, laiks: {startTime}\u2013{endTime}",ageInfo_minutes:"Vecums min\u016bt\u0113s, laiks: {startTime}\u2013{endTime}",
+ageInfo_seconds:"Vecums sekund\u0113s, laiks: {startTime}\u2013{endTime}",relationship:{legendTitle:"Attiec\u012bbas",HL:"Augsts - zems",HH:"Augsts - augsts",LL:"Zems - zems",LH:"Zems - augsts",HM:"Augsts - vid\u0113js",ML:"Vid\u0113js - zems",MM:"Vid\u0113js - vid\u0113js",MH:"Vid\u0113js - augsts",LM:"Zems - vid\u0113js",HM1:"High - Mild",HM2:"High - Medium",M2L:"Medium - Low",M2M1:"Vid\u0113js - neliels",M2M2:"Vid\u0113js - vid\u0113js",M2H:"Medium - High",M1L:"Mild - Low",M1M1:"Neliels - neliels",
+M1M2:"Neliels - vid\u0113js",M1H:"Mild - High",LM1:"Low - Mild",LM2:"Low - Medium"}});

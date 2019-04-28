@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define("require exports ./geometryUtils/axisAngle ./geometryUtils/boundedPlane ./geometryUtils/frustum ./geometryUtils/lineSegment ./geometryUtils/plane ./geometryUtils/ray ./geometryUtils/sphere ./geometryUtils/triangle ./geometryUtils/vector".split(" "),function(m,a,b,c,d,e,f,g,h,k,l){Object.defineProperty(a,"__esModule",{value:!0});a.plane=f;a.boundedPlane=c;a.triangle=k;a.lineSegment=e;a.ray=g;a.sphere=h;a.frustum=d;a.vector=l;a.axisAngle=b});

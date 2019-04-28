@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({authoritative:"Acreditat",deleted:"Suprimit",deprecated:"Desestimat",livingAtlas:"Living Atlas",marketplace:"Marketplace",openData:"Open Data",premium:"Premium",subscriber:"Subscriptor",tooltips:{altAuthoritative:"Acreditat: recomanat per",authoritative:"Acreditat: recomanat per la vostra organitzaci\u00f3",deprecated:"Desestimat: no se'n recomana l'\u00fas",livingAtlas:"Living Atlas: contingut seleccionat per Esri",marketplace:"Publicat a l'ArcGIS Marketplace",openData:"Disponible per a \u00fas p\u00fablic",
+premiumAnon:"Premium: requereix iniciar la sessi\u00f3 amb una subscripci\u00f3 a l'ArcGIS Online i consumeix cr\u00e8dits",subscriberAnon:"Subscriptor: requereix iniciar la sessi\u00f3 amb una subscripci\u00f3 a l'ArcGIS Online",premiumPublic:"Premium: requereix iniciar la sessi\u00f3 amb una subscripci\u00f3 a l'ArcGIS Online i consumeix cr\u00e8dits",subscriberPublic:"Subscriptor: requereix una subscripci\u00f3 a l'ArcGIS Online",premiumOrg:"Premium: contingut exclusiu per a subscriptors. Consumeix cr\u00e8dits.",
+subscriberOrg:"Subscriptor: contingut exclusiu per a subscriptors"}});

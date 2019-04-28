@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"/>
+	<script src= /e-cafe/assets/js/jquery.js ></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="/e-cafe/assets/css/normalize.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/skeleton.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/style.css" rel="stylesheet" type="text/css"/>
+	<title>ecafe.com</title>
+  	<link rel="icon" type="image/png" href="/e-cafe/assets/images/favicon.png">
+  	<style type="text/css">
+		#subAbout{
+			align-content: center;
+			text-align: center;
+		}
+		#subAbout h4{
+			font-weight: bold;
+		}
+		#subAbout p{
+			font-size: 16px;
+			color: black;
+		}
+
+		#subAbout img{
+			padding-top: 70px;
+			padding-bottom: 50px;
+		}
+
+		#menuCategory{
+			align-content: center;
+			text-align: center;
+		}
+
+		#searchRestaurant{
+			align-content: center;
+			text-align:center;
+		}
+
+		#selectTown{
+			height: 50px;
+			width: 25%;
+		}
+		#selectArea {
+    		height: 50px;
+    		width: 40%;
+		}
+		#findNow{
+			height: 50px;
+			background-image: : url(/e-cafe/assets/images/searchicon.png);
+
+		}
+
+		#divFilter{
+			height: 50px;
+		}
+		#filterMenu{
+			list-style-type:none;
+			overflow: hidden;
+   	 		height: 50px;
+    		top: 0px;
+    		text-align: center;
+    		padding: 0px;
+
+    		border: 1px solid #e7e7e7;
+    		background-color: #f3f3f3;
+		}
+
+		#filterMenu li{
+			padding: 5px;
+			float: left;
+			margin-bottom: 10px;
+    		margin-top: 10px;
+	
+		}
+
+		#filterMenu li select{
+			display: block;
+			text-align:center;
+		    margin-top: 1px;
+		    border-radius: 0px;
+		    text-decoration: none;
+
+		    color: #666;
+		}
+
+		#restaurantsTableDiv{
+			/*<div class="row" id="restaurantsTableDiv" style=" height: 300px; "> </div>*/
+			background-color: #f3f3f3;
+		}
+
+		.checkbox{
+			align-content: left;
+			text-align: left;
+			color: maroon;
+		}
+		#restaurantFilterButton1 {
+			border-radius: 0px;
+			background-color: maroon;
+			color: white;
+
+		}
+		#restaurantFilterButton2 {
+			border-radius: 0px;
+			background-color: #494949;
+			color: white;
+
+		}
+
+		.radio{
+			color: maroon;
+		}
+		#priceFilterButton1 {
+			border-radius: 0px;
+			background-color: maroon;
+			color: white;
+		}
+
+		#priceFilterButton2{
+			border-radius: 0px;
+			background-color: #494949;
+			color: white;
+		}
+
+		table{
+			width: 100%;
+		}
+		th{
+			color: maroon;
+			text-align: center;
+		}
+		td{
+			text-align: center;
+		}
+
+		table#restaurantTable tr:nth-child(even) {
+		    background-color: #eee;
+		}
+		table#restaurantTable tr:nth-child(odd) {
+		    background-color: #f3f3f3;
+		}
+		table#restaurantTable th {
+		    color: maroon;
+		    background-color: #f3f3f3;
+		}
+  	</style>
+
+</head>
+<body>
+  <div class="container">
+  <div id="fixedHeader">
+  <!-- Logo area -->
+  	<div class = "row" id="logo">
+  		<div class="three"><h1>E -CAFE</h1> </div>
+  		<div class="seven">
+  			<select name="category" id="searchOption" style="height: 30px; font-size: 11px; line-height: 25px; padding: 0px; ">
+  				<option value="all">All Categories</option>
+  				<option value="recent">Recent Orders</option>
+				<option value="most">Most Orders</option>
+				<option value="rated">High Rated</option>
+				<option value="near"> Near You</option>
+			</select>
+  			<input id="searchInput" type="text" name="searchInput" placeholder="search.." maxlength="10" size="20" 
+  				style="height: 30px; width: 300px; line-height: 25px; ">
+  			<button id = "searchButton" style="height: 30px; font-size: 11px; line-height: 25px; padding: 0px;">search</button>
+  		</div>
+  		<div class="two">
+  		<ul>
+  			<li><a href="#">orders</a></li>
+            <li><a href="#"> lked </a></li>
+  		</ul>
+  		</div>
+  	</div>	
+  <!-- end of Logo area -->
+    <!-- Navigation area -->
+		<div class="row">
+			<div class="twelve columns" style="height: 50px;">
+				<nav style="height: 50px;">
+        			<ul id="menu">
+            			<li><a href="/e-cafe/index.php" >HOME</a></li>
+                        <li><a href="/e-cafe/index.php#about"> ABOUT </a></li>
+            			<li><a href="/e-cafe/index.php#foodMenu"> MENU </a></li>
+            			<li><a href="/e-cafe/restaurant.php" class="active">RESTAURANTS</a></li>
+            			<li style="float:right;"><a href="/e-cafe/addRestaurant.php"> ADD RESTAURANT </a></li>
+            			<li style="float:right;"><a href="/e-cafe/signup.php"> SIGN UP</a></li>
+            			<li style="float:right;"><a href="/e-cafe/login.php">LOGIN</a></li>
+        			</ul>
+    			</nav>
+			</div>
+		</div>
+	<!-- Navigation area ends &nbsp; -->
+   </div>
+   	<div class="row" style=" height: 180px; "> </div>
+	<div class="row" id= "searchRestaurant" >
+		<div class="twelve columns" id="searchRestaurant" >
+
+			<select id="selectTown" placeholder="select Town" >
+				<option value="Country" selected="">select Town</option>
+				<option value="Afghanistan"> Mombasa</option>
+				<option value="Albania"> Kisumu </option>
+				<option value="Algeria"> Machakos</option>
+				<option value="American Samoa">Kajiado</option>
+				<option value="Andorra">Narok </option>
+				<option value="Angola"> Namanga </option>
+				<option value="Anguilla"> Kitengela </option>
+				<option value="Antarctica"> Kiserian </option>
+				<option value="...">...</option>
+			</select>
+			<input id="selectArea" placeholder="Select Area" class="regionSearch empty ui-autocomplete-input" title="Select Area" data-fatreq="{&quot;required&quot;:true}" type="text" name="uregion" value="" autocomplete="off">	
+
+			<input id="findNow" type="submit" name="submit_btn" value ="find">
+					
+		</div>
+		
+	</div>
+
+	<div class = "row" id="divFilter">
+		<ul id="filterMenu">
+			<li>FILTER BY: </li>
+
+			<li style="margin-top: 1px;">
+				<select id="filterRestaurant">
+					<option>Restaurant</option>		
+				</select>
+
+			</li>
+
+			<li style="margin-top: 1px;">
+				<select id="filterPrice">
+					<option>Price Range</option>		
+				</select>
+			</li>
+			<li style="margin-top: 1px;">
+				<select id="filterFood">
+					<option>Food Type</option>		
+				</select>
+			</li>
+
+			<li style="float: right; margin-top: 1px;">
+				<select id="selectSort" >
+					<option value=" ">High Rated</option>
+					<option value=" ">Most Liked</option>
+					<option value=" "></option>		
+				</select>
+			</li>
+			<li style="float: right;">SORT BY: </li>
+		</ul>
+	</div>
+
+	<div class="row" id="restaurantDropDown" style=" display: none; ">
+
+		<div class="row">
+			<div class="three columns" >
+			<label class="checkbox">
+                <input id="res_preorder" type="checkbox" class="filter" name="filter" value="preorder">
+                Pre Order Available 
+            </label>
+			</div>
+			<div class="three columns" >
+				<label class="checkbox">
+	                <input id="res_preorder" type="checkbox" class="filter" name="filter" value="preorder">
+	                Deals 
+	            </label>
+			</div>
+			<div class="three columns" >
+				<label class="checkbox">
+	                <input id="res_preorder" type="checkbox" class="filter" name="filter" value="preorder">
+	                Online Payment Available 
+	            </label>
+			</div>
+			<div class="three columns" >
+				<label class="checkbox">
+	                <input id="res_preorder" type="checkbox" class="filter" name="filter" value="preorder">
+	                 Delivery 
+	            </label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="three columns" >
+				<label class="checkbox">
+	                <input id="res_preorder" type="checkbox" class="filter" name="filter" value="preorder">
+	                Pick Up 
+	            </label>
+			</div>
+			<div class="three columns" >
+				<label class="checkbox">
+	                <input id="res_preorder" type="checkbox" class="filter" name="filter" value="preorder">
+	                Cash On Delivery
+	            </label>
+			</div>
+			<div class="three columns" >
+				<label class="checkbox">
+	                <input id="res_preorder" type="checkbox" class="filter" name="filter" value="preorder">
+	                Vegeterian
+	            </label>
+			</div>
+			<div class="three columns" >
+				<label class="checkbox">
+	                <input id="res_preorder" type="checkbox" class="filter" name="filter" value="preorder">
+	                 Non Vegeterian
+	            </label>
+			</div>
+
+			<div class="twelve columns" style="border: 0px solid #e7e7e7; "> <hr> </div>
+			<div class="twelve columns" style="border: 0px solid #e7e7e7;">
+				<button id="restaurantFilterButton1">APPLY</button>
+				<button id="restaurantFilterButton2">CANCEL</button>
+				<a href="restaurant.html" style="float: right;">remove filters</a>
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="row" id="priceDropDown" style=" display: none; ">
+		<div class="row">
+			<div class="three columns">
+				<label class="radio">
+					<input id="prc_01-100" type="radio" class="price" value="1-100" name="prc">
+                    Ksh 01 - 100                                                    
+                </label>
+			</div>
+			<div class="three columns">
+				<label class="radio">
+					<input id="prc_101-200" type="radio" class="price" value="101-200" name="prc">
+                    Ksh 101 - 200                                                    
+                </label>
+			</div>
+			<div class="three columns">
+				<label class="radio">
+					<input id="prc_201-400" type="radio" class="price" value="201-400" name="prc">
+                    Ksh 201 - 500                                                    
+                </label>
+			</div>
+			<div class="three columns">
+				<label class="radio">
+					<input id="prc_100-200" type="radio" class="price" value="101-200" name="prc">
+                    Ksh 501 - 700                                                    
+                </label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="three columns">
+				<label class="radio">
+					<input id="prc_01-100" type="radio" class="price" value="1-100" name="prc">
+                    ksh 701 - 1000                                                    
+                </label>
+			</div>
+			<div class="three columns">
+				<label class="radio">
+					<input id="prc_100-200" type="radio" class="price" value="101-200" name="prc">
+                    Ksh 1001 - 1500                                                    
+                </label>
+			</div>
+			<div class="three columns">
+				<label class="radio">
+					<input id="prc_01-100" type="radio" class="price" value="1-100" name="prc">
+                    Ksh 1501 - 2000                                                    
+                </label>
+			</div>
+			<div class="three columns">
+				<label class="radio">
+					<input id="prc_100-200" type="radio" class="price" value="101-200" name="prc">
+                    Ksh 2000 - more                                                    
+                </label>
+			</div>
+			<div class="twelve columns" style="border: 0px solid #e7e7e7; "> <hr> </div>
+			<div class="twelve columns" style="border: 0px solid #e7e7e7;">
+				<button id="priceFilterButton1">APPLY</button>
+				<button id="priceFilterButton2">CANCEL</button>
+				<a href="restaurant.html" style="float: right;">remove filters</a>
+			</div>
+		</div>
+
+	</div>
+	<div class="row" id="foodDropDown" style=" display: none; height: 200px; "> </div>
+
+	<div class="row" id="restaurantsTableDiv" style=" "> 
+		<div id="getRestaurant">
+			<table id="restaurantTable">
+				<tr>
+					<th>RESTAURANT NAME</th>
+					<th>RESTAURANT CATEGORY</th>
+					<th>COUNTY</th>
+					<th>TOWN</th>
+				</tr>
+				<?php foreach($this->restaurant_data as $restaurant): ?>
+				<tr>
+					<td><?= $restaurant['restaurant_name']?></td>
+					<td><?= $restaurant['restaurant_category']?></td>
+					<td><?= $restaurant['county']?></td>
+					<td><?= $restaurant['town']?></td>
+				</tr>
+				<?php endforeach; ?>
+			</table>
+		</div>
+	</div>
+
+  </div>
+ 
+<!-- End Documentstyle="border: 1px solid black;"
+  ––––––––––––––––––––––––––––––––––––––––––––––––––-->
+  <script>
+  //Filter drop downs
+  	$(function(){
+  		$("#filterRestaurant").click(function(event){
+  			event.preventDefault();
+  			this.blur();
+  			window.focus();
+  			if($("#restaurantDropDown").css("display")==="block"){
+  				$("#restaurantDropDown").css("display", "none");
+  			}else if($("#restaurantDropDown").css("display")==="none"){
+  				$("#priceDropDown").css("display", "none");
+  				$("#foodDropDown").css("display", "none");
+  				$("#restaurantDropDown").css("display", "block");
+  			}
+  		});
+
+  		$("#filterPrice").click(function(event){
+  			event.preventDefault();
+  			this.blur();
+  			window.focus();
+  			if($("#priceDropDown").css("display")==="block"){
+  				$("#priceDropDown").css("display", "none");
+  			}else if($("#priceDropDown").css("display")==="none"){
+  				$("#foodDropDown").css("display", "none");
+  				$("#restaurantDropDown").css("display", "none");
+  				$("#priceDropDown").css("display", "block");
+  			}
+  		});
+
+  		$("#filterFood").click(function(event){
+  			event.preventDefault();
+  			this.blur();
+  			window.focus();
+  			if($("#foodDropDown").css("display")==="block"){
+  				$("#foodDropDown").css("display", "none");
+  			}else if($("#foodDropDown").css("display")==="none"){
+  				$("#restaurantDropDown").css("display", "none");
+  				$("#priceDropDown").css("display", "none");
+  				$("#foodDropDown").css("display", "block");
+  			}
+  		});
+  	});
+
+  	//filter button
+	$(function(){
+		$("#restaurantFilterButton1").click(function(event){
+			event.preventDefault();
+			$("#restaurantDropDown").css("display", "none");
+		});
+		$("#restaurantFilterButton2").click(function(event){
+			event.preventDefault();
+			$("#restaurantDropDown").css("display", "none");
+		});
+
+		$("#priceFilterButton1").click(function(event){
+			event.preventDefault();
+			$("#priceDropDown").css("display", "none");
+		});
+		$("#priceFilterButton2").click(function(event){
+			event.preventDefault();
+			$("#priceDropDown").css("display", "none");
+		});
+	});
+
+  </script>
+
+</body>
+</html>

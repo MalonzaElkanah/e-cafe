@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports","../lib/DefaultVertexAttributeLocations","./sources/resolver","../../../webgl/programUtils"],function(e,a,c,b,d){Object.defineProperty(a,"__esModule",{value:!0});a.colorPass={name:"native-line-color",shaders:function(a){return{vertexShader:b.resolveIncludes("materials/nativeLine/nativeLine.vert"),fragmentShader:d.glslifyDefineMap({SLICE:a.slice})+b.resolveIncludes("materials/nativeLine/colorPass.frag")}},attributes:c.Default3D};a.highlightPass={name:"native-line-highlight",
+shaders:function(a){return{vertexShader:b.resolveIncludes("materials/nativeLine/nativeLine.vert"),fragmentShader:d.glslifyDefineMap({SLICE:a.slice})+b.resolveIncludes("materials/nativeLine/highlightPass.frag")}},attributes:c.Default3D}});

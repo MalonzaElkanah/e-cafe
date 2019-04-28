@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({title:"Skiltis",cancel:"At\u0161aukti",hint:"Prad\u0117kite dalyti \u012f skiltis spustel\u0117dami ir vilkdami ant scenos pavir\u0161iaus",excludeHint:"Jei norite ne\u012ftraukti sluoksnio \u012f skilt\u012f, pasirinkite j\u012f rodinyje",unsupported:"Skiltis nepalaikoma \u017eem\u0117lapio per\u017ei\u016broje.",multipleDisabled:"Vienu metu gali b\u016bti aktyvi tik viena skiltis",newSlice:"Nauja skiltis",excludedLayers:"Ne\u012ftraukti sluoksniai",pickLayer:"Pasirinkite sluoksn\u012f i\u0161 rodinio",
+excludeLayer:"Ne\u012ftraukti sluoksnio \u012f skilt\u012f",includeLayer:"\u012etraukti sluoksn\u012f \u012f skilt\u012f",ground:"Pavir\u0161ius"});

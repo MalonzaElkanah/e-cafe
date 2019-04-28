@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define("require exports ../../core/tsSupport/declareExtendsHelper ../../core/tsSupport/decorateHelper ../../core/Accessor ../../core/Identifiable ../../core/accessorSupport/decorators".split(" "),function(h,k,e,c,f,g,b){return function(d){function a(a){a=d.call(this)||this;a.items=null;a.name=null;return a}e(a,d);c([b.property()],a.prototype,"items",void 0);c([b.property()],a.prototype,"name",void 0);return a=c([b.subclass("esri.widgets.FeatureTemplates.TemplateItem")],a)}(b.declared(f,g.Identifiable))});

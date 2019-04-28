@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({sort:"Sortare",sortBy:"Sortare dup\u0103",sortDir:"Direc\u021bie de sortare",relevance:"Relevan\u0163\u0103",title:"Titlu",owner:"Proprietar",created:"Data cre\u0103rii",modified:"Dat\u0103 modificare",numviews:"Vizualizare valori",avgrating:"Calificativ",ascending:{relevance:"De la cel mai pu\u021bin la cel mai relevant",title:"Alfabetic",owner:"Alfabetic",created:"Cele mai pu\u021bin recente",modified:"Cele mai pu\u021bin recente",numviews:"De la cel mai pu\u021bin la cel mai mult",avgrating:"De la calificativul cel mai mic la cel mai mare"},
+descending:{relevance:"De la cel mai relevant la cel mai pu\u021bin relevant",title:"Invers-alfabetic",owner:"Invers-alfabetic",created:"Cele mai recente",modified:"Cele mai recente",numviews:"De la cel mai mult la cel mai pu\u021bin",avgrating:"De la calificativul cel mai mare la cel mai mic"}});

@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"/>
+	<script src= /e-cafe/assets/js/jquery.js ></script>
+	
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="/e-cafe/assets/css/normalize.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/skeleton.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/style.css" rel="stylesheet" type="text/css"/>
+	<title>ecafe.com</title>
+  	<link rel="icon" type="image/png" href="/e-cafe/assets/images/favicon.png">
+	
+	<style type="text/css">
+		#navigation{
+			height: 50px;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			border: 1px solid #e7e7e7;
+	    	background-color: #f3f3f3;
+			text-align: center;
+		}
+		#navigation a {
+			text-decoration: none;
+			color: black;
+
+		}
+		#restaurantlogo{
+			font-size: 40px;
+			text-align: center;
+			font-family: forte;
+		    color: maroon;
+		}
+		#restaurantlogo a{
+			font-size: 40px;
+			text-align: center;
+			font-family: forte;
+		    color: maroon;
+		}
+		#sidenav{
+			display: none;
+			border: 1px solid #b7b7b7;
+			color: #6a6c70; 
+			background-color: #2d3035;
+			height: 100%;
+		}
+		#content{
+			background-color: white;
+			border: 0px solid #e7e7e7;
+			height: 100%;
+		}
+		#homecontent{
+			border: 0px solid #e7e7e7;
+			height: 100%;	
+		}
+		#miniprofile{
+			height: 100px;
+			padding-top: 25px;
+			padding-left: 25px;
+
+		}
+		#profilepic{
+
+		    width: 60px;
+	    	height: 60px;
+		    border-radius: 50%;
+		    overflow: hidden;
+		    margin-right: 15px;
+		    background: #6a6c70;
+		    padding: 4px;
+		    border: 3px solid #282b2f;
+		}
+		#profilepic img{
+			/*padding-top: 0px;
+			padding-left: 0px;*/
+
+		}
+		#profilename{
+			padding-top: 10px;
+			border: 0px solid black;
+			height: 60px;
+			text-align: center;
+			color: #6a6c70; 
+		}
+		#maintitle{
+			
+			background-color: #2d3035;
+			height: 30px;
+			
+			font-weight: bold;
+		}
+		#maintitle h6{
+			font-weight: 700;
+		    margin-left: 20px;
+		    color: #494d53;
+		    font-size: 1.2rem;
+		    margin-bottom: 15px
+		}
+		#extrastitle{
+			background-color: #2d3035;
+			height: 30px;
+			
+			font-weight: bold;
+		}
+		#extrastitle h6{
+			font-weight: 700;
+		    margin-left: 20px;
+		    color: #494d53;
+		    font-size: 1.2rem;
+		    margin-bottom: 15px
+		}
+		#homenav{
+			height: 50px;
+		}
+		#sidebaricon{
+			height: 30px;
+			width: 60px;
+			border-right: 1px solid #1EAEDB;
+			padding-left: 15px;
+		}
+		#sidenavname{
+			padding-left: 5px;
+			padding-top: 5px;
+		}
+		#sidenavname a{
+			text-decoration: none;
+		}
+		#extranav{
+			/*border-bottom: 1px solid maroon;
+			border: 1px solid #b7b7b7;*/
+			height: 50px;
+		}
+		#contentNav{
+			height: 40px;
+			border: 1px solid #e7e7e7;
+			background-color: #2d3035;
+			text-align: center;
+		
+		}
+		#contentNav h6{
+			font-weight: bold;
+			color: #f3f3f3;/*#494d53;*/
+			padding-top: 10px;
+		}
+		#contentNav a{
+			text-decoration: none;
+		}
+		.active{
+			background-color: black;
+		}
+		#homeHeader{
+			height: 30px;
+			/*padding-top: 20px;
+			padding-bottom: 20px;
+			border: 0px solid #e7e7e7;
+	    	background-color: #f3f3f3;
+			text-align: center;*/
+		}
+		.menuCategory{
+			align-content: center;
+			text-align: center;
+			/*background-color:#f3f3f3 ; -*/
+			font-weight: bold;		
+		}
+		.panelicon{
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+
+		.sectionHead{
+			color: maroon;
+			font-size: 25px;
+			text-align: center;
+		}
+		#scheduleDeliveries{
+
+		}
+		#schudeleTableDiv{
+			background-color: #f3f3f3;
+			border: 1px solid #e7e7e7;
+		}
+		#scheduleTable{
+			text-align: center;
+			width: 100%;
+		}
+		#scheduleTable td{
+			padding-left: 10px;
+		}
+
+		#divDeliverButton{
+			background-color: #f3f3f3;
+			min-height: 400px;
+		}
+		#orderDelivered{
+			float: right;
+		    font-size: 14px;
+		    color: #fff;
+		    font-weight: 600;
+		    padding: 0px 45px;
+		    background: maroon;
+		    outline: none;
+    		border: none;
+    		cursor: pointer;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+
+		<!-- Navigation area  &nbsp; -->
+
+		<div class="row" id="navigation">
+			<div class="three columns" id="restaurantlogo">
+				<div class="one column">
+					<img alt="" src="/e-cafe/assets/images/sidenavicon.png" id="sidenavicon" style="width: 25px; height:25px; padding-left: 5px" >
+				</div>
+				<div class="ten columns">
+					<a href="#" >E-CAFE</a>
+				</div>
+				
+			</div>
+			<div class="four columns"> <p> </p></div>
+			<div class="five columns">
+				<div class="two columns">
+					<img alt="" src="/e-cafe/assets/images/search.png" id="search" style="width: 25px; height:25px; padding-left: px" >
+				</div>
+				<div class="two columns">
+					<a href="notifications.php">
+						<img alt="" src="/e-cafe/assets/images/notificationIcon.png" id="notificationicon" style="width: 25px; height:25px;" >
+					</a>
+				</div>
+				<div class="two columns">
+					<a href="messages.php">
+						<img alt="" src="/e-cafe/assets/images/messageicon.png" id="messageicon" style="width: 25px; height:25px; " >
+					</a>
+				</div>
+				<div class="six columns">
+					<?php if(Session::get("loggedin")): ?>
+						<p class="iblk log">
+							<?php echo ' '.$_SESSION["username"].' | '; ?> 
+							<a href=<?= BASE_URL."login/runLogout"?>>Logout</a>
+						</p>
+					<?php endif;?> 
+					
+				</div>
+				
+			</div>
+				
+		</div>
+
+		<!-- Navigation area ends &nbsp; -->
+
+		<div class="row" id="content">
+			<?php foreach($this->profile_data as $profile): 
+
+				$profilePic = null;
+				if(isset($profile['profile_picture'])){
+					if($profile['profile_picture']==null){
+						$profilePic = "/e-cafe/assets/profilePictures/default.png";
+					}else{
+						$profilePic = $profile['profile_picture'];
+					}
+				}else{
+					$profilePic = "/e-cafe/assets/profilePictures/default.png";
+				}
+				
+			?>
+
+		<!-- SideBar area Bigins &nbsp; -->	
+
+			<div class="three columns" id="sidenav">
+				<div class="twelve columns" id="miniprofile">
+					<div class="four columns" id="profilepic">
+						<img alt="add food" src="<?= $profilePic?>" title="profile pic" id="proileicon" style="width: 50px; height:50px;">
+					</div>
+					<div class="seven columns" id="profilename">
+						<div class="twelve columns" ><h7 style ="font-weight: bold;">
+							<?php 
+								echo' '.$_SESSION["delivery_person_name"];
+							?>
+						</h7> </div>
+						<div class="twelve columns" ><h7>Delivery Person</h7>  </div>
+					</div>
+				</div>	
+				<div class="twelve columns" id="maintitle">
+					<h6>MAIN</h6>
+				</div>
+				<div class="twelve columns" id="homenav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/homeicon.png" title="home" id="homeicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"><a href="index.php"><h8>Home</h8></a></div>
+				</div>
+				<div class="twelve columns" id="homenav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/profileicon.png" title="profile" id="homeicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"><a href="profile.php"><h8>Profile</h8> </a></div>
+				</div>	
+				<div class="twelve columns" id="homenav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/statsicon.png" title="profile" id="homeicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Statistics</h8></div>
+				</div>
+				<div class="twelve columns" id="homenav"></div>	
+				<div class="twelve columns" id="homenav"></div>
+				<div class="twelve columns" id="extrastitle">
+					<h6>EXTRAS</h6>
+				</div>
+				<div class="twelve columns" id="extranav">
+					<div class="two columns" id="sidebaricon">
+						<img alt="add food" src="/e-cafe/assets/images/settingsicon.png" title="settings" id="settingsicon" style="width: 30px; height:30px;">
+					</div>
+					<div class="eight columns" id="sidenavname"> <h8>Settings</h8></div>
+				</div>
+				<div class="twelve columns" id="extranav"></div>	
+				<div class="twelve columns" id="extranav"></div>
+			</div>
+
+			<!-- Sidebar area ends &nbsp; -->
+			<?php endforeach; ?>
+
+			<div class="twelve columns" id="homecontent">
+				<!-- Content Navigation area Begins &nbsp; -->	
+					<div class="row" id="contentNav">
+						<div class="three columns" id="menuNav">
+							<a href="index.php"><h6> DELIVERIES </h6></a>
+						</div>
+						<div class="three columns">
+							<a href="navigation.php"><h6>NAVIGATION</h6></a> 
+						</div>
+						<div class="three columns">
+							<a href="#"> <h6> MY ACCOUNT </h6></a>
+						</div>
+						<div class="three columns">
+							<a href="#"><h6> PREV DELIVERIES </h6></a>
+						</div>
+					</div>
+				<!-- Content Navigation area Ends &nbsp; -->
+
+				<!-- HOME Navigation area Begins &nbsp; -->
+					<div class="row" id="homeHeader">
+						<h3 id="foodMenu"> </h3>
+					</div>
+					<div class="row" >
+						
+						<div class="three columns menuCategory" id="addFoodDiv" style=" height: 220px; border: 1px solid #e7e7e7;" > 
+							<a href="" id="scheduleDeliveriesNav" style="text-decoration: none;">
+								<img alt="add food" src="/e-cafe/assets/images/plus.png" id="addFoodImage" class="panelicon" title="add food" style="width: 100px; height:100px;" >
+								
+								<p> Schedule Deliveries </p> 
+							</a>	
+						</div>
+						
+
+						<div class="three columns menuCategory" id="" style=" height: 220px; border: 1px solid #e7e7e7;" > 
+							<a href="" id="currentDeliveriesNav" style="text-decoration: none;">
+								<img alt="Recent Orders" src="/e-cafe/assets/images/food.png" class="panelicon" title="Recent Orders" style="width: 100px; height:100px;">
+								
+								<p> Current Deliveries </p> 
+							</a>
+						</div>
+						<div class="three columns menuCategory" id="" style=" height: 220px; border: 1px solid #e7e7e7;" > 
+							<a href="" id="viewMenuNav" style="text-decoration: none;">
+								<img alt="4. Enjoy" src="/e-cafe/assets/images/burger.png" class="panelicon" title="4. Enjoy" style="width: 100px; height:100px;">
+								
+								<p> view Menu </p> 
+							</a>
+						</div>
+
+						<div class="three columns menuCategory" id="" style=" height: 220px; border: 1px solid #e7e7e7;" > 
+							<a href="" id="prevDeliveriesNav" style="text-decoration: none;">
+								<img alt="4. Enjoy" src="/e-cafe/assets/images/list.png" class="panelicon" title="4. Enjoy" style="width: 100px; height:100px;">
+								
+								<p> Previous Deliveries </p> 
+							</a>
+						</div>
+					</div>
+				<!-- HOME Navigation area Ends &nbsp;-- -->				
+
+				<div class="row" style="height:30px; "> <p> </p></div>
+
+				<!-- Schedule Deliveries area Begins &nbsp; -->
+				
+					<div class="row" id="scheduleDeliveries">
+						<div class="twelve columns sectionHead"> <h3>SCHEDULE DELIVERIES</h3></div>
+						<div class="twelve columns" id="schudeleTableDiv">
+							<table id="scheduleTable">
+								<tr style="color: maroon;">
+									<th> </th>
+									<th>FOOD </th>
+									<th>QUANTITY</th>
+									<th>FROM</th>
+									<th>DESTNATION</th>
+									<th>DELIVERY PRICE</th>
+									<th>DELIVERY TIME</th>
+									<th>DISTANCE</th>
+									<th> </th>
+								</tr>
+								<?php 
+									$i = 0; 
+									foreach($this->schedule_delivery_data as $schedule_data): 
+									$i++;
+								?>
+								<tr>
+									<td>
+										<img alt=" " src="/e-cafe/assets/<?= $schedule_data['picture_id']?>" title=" " id="foodImage" style="width: 50px; height:50px; padding-left: 30px;">
+									</td>
+									<td><?= $schedule_data['food_name']?></td>
+									<td><?= $schedule_data['food_quantity']?></td>
+									<td> <?= $schedule_data['r_pos_name']?></td>
+									<td> <?= $schedule_data['c_pos_name']?></td>
+									<td>kSh <?= $schedule_data['delivery_price']?></td>
+									<td> 
+										<?= $schedule_data['delivery_date']?> 
+										<?= $schedule_data['deliver_time']?>									
+									</td>
+									<td><?= $schedule_data['delivery_distance']?> KMs</td>
+									<td> <a href="#">view on map</a></td>
+								</tr>
+								<?php endforeach; ?>
+							</table>
+							<?php if($i==0): ?>
+								<p style="color: grey; font-size: 25px; text-align: center;">No Schedule Deliveries</p>
+							<?php endif;?> 
+								
+						</div>
+					</div>
+				
+				<!-- Schedule Deliveries Ends B; -->
+
+				<!-- Current Deliveries area Begins &nbsp; -->	
+					<div class="row" id="currentDeliveries" style="display:none;">
+						<div class="twelve columns sectionHead"> <h3>CURRENT DELIVERIES</h3></div>
+						<div class="twelve columns" id="schudeleTableDiv">
+							<table id="scheduleTable">
+								<tr style="color: maroon;">
+									<th> </th>
+									<th>FOOD </th>
+									<th>QUANTITY</th>
+									<th>FROM</th>
+									<th>DESTNATION</th>
+									<th> DELIVERY PRICE</th>
+									<th>DELIVERY TIME</th>
+									<th>DISTANCE</th>
+									<th>DELIVERED </th>
+								</tr>
+
+								<?php 
+									$i = 0; 
+									foreach($this->current_delivery_data as $current_data): 
+									$i++;
+								?>
+								<tr>
+									<td>
+										<img alt=" " src="/e-cafe/assets/<?= $current_data['picture_id']?>" title=" " id="foodImage" style="width: 50px; height:50px; padding-left: 30px;">
+									</td>
+									<td><?= $current_data['food_name']?></td>
+									<td><?= $current_data['food_quantity']?></td>
+									<td> <?= $current_data['r_pos_name']?></td>
+									<td> <?= $current_data['c_pos_name']?></td>
+									<td>kSH <?= $current_data['delivery_price']?></td>
+									<td> 
+										<?= $current_data['delivery_date']?> 
+										<?= $current_data['deliver_time']?>
+									</td>
+									<td> <?= $current_data['delivery_distance']?> KMs</td>
+									<td> 
+										<input id="currentDeli<?= $i?>" type="checkbox" name="orderDelivered" value="<?= $current_data['order_id']?>"> 
+									</td>
+								</tr>
+								
+								<?php endforeach; ?>
+
+							</table>
+							<p id="cd_count" value="<?= $i?>" style="display: none;"><?= $i?></p>
+							<?php if($i==0): ?>
+								<p style="color: grey; font-size: 25px; text-align: center;">No Current Deliveries</p>
+								<style type="text/css"> #divDeliverButton{display: none;} </style>
+							<?php endif;?> 
+						</div>
+						<div id="divDeliverButton" style="padding-top: 30px;">
+							<div class="two columns" style="padding-left: 40px; ">
+								<p> </p>
+							</div>
+							<div class="eight columns">
+								<p> </p>
+							</div>
+							<div class="two columns" style="padding-right: 50px; padding-top: 70px;">
+								<button id="orderDelivered" class="button" >DELIVER</button>
+							</div>  	
+						</div>
+					</div>
+				<!-- Current Deliveries area ends &nbsp; -->	
+
+				<!-- food cart area Begins &nbsp; -->
+					
+				<!--Cart Table area Ends -->
+
+				<!-- Previous Deliveries area Begins &nbsp; -->
+					<div class="row" id="prevDeliveries" style="display:none;">
+						<div class="twelve columns sectionHead"> <h3>PREVIOUS DELIVERIES</h3></div>
+						<div class="twelve columns" id="prevTableDiv">
+							<table id="scheduleTable">
+								<tr style="color: maroon;">
+									<th> </th>
+									<th>FOOD </th>
+									<th>QUANTITY</th>
+									<th>FROM</th>
+									<th>DESTNATION</th>
+									<th>DELIVERY PRICE</th>
+									<th>DELIVERY TIME</th>
+									<th>DELIVERY DISTANCE</th>
+								</tr>
+
+								<?php 
+									$i = 0; 
+									foreach($this->prev_delivery_data as $prev_data): 
+									$i++;
+								?>
+								<tr>
+									<td>
+										<img alt=" " src="/e-cafe/assets/<?= $prev_data['picture_id']?>" title=" " id="foodImage" style="width: 50px; height:50px; padding-left: 30px;">
+									</td>
+									<td><?= $prev_data['food_name']?></td>
+									<td><?= $prev_data['food_quantity']?></td>
+									<td> <?= $prev_data['r_pos_name']?></td>
+									<td> <?= $prev_data['c_pos_name']?></td>
+									<td>kSH <?= $prev_data['delivery_price']?></td>
+									<td> 
+										<?= $prev_data['delivery_date']?> 
+										<?= $prev_data['deliver_time']?>
+									</td>
+									<td><?= $prev_data['delivery_distance']?> KMs</td>
+								</tr>
+								
+								<?php endforeach; ?>
+
+							</table>
+							<?php if($i==0): ?>
+								<p style="color: grey; font-size: 25px; text-align: center;">No Previous Deliveries</p>
+							<?php endif;?> 
+						</div>
+					</div>
+				<!-- Previous Deliveries area Ends -->
+
+				<!--delivery order PANEL area Bigins-->
+					<div id="deliveryOrderBlock" style="display: none;">
+						<div class="row" id="getDeliveryOrder"> 
+							
+						</div>
+					</div>
+				<!--delivery order PANEL area Ends -->
+
+
+				<div class="row" style="min-height: 50px;">
+					<h1> </h1>
+				</div>
+
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		//SIDE NAV BUTTON
+		$(function(){
+			$("#sidenavicon").click(function(){
+				if($("#sidenav").css("display")==="block"){
+  					$("#sidenav").css("display", "none");
+  					$("#homecontent").removeClass("nine columns").addClass("twelve columns");
+  				}else if($("#sidenav").css("display")==="none"){
+  					$("#homecontent").removeClass("twelve columns").addClass("nine columns"); 
+  					$("#sidenav").css("display", "block");
+  				}
+			});
+		});
+		//HOME NAV
+		$(function(){
+			//schedule deliveries
+			$("#scheduleDeliveriesNav").click(function(event){
+				event.preventDefault();
+				$("#scheduleDeliveries").css("display", "block");
+				$("#currentDeliveries").css("display", "none");
+				$("#prevDeliveries").css("display", "none");
+				$("#deliveryOrderBlock").css("display", "none");
+			});
+			//current Deliveries
+			$("#currentDeliveriesNav").click(function(event){
+				event.preventDefault();
+				$("#currentDeliveries").css("display", "block");
+				$("#scheduleDeliveries").css("display", "none");
+				$("#prevDeliveries").css("display", "none");
+				$("#deliveryOrderBlock").css("display", "none");
+			});
+			$("#orderDelivered").click(function(event){
+				event.preventDefault();
+				var init = $("#cd_count").attr("value");
+				var ifckd = 0;
+				for (var i = init; i > 0; i--) {
+					var odr = "currentDeli"+i;
+					if ($("input[id='"+odr+"']").is(':checked')) {
+						ifckd = ifckd +1; 
+						var odr_id = $("#"+odr).attr("value");
+						$.post("index.php",
+					    {
+					        pre_delivered: odr_id
+					    },
+					    function(data, status){
+					    	alert(data+"..."+status);
+					    });
+					}
+					if (ifckd<1) {
+						alert("NO ORDER WAS CHECKED !!!");
+					}else if (ifckd>0){
+						$.ajax({
+							url: 'index.php',
+							method: 'GET',
+							data: {
+								select_preDelivery: true
+							},
+							success: function(response){
+								//alert("zxcv:- "+response);
+								$("#currentDeliveries").css("display", "none");
+								$("#scheduleDeliveries").css("display", "none");
+								$("#prevDeliveries").css("display", "none");
+								$("#deliveryOrderBlock").css("display", "block");
+
+								$("#getDeliveryOrder").html(response);
+							},
+							error: function(){
+								alert("error"+url);
+							}
+						});
+					}
+				}
+			});
+
+			//previous deliveries
+			$("#prevDeliveriesNav").click(function(event){
+				event.preventDefault();
+				$("#prevDeliveries").css("display", "block");
+				$("#currentDeliveries").css("display", "none");
+				$("#scheduleDeliveries").css("display", "none");
+				$("#deliveryOrderBlock").css("display", "none");
+			});
+			//
+			$("#viewMenuNav").click(function(event){
+				event.preventDefault();
+
+			});
+		});
+		//CHECK USER ACTIVITY
+		$(function(){
+			setInterval(function(){
+				checkActivity();
+			}, 300000);
+		});
+		//CHECK NOTIFICATIONS
+		$(function(){
+			setInterval(function(){
+				checkNotifications();
+				getMyLocation();
+			}, 30000);
+		});
+		function checkNotifications(){
+			$.post("index.php",
+		    {
+		        notification_activity: true
+		    },
+		    function(data, status){
+		    	if (data==0) {
+		    		//no notifications
+		    	}else{
+		    		alert("Data: " + data + "\nStatus: " + status);
+		    	}
+		    });	
+		}
+		function getMyLocation(){
+      		var options = {
+				enableHighAccuracy: true,
+				maximumAge: 1000,
+				timeout: 45000
+			};
+			if (window.navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(successCallback,
+				errorCallback, options);
+			} else {
+				//alert('Your browser does not natively support geolocation.');
+			}
+			function successCallback(position) {
+				var lati = position.coords.latitude;
+				var longi = position.coords.longitude;
+				$.post("index.php",
+			    {
+			        update_lati_pos: lati,
+			        update_longi_pos: longi
+			    },
+			    function(data, status){
+			    	//alert(data);
+			    });
+			}
+			function errorCallback(error) {
+				//alert("There was a problem getting the location");
+			}
+		}
+	</script>
+	<script type="text/javascript" src="/e-cafe/assets/js/userActivity.js"></script>
+</body>
+</html>

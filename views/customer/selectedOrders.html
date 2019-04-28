@@ -1,0 +1,46 @@
+<div id="getLocation">
+	<div class="row" id="tableTitle" style="height:50px; ">
+		<h4> MY FOOD CART</h4>
+	</div>
+	<div class="row" id="getRestaurant">
+		<table id="restaurantTable">
+			<tr>
+				<th> </th>
+				<th>FOOD NAME</th>
+				<th>QUANTITY</th>
+				<th>PRICE</th>
+				<th>RESTAURANT NAME</th>
+				<th>SELECT</th>
+			</tr>
+			<?php 
+			$i = 0; 
+			foreach($this->selected_data as $order): 
+			$i++;
+			?>
+			<tr>
+				<td>
+					<img alt=" " src="/e-cafe/assets/<?= $order['picture_id']?>" title=" " id="foodImage" style="width: 50px; height:50px; padding-left: 30px;">
+				</td>
+				<td><?= $order['food_name']?></td>
+				<td><?= $order['food_quantity']?></td>
+				<td><?= $order['food_price']?></td>
+				<td><?= $order['restaurant_name']?></td>
+				<td>
+					<input type="checkbox" name="O<?= $i?>" value="<?= $order['order_id']?>">
+				</td>
+			</tr>
+			<?php 
+			
+			endforeach; ?>
+			<p id="count" style="display: none;"><?= $i?></p>
+		</table>
+	</div>
+	<div id="tableButtons" style="padding-top: 30px;">
+			<div class="two columns" style="padding-right: 20px; float: right;">
+				<button href="#" id="orderFood" class=" "> ORDER </button></div>
+			<div class="two columns" style="padding-right: 20px; float: right;">
+				<button href="#" id="removeOrder" > REMOVE</button>
+			</div>  
+		
+	</div>					
+</div>

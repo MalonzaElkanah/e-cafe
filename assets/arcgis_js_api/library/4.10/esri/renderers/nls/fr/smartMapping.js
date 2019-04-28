@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({other:"Autre",sumOfCategories:"Somme des cat\u00e9gories",predominantCategory:"Cat\u00e9gorie pr\u00e9dominante",strengthOfPredominance:"Importance de la pr\u00e9dominance",ageInfo_years:"Anciennet\u00e9, en ann\u00e9es, de {startTime} \u00e0 {endTime}",ageInfo_months:"\u00c2ge, en mois, de {startTime} \u00e0 {endTime}",ageInfo_days:"\u00c2ge, en jours, de {startTime} \u00e0 {endTime}",ageInfo_hours:"\u00c2ge, en heures, de {startTime} \u00e0 {endTime}",ageInfo_minutes:"\u00c2ge, en minutes, de {startTime} \u00e0 {endTime}",
+ageInfo_seconds:"\u00c2ge, en secondes, de {startTime} \u00e0 {endTime}",relationship:{legendTitle:"Relation",HL:"\u00c9lev\u00e9 - faible",HH:"\u00c9lev\u00e9 - \u00c9lev\u00e9",LL:"Faible - Faible",LH:"Faible - \u00c9lev\u00e9",HM:"\u00c9lev\u00e9 - Moyen",ML:"Moyen - Faible",MM:"Moyen - Moyen",MH:"Moyen - \u00c9lev\u00e9",LM:"Faible - Moyen",HM1:"High - Mild",HM2:"High - Medium",M2L:"Medium - Low",M2M1:"Moyen - Faible",M2M2:"Moyen - Moyen",M2H:"Medium - High",M1L:"Mild - Low",M1M1:"Faible - Faible",
+M1M2:"Faible - Moyen",M1H:"Mild - High",LM1:"Low - Mild",LM2:"Low - Medium"}});

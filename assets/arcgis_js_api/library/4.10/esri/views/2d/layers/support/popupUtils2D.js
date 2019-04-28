@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports","../../../../core/tsSupport/extendsHelper","../../../../core/tsSupport/decorateHelper","../../../../geometry/Extent"],function(f,d,g,h,e){Object.defineProperty(d,"__esModule",{value:!0});d.createQueryGeometry=function(a,c,d){var b=d.get("state.resolution"),b=c*("number"===typeof b?b:1);c=a.clone().offset(-b,-b);a=a.clone().offset(b,b);return new e({xmin:Math.min(c.x,a.x),ymin:Math.min(c.y,a.y),xmax:Math.max(c.x,a.x),ymax:Math.max(c.y,a.y),spatialReference:d.spatialReference})}});

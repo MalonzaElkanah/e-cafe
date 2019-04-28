@@ -1,0 +1,2 @@
+//>>built
+(function(a){"object"===typeof module&&"object"===typeof module.exports?(a=a(require,exports),void 0!==a&&(module.exports=a)):"function"===typeof define&&define.amd&&define(["require","exports","tslib","./has","./has"],a)})(function(a,b){Object.defineProperty(b,"__esModule",{value:!0});var c=a("tslib"),d=a("./has");c.__exportStar(a("./has"),b);b.default=d.default});

@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({sort:"Sortieren",sortBy:"Sortieren nach",sortDir:"Sortierrichtung",relevance:"Relevanz",title:"Titel",owner:"Eigent\u00fcmer",created:"Erstellungsdatum",modified:"\u00c4nderungsdatum",numviews:"Anzahl der Aufrufe",avgrating:"Bewertung",ascending:{relevance:"Nach Relevanz aufsteigend",title:"Alphabetisch",owner:"Alphabetisch",created:"\u00c4lteste",modified:"\u00c4lteste",numviews:"Aufsteigend",avgrating:"Von niedrigster zu h\u00f6chster Bewertung"},descending:{relevance:"Nach Relevanz absteigend",
+title:"In umgekehrter alphabetischer Reihenfolge",owner:"In umgekehrter alphabetischer Reihenfolge",created:"Neueste",modified:"Neueste",numviews:"Absteigend",avgrating:"Von h\u00f6chster zu niedrigster Bewertung"}});

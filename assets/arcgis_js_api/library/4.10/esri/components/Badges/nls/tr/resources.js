@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({authoritative:"G\u00fcvenilir",deleted:"Silindi",deprecated:"\u0130ptal Edildi",livingAtlas:"Living Atlas",marketplace:"Pazar",openData:"A\u00e7\u0131k Veri",premium:"Premium",subscriber:"Abone",tooltips:{altAuthoritative:"Yetkili: Tavsiye edilen",authoritative:"Yetkili: Kurulu\u015funuz taraf\u0131ndan tavsiye edilir",deprecated:"Kullan\u0131m d\u0131\u015f\u0131: Kullan\u0131m i\u00e7in tavsiye edilmez",livingAtlas:"Living Atlas: Esri taraf\u0131ndan olu\u015fturulan i\u00e7erik",marketplace:"ArcGIS Marketplace'te listelenmi\u015ftir",
+openData:"Genel kullan\u0131ma a\u00e7\u0131kt\u0131r",premiumAnon:"Premium: Bir ArcGIS Online aboneli\u011fi ile oturum a\u00e7\u0131lmas\u0131n\u0131 gerektirir ve kredi kullan\u0131r",subscriberAnon:"Abone: Bir ArcGIS Online aboneli\u011fi ile oturum a\u00e7\u0131lmas\u0131n\u0131 gerektirir",premiumPublic:"Premium: Bir ArcGIS Online aboneli\u011fi gerektirir ve kredi kullan\u0131r",subscriberPublic:"Abone: ArcGIS Online aboneli\u011fi gerektirir",premiumOrg:"Premium: Abone: Aboneler i\u00e7in \u00f6zel i\u00e7erik. Kredi kullan\u0131r.",
+subscriberOrg:"Abone: Aboneler i\u00e7in \u00f6zel i\u00e7erik"}});

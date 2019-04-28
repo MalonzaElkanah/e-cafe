@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define("require exports ../../core/tsSupport/declareExtendsHelper ../../core/tsSupport/decorateHelper ../../core/JSONSupport ../../core/accessorSupport/decorators ../../core/accessorSupport/ensureType".split(" "),function(k,l,g,c,h,b,e){return function(f){function a(a){a=f.call(this)||this;a.contentType=null;a.id=null;a.keywords=null;a.name=null;a.parentObjectId=null;a.size=null;a.url=null;return a}g(a,f);d=a;a.prototype.clone=function(){return new d({contentType:this.contentType,id:this.id,keywords:this.keywords,
+name:this.name,parentObjectId:this.parentObjectId,size:this.size,url:this.url})};var d;c([b.property({type:String})],a.prototype,"contentType",void 0);c([b.property({type:e.Integer})],a.prototype,"id",void 0);c([b.property({type:String})],a.prototype,"keywords",void 0);c([b.property({type:String})],a.prototype,"name",void 0);c([b.property({json:{read:!1}})],a.prototype,"parentObjectId",void 0);c([b.property({type:e.Integer})],a.prototype,"size",void 0);c([b.property({json:{read:!1}})],a.prototype,
+"url",void 0);return a=d=c([b.subclass("esri.layers.support.AttachmentInfo")],a)}(b.declared(h))});

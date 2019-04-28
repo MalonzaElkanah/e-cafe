@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"/>
+	<script src= /e-cafe/assets/js/jquery.js ></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="/e-cafe/assets/css/normalize.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/skeleton.css" rel="stylesheet" type="text/css"/>
+	<link href="/e-cafe/assets/css/style.css" rel="stylesheet" type="text/css"/>
+	<!-- font-awesome-icons -->
+	<link href="/e-cafe/assets/css/font-awesome.css" rel="stylesheet"> 
+	<!-- //font-awesome-icons -->
+	<title>e-cafe login</title>
+  	<link rel="icon" type="image/png" href="/e-cafe/assets/images/favicon.png">
+  	<style type="text/css">
+  		#signupHeader{
+  			text-align: center;
+  			padding-top: 30px;
+  			padding-bottom: 20px;
+  			height: 14px;
+  			font-size: 14px;
+  			text-transform: uppercase;
+  			font-family: sans-serif;
+  			font-weight: bold;
+  			margin-bottom: 30px;
+  		}
+
+  		#progress {
+    		float: none;
+    		height: 20px;
+    		margin: auto;
+    		background-color: #eee;
+    		margin-bottom: 20px;
+    		border-radius: 20px;
+    		
+		}
+
+		
+		#progress-complete {
+    		border: 0;
+    		position: absolute;
+    		height: 20px;
+    		min-width: 10px;
+		    background-color: maroon;
+		    transition: width .5s ease-in-out;
+    		border-radius: 20px;
+		}
+
+		#signupForm{
+			float: none;
+    		padding: 3em;
+    		background: #eee;
+    		margin: auto;
+		}
+
+		#signupForm h3 {
+    		margin-bottom: 2em;
+    		font-size: 1.5em;
+    		color: maroon;
+    		border-bottom: 1px solid #e5e5e5;
+    		text-align: center;
+    		font-weight: 600;
+    		padding-bottom: .5em;
+		}
+
+		.w3_agileits_margin {
+   			margin-right: 1.5em;
+   			padding-bottom: 25px;
+		}
+
+		.agileits_w3layouts_form {
+    		width: 48.05%;
+    		float: left;
+    		margin-bottom: 1.5em;
+    		padding-bottom: 25px;
+		}
+
+		.wthree_input, .w3ls_description {
+    		position: relative;
+		}
+
+		.wthree_input i {
+    		position: absolute;
+    		left: 0%;
+    		top: 25%;
+    		color: #38a90e;
+		}
+		.wthree_input input[type="text"], .w3ls_description textarea, .wthree_input select, .wthree_input input[type="email"], .wthree_input input[type="password"] {
+    		outline: none;
+    		background: none;
+    		border: none;
+    		border-bottom: 2px solid #212121;
+    		font-size: 14px;
+    		font-style: normal;
+    		color: #212121;
+    		padding: 1em 1em 1em 2em;
+    		width: 85.5%;
+    		font-weight: 600;
+    		font-family: 'Raleway', sans-serif;
+    		border-radius: 0px;
+		}
+		.w3_agileits_margin select {
+    		width: 100% ;
+    		padding-top: 7px;
+		}
+		#areaCode{
+			width: 30% !important;
+			float: left;
+		}
+		#phoneNumber{
+			width: 65.5% !important;
+			float: left;
+			margin-left: 5px;	
+		}
+		.error {
+    		color: #d65c0d;
+    		display: none;
+    		font-size: 13px;
+    		font-style: italic;
+		}
+
+		.clear {
+    		clear: both;
+		}
+
+		.commands {
+    		overflow: hidden;
+    		margin-top: 30px;
+		}
+
+		.btn-primary, button#step1Prev, button#step2Prev {
+		    font-size: 14px;
+		    color: #fff;
+		    font-weight: 600;
+		    padding: 0px 45px;
+		    background: maroon;
+		    outline: none;
+    		border: none;
+    		cursor: pointer;
+		}
+
+		.next, .submit {
+    		float: right;
+		}
+
+
+  	</style>
+
+</head>
+<body>
+  <div class="container">
+  <div id="fixedHeader">
+  <!-- Logo area -->
+  	<div class = "row" id="logo">
+  		<div class="three"><h1>E -CAFE</h1> </div>
+  		<div class="seven">
+  			<select name="category" id="searchOption" style="height: 30px; font-size: 11px; line-height: 25px; padding: 0px; ">
+  				<option value="all">All Categories</option>
+  				<option value="recent">Recent Orders</option>
+				<option value="most">Most Orders</option>
+				<option value="rated">High Rated</option>
+				<option value="near"> Near You</option>
+			</select>
+  			<input id="searchInput" type="text" name="searchInput" placeholder="search.." maxlength="10" size="20" 
+  				style=" height: 30px; width: 300px; line-height: 25px; ">
+  			<button id = "searchButton" style="height: 30px; font-size: 11px; line-height: 25px; padding: 0px;">search</button>
+  		</div>
+  		<div class="two">
+  		<ul>
+  			<li><a href="#">orders</a></li>
+            <li><a href="#"> lked </a></li>
+  		</ul>
+  		</div>
+  	</div>	
+  <!-- end of Logo area -->
+    <!-- Navigation area -->
+		<div class="row">
+			<div class="twelve columns" style="height: 50px;">
+				<nav style="height: 50px;">
+        			<ul id="menu">
+            			<li><a href="/e-cafe/index.php" >HOME</a></li>
+                        <li><a href="/e-cafe/index.php#about"> ABOUT </a></li>
+            			<li><a href="/e-cafe/index.php#foodMenu"> MENU </a></li>
+            			<li><a href="/e-cafe/restaurant.php">RESTAURANTS</a></li>
+            			<li style="float:right;"><a href="/e-cafe/addRestaurant.php"> ADD RESTAURANT </a></li>
+            			<li style="float:right;"><a href="/e-cafe/signup.php" class="active"> SIGN UP</a></li>
+            			<li style="float:right;"><a href="/e-cafe/login.php">LOGIN</a></li>
+        			</ul>
+    			</nav>
+			</div>
+		</div>
+	<!-- Navigation area ends &nbsp; --><!--  -->
+	</div>
+	<div class="row" style="height: 150px;"> </div>
+	<!--Login form area  -->
+		<div class="row" id="signupHeader">
+			<h3>DELIVERY SIGN UP</h3>
+		</div>
+		<div class="row" id="progressBar">
+			<div class="two columns" > </div>
+			<div class="eight columns" id="progress" style="border: 1px solid #e7e7e7; " >
+				<div id="progress-complete" style="width: 1%;"> </div>
+			</div>
+			<div class="two columns"> </div>
+		</div>
+
+		<div class="row" style=" ">
+			<div class="two columns"> </div>
+			<div class="eight columns" id="signupForm" method ="post" style="border: 1px solid #e7e7e7; ">
+			<form id="SignupForm" action="deliverySignUp.php" class="agile_form" method="post" novalidate=" novalidate ">
+
+				<div id="step0" class="stepDetails">
+				<fieldset>
+					<h3>Personal information</h3>
+					<!--First Name Margin  -->
+					<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+						<div class="wthree_input">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<input id="firstName" type="text" name="first_name" class="form-control" placeholder="First Name " required="" aria-required="true" aria-describedby="Name-error" aria-invalid="true">
+							<em id="first_name-error" class="error">This field is required.</em>
+						</div>
+					</div>
+					<!--Second Name (no margin)  -->
+					<div class="form-group agileits_w3layouts_form">
+						<div class="wthree_input">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<input id="secondName" type="text" name="second_name" class="form-control" placeholder="Last Name" required="" aria-required="true" aria-describedby="Name-error" aria-invalid="true">
+							<em id="second_name-error" class="error">This field is required.</em>
+						</div>
+					</div>
+
+					<!--ID NO (Margin)  -->
+					<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+						<div class="wthree_input">
+							<i class="fa fa-file-text" aria-hidden="true"></i>
+							<input id="idNumber" type="text" name="id_number" class="form-control" placeholder="ID Number" required="" aria-required="true" aria-describedby="Subject-error" aria-invalid="true">
+							<em id="id_number-error" class="error">This field is required.</em>
+						</div>
+					</div>
+
+					<!--Email (no margin)  -->
+					<div class="form-group agileits_w3layouts_form">
+						<div class="wthree_input">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<input id="email" type="email" name="email" class="form-control" placeholder="Email" required="" aria-required="true" aria-describedby="Email-error" aria-invalid="true">
+							<em id="email-error" class="error">This field is required.</em>
+						</div>
+					</div>
+
+					<!--Phone Num (margin)  -->
+					<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+						<div class="wthree_input">
+							<i class="fa fa-globe" aria-hidden="true"></i>
+							<select class="form-control valid" id="areaCode" aria-invalid="false" >
+								<option value="Country" selected="">+254</option>
+								<option value="Afghanistan"> +253 </option>
+								<option value="Albania"> +255 </option>
+								<option value="Algeria"> +234 </option>
+								<option value="American Samoa"> +1 </option>
+								<option value="Andorra"> +5 </option>
+								<option value="Angola"> +9 </option>
+								<option value="Anguilla"> +5 </option>
+								<option value="Antarctica"> +3 </option>
+								<option value="...">...</option>
+							</select>
+							<input id="phoneNumber" type="text" name="phone_number" class="form-control" placeholder="phone Number" required="" aria-required="true" aria-describedby="Subject-error" aria-invalid="true">
+							<em id="phone_number-error" class="error">This field is required.</em>
+						</div>
+					</div>
+					<!-- button  -->
+					<div class="clear"> </div>
+					<p id="step0commands" class="commands">
+						<button href="#" id="step0Next" class="btn btn-primary next valid" aria-invalid="false">Next &gt;</button>
+					</p>
+				</fieldset>
+				</div>
+
+
+				<div id="step1" class="stepDetails" style="display: none;">
+				<fieldset>
+					<h3>Person Infomation</h3>
+					<!--Delivery Means  -->
+					<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+						<div class="wthree_input">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<select id="deliveryMeans" name="delivery_means" class="form-control" placeholder="Delivery Means" required="" aria-required="true" aria-describedby="Subject-error" aria-invalid="true" >
+								<option value="delivery_means" selected="">Delivery Means</option>
+								<option value="Bicycle">Bicycle</option>
+								<option value="Walk">Walk</option>
+								<option value="Motorcycle"> Motorcycle </option>
+								<option value="Vehicle">Vehicle </option>
+							</select>
+							<em id="delivery_means-error" class="error">This field is required.</em>
+						</div>
+					</div>
+
+					<!--County  -->
+					<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+						<div class="wthree_input">
+							<i class="fa fa-key" aria-hidden="true"></i>
+							<select id="county" name="county" class="form-control" placeholder="County" required="" aria-required="true" aria-describedby="Subject-error" aria-invalid="true" >
+								<option value="county" selected="">County</option>
+								<option value="Mombasa">Mombasa</option>
+								<option value="Kisumu"> Kisumu </option>
+								<option value="Machokos">Machokos </option>
+							</select>
+							<em id="county-error" class="error">This field is required.</em>
+						</div>
+					</div>
+
+					<!--Town  -->
+					<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+						<div class="wthree_input">
+							<i class="fa fa-key" aria-hidden="true"></i>
+							<select id="town" name="town" class="form-control" placeholder="town" required="" aria-required="true" aria-describedby="Town-error" aria-invalid="true" >
+								<option value="town" selected="">Town</option>
+								<option value="Mombasa">Mombasa</option>
+								<option value="Kisumu"> Kisumu </option>
+								<option value="Machokos">Machokos </option>
+							</select>
+							<em id="town-error" class="error">This field is required.</em>
+						</div>
+					</div>
+
+					<div class="clear"> </div>
+					<p id="step1commands" class="commands">
+						<button href="#" id="step1Prev" class="btn btn-default prev">&lt; Back</button>
+						<button href="#" id="step1Next" class="btn btn-primary next">NEXT &gt;</button>
+					</p>
+				</fieldset> 
+				</div>
+
+				<div id="step2" class="stepDetails" style="display: none;">
+				<fieldset>
+					<h3>Login Infomation</h3>
+					<!--UserName Margin  -->
+					<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+						<div class="wthree_input">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<input id="userName" type="text" name="user_name" class="form-control" placeholder="User Name " aria-required="true" aria-describedby="Name-error" aria-invalid="true">
+							<em id="user_name-error" class="error">This field is required.</em>
+						</div>
+					</div>
+
+					<!--Password (no margin)  -->
+					<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+						<div class="wthree_input">
+							<i class="fa fa-key" aria-hidden="true"></i>
+							<input id="password" type="password" name="password" class="form-control" placeholder="*Password" aria-required="true" aria-describedby="Password-error" aria-invalid="true">
+							<em id="password-error" class="error">This field is required.</em>
+						</div>
+					</div>
+
+					<!--confirm Password (margin)  -->
+					<div class="form-group agileits_w3layouts_form w3_agileits_margin">
+						<div class="wthree_input">
+							<i class="fa fa-key" aria-hidden="true"></i>
+							<input id="confirmPassword" type="password" name="confirm_password" class="form-control" placeholder=" *confirm Password" aria-required="true" aria-describedby="Password-error" aria-invalid="true">
+							<em id="confirm_password-error" class="error">This field is required.</em>
+						</div>
+					</div>
+
+					<div class="clear"> </div>
+					<p id="step1commands" class="commands">
+						<button href="#" id="step2Prev" class="btn btn-default prev">&lt; Back</button>
+						<button href="#" id="createDeliveryAccount" name="submit" class="btn btn-primary next">CREATE </button>
+					</p>
+				</fieldset> 
+				</div>
+
+			</form>	
+			</div>
+			<div class="two columns"> </div>
+		</div>
+		&nbsp;
+	<!--Login form Areaa End  -->
+  </div>
+ 
+<!-- End Documentstyle="border: 1px solid black;"
+  ––––––––––––––––––––––––––––––––––––––––––––––––––-->
+  
+    <script>
+    	//form step0
+        $(function () {
+        	//NEXT- Step 0
+			$("#step0Next").click(function(event){
+				event.preventDefault();
+				var intError = 0;
+				if ($("input[name='first_name']").val().trim()==="") {
+					$("#first_name-error").css("display", "block");
+					intError = 1;
+				} 
+				if ($("input[name='second_name']").val().trim()==="") {
+					$("#second_name-error").css("display", "block");
+					intError =2;
+				}
+				if ($("input[name='id_number']").val().trim()==="") {
+					$("#id_number-error").css("display", "block");
+					intError =3;
+				}
+				if ($("input[name='email']").val().trim()==="") {
+					$("#email-error").css("display", "block");
+					intError = 4
+				}
+				if ($("input[name='phone_number']").val().trim()==="") {
+					$("#phone_number-error").css("display", "block");
+					intError =5;
+				}
+				if (intError===0) {
+					$("#step0").css("display", "none");
+					$("#progress-complete").css("width", "25%");
+					$("#step1").css("display", "block");
+
+				}
+			});
+			$("input").change(function(){
+				var name1 = $(this).attr('name');
+				var errorName = "#"+name1+"-error";
+				if ($("input[name='"+name1+"']").val().trim()==="") {
+					$(""+errorName).val("This field is required.").css("display","block");	
+				}else{
+					$(""+errorName).css("display", "none");
+				}
+			});
+			/*$("input[type='email']").change(function(){
+				var emailInput = $(this).attr('value');
+				if ($("input[type='email']").val().trim()==="") {
+					$("Email-error").css("color", "#d65c0d");
+				}
+			});*/
+			
+		});
+
+
+        //form Step 1	
+        $(function(){
+        	$("#step1Prev").click(function(event){
+        		event.preventDefault();	
+        		$("#step1").css("display", "none");
+				$("#progress-complete").css("width", "1%");
+				$("#step0").css("display", "block");	
+        	});	
+        	$("#step1Next").click(function(event){
+        		event.preventDefault();	
+        		var intError = 0;
+				if( $("select[id='county']").val()==="county"){
+					intError = 1;
+					$("#county-error").css("display","block");
+					$("#county-error").css("color","#d65c0d");
+				}else{
+					$("#county-error").css("display","none");
+				}
+				if($("select[id='town']").val()==="town"){
+					intError = 2;
+
+					$("#town-error").css("display","block");
+				}else{
+					$("#town-error").css("display","none");
+				}
+				if( $("select[id='deliveryMeans']").val()==="delivery_means"){
+					intError = 3;
+					$("#delivery_means-error").css("display","block");
+				}else{
+					$("#delivery_means-error").css("display","none");
+				}
+				
+				if (intError===0) {
+					$("#step1").css("display", "none");
+					$("#progress-complete").css("width", "65%");
+					$("#step2").css("display", "block");
+				}	
+        	});	
+        	$("select").change(function(){
+				var name1 = $(this).attr('name');
+				var errorName = "#"+name1+"-error";
+				if ($("select[name='"+name1+"']").val().trim()===""+name1) {
+					$(""+errorName).val("This field is required.").css("display","block");	
+				}else{
+					$(""+errorName).css("display", "none");
+				}
+			});
+        });	
+
+
+		//form step2
+		$(function(){
+			$("#step2Prev").click(function(event){
+				event.preventDefault();
+				$("#step2").css("display", "none");
+				$("#progress-complete").css("width", "25%");
+				$("#step1").css("display", "block");
+			});
+
+			//$(document).on('submit', '#createDeliveryAccount', function(event){
+			$("#createDeliveryAccount").click(function(event){
+				event.preventDefault();
+				var intError = 0;
+				if ($("input[name='user_name']").val().trim()==="") {
+					$("#user_name-error").css("display", "block");
+					intError = 1;
+				} 
+				if ($("input[name='password']").val().trim()==="") {
+					$("#password-error").css("display", "block");
+					intError =2;
+				}
+				if ($("input[name='confirm_password']").val().trim()==="") {
+					$("#confirm_password-error").css("display", "block");
+					intError =3;
+				}
+				if ($("input[id='confirmPassword']").val()=== $("input[id='password']").val()){
+					if(intError===0){
+						//$("#createDeliveryAccount").unbind('submit').submit();
+						$.post("deliverySignUp.php",
+					    {
+					        submit: true,
+					        first_name: $("input[name='first_name']").val().trim(),
+					        second_name: $("input[name='second_name']").val().trim(),
+					        id_number: $("input[name='id_number']").val().trim(),
+					        email: $("input[name='email']").val().trim(),
+					        phone_number: $("input[name='phone_number']").val().trim(),
+					        county: $("select[id='county']").val(),
+					        town: $("select[id='town']").val(),
+					        delivery_means: $("select[id='deliveryMeans']").val(),
+					        user_name: $("input[name='user_name']").val().trim(),
+					        password: $("input[name='password']").val().trim(),
+					        confirm_password: $("input[name='confirm_password']").val().trim()
+					    },
+					    function(data, status){
+					        if (data>0) {
+					        	alert("USER CREATED SUCCESSFUL. Please Login");
+					        	window.location.href = "login.php";
+					        }else{
+					        	alert("ERROR: USER NOT CREATED: "+data);
+					        }
+					    });
+					}
+				}else{
+					$("#confirm_password-error").empty();
+					$("#confirm_password-error").append("This field should be equal to password field.");
+					$("#confirm_password-error").css("display","block");
+				}
+
+			});
+		});
+
+    </script>
+</body>
+</html>

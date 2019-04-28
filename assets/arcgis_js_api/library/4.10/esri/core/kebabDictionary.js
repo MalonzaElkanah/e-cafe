@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define(["require","exports"],function(g,h){function d(b,a){void 0===a&&(a={});return new e(b,a)}var e=function(){function b(a,b){void 0===b&&(b={ignoreUnknown:!1});var c=this;this.jsonToAPI=a;this.options=b;this.apiValues=[];this.jsonValues=[];this.apiToJSON=this.invertMap(a);this.apiValues=this.getKeysSorted(this.apiToJSON);this.jsonValues=this.getKeysSorted(this.jsonToAPI);this.read=function(a){return c.fromJSON(a)};this.write=function(a,b,f){a=c.toJSON(a);void 0!==a&&(b[f]=a)}}b.prototype.toJSON=
+function(a){return this.apiToJSON.hasOwnProperty(a)?this.apiToJSON[a]:this.options.ignoreUnknown?void 0:a};b.prototype.fromJSON=function(a){return this.jsonToAPI.hasOwnProperty(a)?this.jsonToAPI[a]:this.options.ignoreUnknown?void 0:a};b.prototype.invertMap=function(a){var b={},c;for(c in a)b[a[c]]=c;return b};b.prototype.getKeysSorted=function(a){var b=[],c;for(c in a)b.push(c);b.sort();return b};return b}();(function(b){b.strict=function(){return function(a){return new b.KebabDictionary(a,{ignoreUnknown:!0})}};
+b.KebabDictionary=e})(d||(d={}));return d});

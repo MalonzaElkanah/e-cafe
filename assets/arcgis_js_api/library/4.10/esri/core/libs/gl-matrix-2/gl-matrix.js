@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define("require exports ./factories/mat2df32 ./factories/mat2df64 ./factories/mat2f32 ./factories/mat2f64 ./factories/mat3f32 ./factories/mat3f64 ./factories/mat4f32 ./factories/mat4f64 ./factories/quat2f32 ./factories/quat2f64 ./factories/quatf32 ./factories/quatf64 ./factories/vec2f32 ./factories/vec2f64 ./factories/vec3f32 ./factories/vec3f64 ./factories/vec4f32 ./factories/vec4f64 ./math/common ./math/mat2 ./math/mat2d ./math/mat3 ./math/mat4 ./math/quat ./math/quat2 ./math/vec2 ./math/vec3 ./math/vec4".split(" "),
+function(H,a,b,c,d,e,f,g,h,k,l,m,n,p,q,r,t,u,v,w,x,y,z,A,B,C,D,E,F,G){Object.defineProperty(a,"__esModule",{value:!0});a.mat2df32=b;a.mat2df64=c;a.mat2f32=d;a.mat2f64=e;a.mat3f32=f;a.mat3f64=g;a.mat4f32=h;a.mat4f64=k;a.quat2f32=l;a.quat2f64=m;a.quatf32=n;a.quatf64=p;a.vec2f32=q;a.vec2f64=r;a.vec3f32=t;a.vec3f64=u;a.vec4f32=v;a.vec4f64=w;a.common=x;a.mat2=y;a.mat2d=z;a.mat3=A;a.mat4=B;a.quat=C;a.quat2=D;a.vec2=E;a.vec3=F;a.vec4=G});

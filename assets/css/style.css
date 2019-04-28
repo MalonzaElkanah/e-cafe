@@ -1,0 +1,138 @@
+#logo{
+	border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+
+}
+#logo .three{
+	font-family: forte;
+	text-align: center;
+	display: block;
+	float: left;
+    padding: 5px;
+    color: maroon;
+    width: 25%
+    
+}
+#logo .seven{
+	text-align: center;
+	display: block;
+	float: left;
+    padding: 5px;
+    align-content: center;
+    width: 50%
+}
+#logo .two{
+	text-align: center;
+	display: block;
+	float: left;
+    padding: 5px;
+    list-style-type:none;
+	overflow: hidden;
+	width: 25;
+}
+#logo li{
+	padding: 5px;
+	float: left;
+	text-decoration: none;
+	list-style-type:none;
+}
+ul#menu{
+	list-style-type:none;
+	overflow: hidden;
+    height: 50px;
+    top: 0px;
+    /*background-color: white;*/
+    /*position: fixed;*/
+    padding: 0px;
+
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+
+}
+#menu li{
+	padding: 5px;
+	float: left;
+	
+}
+#menu li a{
+	display: block;
+	text-align:center;
+    /*color: black;*/
+    padding: 5px;
+    text-decoration: none;
+
+    color: #666;
+}
+#menu li a.active {
+    /*background-color: maroon;*/
+    color: maroon;
+    font-weight: bold;
+    border-bottom: 2px solid maroon;
+}
+li a:hover {
+    color: maroon;
+}
+#searchInput {
+    border: 1px solid blue;
+    border-radius: 4px;
+    text-align:;
+    font-size: 14px;
+    background-color: white;
+    background-image: url('../images/searchicon.png');
+    background-position: 5px 5px; 
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    
+}
+#fixedHeader{
+	position: fixed;
+	width: 99%
+}
+.headInterval{
+	border: 1px solid #e7e7e7;
+	background: url("../images/cover2.jpg") no-repeat center;
+	height: 640px;
+	background-size: cover;
+}
+.masthead{
+	border: 1px solid #e7e7e7;
+	background: url("../images/cover2.jpg") no-repeat center;
+	height: 640px;
+	background-size: cover;
+	position: ;
+}
+#sectionHeader{
+	text-align:center;
+	font-family: forte;
+}
+#sectionHeader2{
+	text-align: left;
+	font-family: forte;
+}
+
+.footer{
+	background-color: #444;
+	align-content: center;
+	text-align: center;
+}
+.footer h4{
+	text-align: center;
+	color: white;
+}
+
+
+.addfoodinput{
+	outline: none;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #212121;
+    font-size: 14px;
+    font-style: normal;
+    color: #212121;
+    padding: 1em 1em 1em 2em;
+    width: 85.5%;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 0px;
+}
+

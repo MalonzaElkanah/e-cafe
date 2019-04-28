@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({itemType:"Vien\u012bbas veids",filters:{maps:"Kartes",webMaps:"T\u012bmek\u013ca kartes",mapFiles:"Kartes faili",layers:"Sl\u0101\u0146i",featureLayers:"Elementu sl\u0101\u0146i",tileLayers:"Moza\u012bkas sl\u0101\u0146i",mapImageLayers:"Kartes att\u0113la sl\u0101\u0146i",imageryLayers:"Att\u0113lu sl\u0101\u0146i",sceneLayers:"Sc\u0113nas sl\u0101\u0146i",tables:"Tabulas",layerFiles:"Sl\u0101\u0146a faili",scenes:"Sc\u0113nas",apps:"Lietotnes",webApps:"T\u012bmek\u013ca lietotnes",mobileApps:"Mobil\u0101s lietotnes",
+desktopApps:"Darbvirsmas lietotnes",tools:"R\u012bki",locators:"Mekl\u0113t\u0101ji",geodatabaseAccess:"\u0122eodatub\u0101zes piek\u013cuve",geometricOperations:"\u0122eometrisk\u0101s darb\u012bbas",geoprocessingTasks:"\u0122eoapstr\u0101des uzdevumi",networkAnalysis:"T\u012bkla anal\u012bze",files:"Faili",documents:"Dokumenti",images:"Att\u0113li",pdfs:"PDF faili",webTools:"T\u012bmek\u013ca r\u012bki",notebooks:"Piez\u012bmju gr\u0101mati\u0146as"}});

@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.10/esri/copyright.txt for details.
+//>>built
+define({itemType:"Itemtype",filters:{maps:"Kaarten",webMaps:"Webmaps",mapFiles:"Kaartbestanden",layers:"Lagen",featureLayers:"Objectlagen",tileLayers:"Tilelagen",mapImageLayers:"Map imagelagen",imageryLayers:"Imagelaag",sceneLayers:"Satellietbeeldlagen",tables:"Tabellen",layerFiles:"Laagbestanden",scenes:"Scenes",apps:"Apps",webApps:"Webapps",mobileApps:"Mobiele apps",desktopApps:"Desktopapps",tools:"Tools",locators:"Locators",geodatabaseAccess:"Geodatabase-toegang",geometricOperations:"Geometrische operaties",
+geoprocessingTasks:"Geoprocessing-taken",networkAnalysis:"Netwerkanalyse",files:"Bestanden",documents:"Documenten",images:"Afbeeldingen",pdfs:"PDF's",webTools:"Webtools",notebooks:"Notebooks"}});
